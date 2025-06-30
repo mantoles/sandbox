@@ -1,0 +1,5 @@
+<Step Name>
+<StationGlobals>	Variable Value	
+'Including "ATES.fixture_Model" and/or "ATES.fixture_Serial" StationGlobals will force ATES into Fixture identification simulation mode
+ATES.fixture_Model	A
+ATES.fixture_Serial	ABC

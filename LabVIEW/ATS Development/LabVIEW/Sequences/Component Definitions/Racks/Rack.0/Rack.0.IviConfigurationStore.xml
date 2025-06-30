@@ -1,0 +1,4333 @@
+<IviConfigStore xmlns:dt="urn:schemas-microsoft-com:datatypes">
+	<Name>IVI Configuration Server (32-bit C API)</Name>
+	<Description>The IVI Configuration Server allows access to and modification of an IVI configuration store</Description>
+	<Vendor>IVI Foundation, Inc.</Vendor>
+	<Revision>1.7.0.12115</Revision>
+	<SpecificationMajorVersion>1</SpecificationMajorVersion>
+	<SpecificationMinorVersion>7</SpecificationMinorVersion>
+	<MasterLocation>C:\Documents and Settings\All Users\Application Data\IVI Foundation\IVI\IviConfigurationStore.xml</MasterLocation>
+	<ProcessDefaultLocation>C:\ATES\Engineering\3 - Develop\Code\Project Templates\1up Minimal\Component Definitions\Racks\Rack.0\Rack.0.A.IviConfigurationStore.xml</ProcessDefaultLocation>
+	<ActualLocation>C:\Documents and Settings\All Users\Application Data\IVI Foundation\IVI\IviConfigurationStore.xml</ActualLocation>
+	<PublishedAPIs>
+		<IviPublishedAPI id="p1">
+			<Name>IviDCPwr</Name>
+			<MajorVersion>2</MajorVersion>
+			<MinorVersion>0</MinorVersion>
+			<Type>IVI-C</Type>
+		</IviPublishedAPI>
+		<IviPublishedAPI id="p2">
+			<Name>IviDmm</Name>
+			<MajorVersion>3</MajorVersion>
+			<MinorVersion>0</MinorVersion>
+			<Type>IVI-C</Type>
+		</IviPublishedAPI>
+		<IviPublishedAPI id="p3">
+			<Name>IviDmm</Name>
+			<MajorVersion>3</MajorVersion>
+			<MinorVersion>0</MinorVersion>
+			<Type>IVI-COM</Type>
+		</IviPublishedAPI>
+		<IviPublishedAPI id="p4">
+			<Name>IviDriver</Name>
+			<MajorVersion>1</MajorVersion>
+			<MinorVersion>0</MinorVersion>
+			<Type>IVI-C</Type>
+		</IviPublishedAPI>
+		<IviPublishedAPI id="p5">
+			<Name>IviDriver</Name>
+			<MajorVersion>1</MajorVersion>
+			<MinorVersion>0</MinorVersion>
+			<Type>IVI-COM</Type>
+		</IviPublishedAPI>
+		<IviPublishedAPI id="p6">
+			<Name>IviDriver</Name>
+			<MajorVersion>2</MajorVersion>
+			<MinorVersion>1</MinorVersion>
+			<Type>IVI-C</Type>
+		</IviPublishedAPI>
+		<IviPublishedAPI id="p7">
+			<Name>IviFgen</Name>
+			<MajorVersion>3</MajorVersion>
+			<MinorVersion>0</MinorVersion>
+			<Type>IVI-C</Type>
+		</IviPublishedAPI>
+		<IviPublishedAPI id="p8">
+			<Name>IviScope</Name>
+			<MajorVersion>3</MajorVersion>
+			<MinorVersion>0</MinorVersion>
+			<Type>IVI-C</Type>
+		</IviPublishedAPI>
+		<IviPublishedAPI id="p9">
+			<Name>IviSwtch</Name>
+			<MajorVersion>3</MajorVersion>
+			<MinorVersion>0</MinorVersion>
+			<Type>IVI-C</Type>
+		</IviPublishedAPI>
+		<IviPublishedAPI id="p10">
+			<Name>NISimulationDriver</Name>
+			<MajorVersion>2</MajorVersion>
+			<MinorVersion>0</MinorVersion>
+			<Type>IVI-C</Type>
+		</IviPublishedAPI>
+	</PublishedAPIs>
+	<SoftwareModules>
+		<IviSoftwareModule id="p11">
+			<Name>ag6000</Name>
+			<Description>Agilent driver for 6000 and 7000 Series Oscilloscopes</Description>
+			<DataComponents/>
+			<ModulePath>ag6000_32.dll</ModulePath>
+			<Prefix>ag6000</Prefix>
+			<ProgID/>
+			<SupportedInstrumentModels>DSO6032A,MSO6032A,DSO6034A,MSO6034A,DSO6052A,MSO6052A,DSO6054,MSO6054,DSO6102A,MSO6102A,DSO6104,MSO6104,DSO6012A,MSO6012A,DSO6014,MSO6014,DSO5054A,DSO5034A,DSO5052A,DSO5012A,DSO5014A,DSO5032A,DSO7032A,DSO7034A,DSO7052A,DSO7054A,DSO7104A,MSO7032A,MSO7034A, MSO7052A,MSO7054A,MSO7104A,DSO7012A,MSO7012A,DSO7014A,MSO7014A</SupportedInstrumentModels>
+			<PhysicalNames>
+				<IviPhysicalName id="p12">
+					<Name>CHAN1</Name>
+					<RCName>Channel</RCName>
+					<PhysicalNames/>
+					<PhysicalRanges/>
+				</IviPhysicalName>
+				<IviPhysicalName id="p13">
+					<Name>CHAN2</Name>
+					<RCName>Channel</RCName>
+					<PhysicalNames/>
+					<PhysicalRanges/>
+				</IviPhysicalName>
+				<IviPhysicalName id="p14">
+					<Name>CHAN3</Name>
+					<RCName>Channel</RCName>
+					<PhysicalNames/>
+					<PhysicalRanges/>
+				</IviPhysicalName>
+				<IviPhysicalName id="p15">
+					<Name>CHAN4</Name>
+					<RCName>Channel</RCName>
+					<PhysicalNames/>
+					<PhysicalRanges/>
+				</IviPhysicalName>
+			</PhysicalNames>
+			<PublishedAPIs>
+				<IviPublishedAPI idref="p6"/>
+				<IviPublishedAPI idref="p8"/>
+			</PublishedAPIs>
+			<AssemblyQualifiedClassName/>
+			<ModulePath64/>
+		</IviSoftwareModule>
+		<IviSoftwareModule id="p16">
+			<Name>agn6700</Name>
+			<Description>Agilent Technologies N6700 DC Power Supply Instrument Driver</Description>
+			<DataComponents/>
+			<ModulePath>agn6700_32.dll</ModulePath>
+			<Prefix>agn6700</Prefix>
+			<ProgID/>
+			<SupportedInstrumentModels>N6700</SupportedInstrumentModels>
+			<PhysicalNames>
+				<IviPhysicalName id="p17">
+					<Name>1</Name>
+					<RCName>Channel</RCName>
+					<PhysicalNames/>
+					<PhysicalRanges/>
+				</IviPhysicalName>
+			</PhysicalNames>
+			<PublishedAPIs>
+				<IviPublishedAPI idref="p1"/>
+				<IviPublishedAPI idref="p4"/>
+			</PublishedAPIs>
+			<AssemblyQualifiedClassName/>
+			<ModulePath64/>
+		</IviSoftwareModule>
+		<IviSoftwareModule id="p18">
+			<Name>hp33120a</Name>
+			<Description>Hewlett-Packard 33120A Function/Arbitrary Waveform Generator</Description>
+			<DataComponents/>
+			<ModulePath>hp33120a_32.dll</ModulePath>
+			<Prefix>hp33120a</Prefix>
+			<ProgID/>
+			<SupportedInstrumentModels>33120A,E1441A,33210A,33220A,33250A</SupportedInstrumentModels>
+			<PhysicalNames>
+				<IviPhysicalName id="p19">
+					<Name>1</Name>
+					<RCName>Channel</RCName>
+					<PhysicalNames/>
+					<PhysicalRanges/>
+				</IviPhysicalName>
+			</PhysicalNames>
+			<PublishedAPIs>
+				<IviPublishedAPI idref="p4"/>
+				<IviPublishedAPI idref="p7"/>
+			</PublishedAPIs>
+			<AssemblyQualifiedClassName/>
+			<ModulePath64/>
+		</IviSoftwareModule>
+		<IviSoftwareModule id="p20">
+			<Name>hp34401a</Name>
+			<Description>Hewlett-Packard 34401A Digital Multimeter</Description>
+			<DataComponents/>
+			<ModulePath>hp34401a_32.dll</ModulePath>
+			<Prefix>hp34401a</Prefix>
+			<ProgID/>
+			<SupportedInstrumentModels>34401A,E1412A,34410A,34411A,L4411A</SupportedInstrumentModels>
+			<PhysicalNames>
+				<IviPhysicalName id="p21">
+					<Name>1</Name>
+					<RCName>Channel</RCName>
+					<PhysicalNames/>
+					<PhysicalRanges/>
+				</IviPhysicalName>
+			</PhysicalNames>
+			<PublishedAPIs>
+				<IviPublishedAPI idref="p2"/>
+				<IviPublishedAPI idref="p4"/>
+			</PublishedAPIs>
+			<AssemblyQualifiedClassName/>
+			<ModulePath64/>
+		</IviSoftwareModule>
+		<IviSoftwareModule id="p22">
+			<Name>NI-DCPower</Name>
+			<Description>National Instruments DC Power Supplies and SMUs Driver</Description>
+			<DataComponents/>
+			<ModulePath>nidcpower_32.dll</ModulePath>
+			<Prefix>niDCPower</Prefix>
+			<ProgID/>
+			<SupportedInstrumentModels>NI PXI-4110,NI PXI-4130</SupportedInstrumentModels>
+			<PhysicalNames>
+				<IviPhysicalName id="p23">
+					<Name>0</Name>
+					<RCName>Channel</RCName>
+					<PhysicalNames/>
+					<PhysicalRanges/>
+				</IviPhysicalName>
+				<IviPhysicalName id="p24">
+					<Name>1</Name>
+					<RCName>Channel</RCName>
+					<PhysicalNames/>
+					<PhysicalRanges/>
+				</IviPhysicalName>
+				<IviPhysicalName id="p25">
+					<Name>2</Name>
+					<RCName>Channel</RCName>
+					<PhysicalNames/>
+					<PhysicalRanges/>
+				</IviPhysicalName>
+			</PhysicalNames>
+			<PublishedAPIs>
+				<IviPublishedAPI idref="p1"/>
+				<IviPublishedAPI idref="p4"/>
+			</PublishedAPIs>
+			<AssemblyQualifiedClassName/>
+			<ModulePath64/>
+		</IviSoftwareModule>
+		<IviSoftwareModule id="p26">
+			<Name>NIDMM</Name>
+			<Description>National Instruments Digital Multimeters Driver</Description>
+			<DataComponents>
+				<IviStructure id="p27">
+					<Name>Configurable Initial Settings</Name>
+					<Description/>
+					<ReadOnly>1</ReadOnly>
+					<UsedInSession>None</UsedInSession>
+					<Type>Structure</Type>
+					<HelpContextID>0</HelpContextID>
+					<HelpFilePath/>
+					<SoftwareModuleKey/>
+					<DataComponents>
+						<IviInteger id="p28">
+							<Name>Auto Zero</Name>
+							<Description>Default setting for Auto Zero</Description>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>Integer</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>NIDMM_ATTR_AUTO_ZERO</SoftwareModuleKey>
+							<Units/>
+							<Value>0</Value>
+						</IviInteger>
+					</DataComponents>
+				</IviStructure>
+			</DataComponents>
+			<ModulePath>nidmm_32.dll</ModulePath>
+			<Prefix>niDMM</Prefix>
+			<ProgID/>
+			<SupportedInstrumentModels>NI PCMCIA-4050, NI PCI-4060, NI PXI-4060, NI PCI-4065, NI PCIe-4065, NI PXI-4065, NI USB-4065, NI PCI-4070, NI PXI-4070, NI PXI-4071, NI PXI-4072</SupportedInstrumentModels>
+			<PhysicalNames/>
+			<PublishedAPIs>
+				<IviPublishedAPI idref="p2"/>
+				<IviPublishedAPI idref="p4"/>
+			</PublishedAPIs>
+			<AssemblyQualifiedClassName/>
+			<ModulePath64>nidmm_64.dll</ModulePath64>
+		</IviSoftwareModule>
+		<IviSoftwareModule id="p29">
+			<Name>NI-FGEN</Name>
+			<Description>Instrument Driver for National Instruments Signal Generators</Description>
+			<DataComponents/>
+			<ModulePath>niFgen_32.dll</ModulePath>
+			<Prefix>niFgen</Prefix>
+			<ProgID/>
+			<SupportedInstrumentModels>NI PXI-5401,NI PCI-5401,NI PXI-5402,NI PCI-5402,NI PXI-5406,NI PCI-5406,NI PXI-5411,NI PCI-5411,NI PXI-5431,NI PCI-5431,NI PXI-5404,NI PXI-5412,NI PCI-5412,NI PXI-5421,NI PCI-5421,NI PXI-5422,NI PXI-5441,NI PXIe-5442,NI PXIe-5450</SupportedInstrumentModels>
+			<PhysicalNames>
+				<IviPhysicalName id="p30">
+					<Name>0</Name>
+					<RCName>Channel</RCName>
+					<PhysicalNames/>
+					<PhysicalRanges/>
+				</IviPhysicalName>
+			</PhysicalNames>
+			<PublishedAPIs>
+				<IviPublishedAPI idref="p4"/>
+				<IviPublishedAPI idref="p7"/>
+			</PublishedAPIs>
+			<AssemblyQualifiedClassName/>
+			<ModulePath64/>
+		</IviSoftwareModule>
+		<IviSoftwareModule id="p31">
+			<Name>niRFSA</Name>
+			<Description>RF Signal Analyzer Instrument Driver</Description>
+			<DataComponents/>
+			<ModulePath>niRFSA.dll</ModulePath>
+			<Prefix>niRFSA</Prefix>
+			<ProgID/>
+			<SupportedInstrumentModels>NI PXI-5661</SupportedInstrumentModels>
+			<PhysicalNames>
+				<IviPhysicalName id="p32">
+					<Name>0</Name>
+					<RCName>Channel</RCName>
+					<PhysicalNames/>
+					<PhysicalRanges/>
+				</IviPhysicalName>
+			</PhysicalNames>
+			<PublishedAPIs>
+				<IviPublishedAPI idref="p4"/>
+			</PublishedAPIs>
+			<AssemblyQualifiedClassName/>
+			<ModulePath64/>
+		</IviSoftwareModule>
+		<IviSoftwareModule id="p33">
+			<Name>niScope</Name>
+			<Description>High Speed Digitizers Oscilloscope Instrument Driver</Description>
+			<DataComponents/>
+			<ModulePath>niScope_32.dll</ModulePath>
+			<Prefix>niScope</Prefix>
+			<ProgID/>
+			<SupportedInstrumentModels>NI USB-5133, NI USB-5132, NI PCI-5152, NI PXI-5152, NI PXI-5105, NI PCI-5105, NI PXIe-5122, NI PXI-5122, NI PCI-5122, NI PXI-5124, NI PCI-5124, NI PXI-5922, NI PCI-5922, NI PCI-5114, NI PXI-5114, NI PXI-5142, NI PCI-5142, NI PXI-5112, NI PCI-5112, NI PXI-5620, NI PXI-5621, NI PCI-5911, NI PCI-5102, NI PXI-5102, NI CPCI-5102, NI USB-5102, NI AT-5102, NI PCMCIA-5102</SupportedInstrumentModels>
+			<PhysicalNames>
+				<IviPhysicalName id="p34">
+					<Name>0</Name>
+					<RCName>Channel</RCName>
+					<PhysicalNames/>
+					<PhysicalRanges/>
+				</IviPhysicalName>
+				<IviPhysicalName id="p35">
+					<Name>1</Name>
+					<RCName>Channel</RCName>
+					<PhysicalNames/>
+					<PhysicalRanges/>
+				</IviPhysicalName>
+			</PhysicalNames>
+			<PublishedAPIs>
+				<IviPublishedAPI idref="p4"/>
+				<IviPublishedAPI idref="p8"/>
+			</PublishedAPIs>
+			<AssemblyQualifiedClassName/>
+			<ModulePath64/>
+		</IviSoftwareModule>
+		<IviSoftwareModule id="p36">
+			<Name>nisDCPwr</Name>
+			<Description>National Instruments DCPwr Class Simulation Driver</Description>
+			<DataComponents>
+				<IviStructure id="p37">
+					<Name>Configurable Initial Settings</Name>
+					<Description/>
+					<ReadOnly>1</ReadOnly>
+					<UsedInSession>None</UsedInSession>
+					<Type>Structure</Type>
+					<HelpContextID>0</HelpContextID>
+					<HelpFilePath/>
+					<SoftwareModuleKey/>
+					<DataComponents>
+						<IviInteger id="p38">
+							<Name>ABORT_STATUS</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>Integer</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>ABORT_STATUS</SoftwareModuleKey>
+							<Units/>
+							<Value>0</Value>
+						</IviInteger>
+						<IviInteger id="p39">
+							<Name>CONFIGURE_CURRENT_LIMIT_STATUS</Name>
+							<Description>W</Description>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>Integer</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>CONFIGURE_CURRENT_LIMIT_STATUS</SoftwareModuleKey>
+							<Units/>
+							<Value>0</Value>
+						</IviInteger>
+						<IviInteger id="p40">
+							<Name>CONFIGURE_OUTPUT_ENABLED_STATUS</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>Integer</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>CONFIGURE_OUTPUT_ENABLED_STATUS</SoftwareModuleKey>
+							<Units/>
+							<Value>0</Value>
+						</IviInteger>
+						<IviInteger id="p41">
+							<Name>CONFIGURE_OUTPUT_RANGE_STATUS</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>Integer</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>CONFIGURE_OUTPUT_RANGE_STATUS</SoftwareModuleKey>
+							<Units/>
+							<Value>0</Value>
+						</IviInteger>
+						<IviInteger id="p42">
+							<Name>CONFIGURE_OVP_STATUS</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>Integer</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>CONFIGURE_OVP_STATUS</SoftwareModuleKey>
+							<Units/>
+							<Value>0</Value>
+						</IviInteger>
+						<IviInteger id="p43">
+							<Name>CONFIGURE_TRIGGER_SOURCE_STATUS</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>Integer</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>CONFIGURE_TRIGGER_SOURCE_STATUS</SoftwareModuleKey>
+							<Units/>
+							<Value>0</Value>
+						</IviInteger>
+						<IviInteger id="p44">
+							<Name>CONFIGURE_TRIGGERED_CURRENT_LIMIT_STATUS</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>Integer</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>CONFIGURE_TRIGGERED_CURRENT_LIMIT_STATUS</SoftwareModuleKey>
+							<Units/>
+							<Value>0</Value>
+						</IviInteger>
+						<IviInteger id="p45">
+							<Name>CONFIGURE_TRIGGERED_VOLTAGE_LEVEL_STATUS</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>Integer</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>CONFIGURE_TRIGGERED_VOLTAGE_LEVEL_STATUS</SoftwareModuleKey>
+							<Units/>
+							<Value>0</Value>
+						</IviInteger>
+						<IviInteger id="p46">
+							<Name>CONFIGURE_VOLTAGE_LEVEL_STATUS</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>Integer</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>CONFIGURE_VOLTAGE_LEVEL_STATUS</SoftwareModuleKey>
+							<Units/>
+							<Value>0</Value>
+						</IviInteger>
+						<IviInteger id="p47">
+							<Name>DISABLE_STATUS</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>Integer</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>DISABLE_STATUS</SoftwareModuleKey>
+							<Units/>
+							<Value>0</Value>
+						</IviInteger>
+						<IviString id="p48">
+							<Name>DRIVER_REV_QUERY</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>String</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>DRIVER_REV_QUERY</SoftwareModuleKey>
+							<Value>Driver:&lt;Driver Prefix&gt; 2.0, Compiler: CVI 5.5, Components: IVIEngine 1.5, VISA-Spec 2.0.</Value>
+						</IviString>
+						<IviInteger id="p49">
+							<Name>ERROR_MESSAGE_STATUS</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>Integer</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>ERROR_MESSAGE_STATUS</SoftwareModuleKey>
+							<Units/>
+							<Value>0</Value>
+						</IviInteger>
+						<IviInteger id="p50">
+							<Name>ERROR_QUERY_CODE</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>Integer</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>ERROR_QUERY_CODE</SoftwareModuleKey>
+							<Units/>
+							<Value>0</Value>
+						</IviInteger>
+						<IviString id="p51">
+							<Name>ERROR_QUERY_MSG</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>String</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>ERROR_QUERY_MSG</SoftwareModuleKey>
+							<Value>No error</Value>
+						</IviString>
+						<IviInteger id="p52">
+							<Name>ERROR_QUERY_STATUS</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>Integer</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>ERROR_QUERY_STATUS</SoftwareModuleKey>
+							<Units/>
+							<Value>0</Value>
+						</IviInteger>
+						<IviInteger id="p53">
+							<Name>GET_CH_NAME_STATUS</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>Integer</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>GET_CH_NAME_STATUS</SoftwareModuleKey>
+							<Units/>
+							<Value>0</Value>
+						</IviInteger>
+						<IviInteger id="p54">
+							<Name>INIT_STATUS</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>Integer</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>INIT_STATUS</SoftwareModuleKey>
+							<Units/>
+							<Value>0</Value>
+						</IviInteger>
+						<IviInteger id="p55">
+							<Name>INITIATE_STATUS</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>Integer</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>INITIATE_STATUS</SoftwareModuleKey>
+							<Units/>
+							<Value>0</Value>
+						</IviInteger>
+						<IviString id="p56">
+							<Name>INSTR_REV_QUERY</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>String</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>INSTR_REV_QUERY</SoftwareModuleKey>
+							<Value>A0.01.01</Value>
+						</IviString>
+						<IviBoolean id="p57">
+							<Name>INTERACTIVE_SIMULATION</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>Boolean</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>INTERACTIVE_SIMULATION</SoftwareModuleKey>
+							<Value>1</Value>
+						</IviBoolean>
+						<IviInteger id="p58">
+							<Name>INVALIDATE_STATUS</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>Integer</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>INVALIDATE_STATUS</SoftwareModuleKey>
+							<Units/>
+							<Value>0</Value>
+						</IviInteger>
+						<IviInteger id="p59">
+							<Name>MEASURE_STATUS</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>Integer</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>MEASURE_STATUS</SoftwareModuleKey>
+							<Units/>
+							<Value>0</Value>
+						</IviInteger>
+						<IviReal id="p60">
+							<Name>MEASUREMENT_BASEA</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>Real</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>MEASUREMENT_BASEA</SoftwareModuleKey>
+							<Units/>
+							<Value>10</Value>
+						</IviReal>
+						<IviReal id="p61">
+							<Name>MEASUREMENT_BASEV</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>Real</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>MEASUREMENT_BASEV</SoftwareModuleKey>
+							<Units/>
+							<Value>10</Value>
+						</IviReal>
+						<IviReal id="p62">
+							<Name>MEASUREMENT_NOISEA</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>Real</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>MEASUREMENT_NOISEA</SoftwareModuleKey>
+							<Units/>
+							<Value>1</Value>
+						</IviReal>
+						<IviReal id="p63">
+							<Name>MEASUREMENT_NOISEV</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>Real</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>MEASUREMENT_NOISEV</SoftwareModuleKey>
+							<Units/>
+							<Value>1</Value>
+						</IviReal>
+						<IviInteger id="p64">
+							<Name>QUERY_MAX_CURRENT_LIMIT_STATUS</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>Integer</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>QUERY_MAX_CURRENT_LIMIT_STATUS</SoftwareModuleKey>
+							<Units/>
+							<Value>0</Value>
+						</IviInteger>
+						<IviInteger id="p65">
+							<Name>QUERY_MAX_VOLTAGE_LEVEL_STATUS</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>Integer</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>QUERY_MAX_VOLTAGE_LEVEL_STATUS</SoftwareModuleKey>
+							<Units/>
+							<Value>0</Value>
+						</IviInteger>
+						<IviInteger id="p66">
+							<Name>QUERY_OUTPUT_STATE_STATUS</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>Integer</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>QUERY_OUTPUT_STATE_STATUS</SoftwareModuleKey>
+							<Units/>
+							<Value>0</Value>
+						</IviInteger>
+						<IviInteger id="p67">
+							<Name>RESET_DEFAULT_STATUS</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>Integer</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>RESET_DEFAULT_STATUS</SoftwareModuleKey>
+							<Units/>
+							<Value>0</Value>
+						</IviInteger>
+						<IviInteger id="p68">
+							<Name>RESET_OUTPUT_PROTECTION_STATUS</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>Integer</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>RESET_OUTPUT_PROTECTION_STATUS</SoftwareModuleKey>
+							<Units/>
+							<Value>0</Value>
+						</IviInteger>
+						<IviInteger id="p69">
+							<Name>RESET_STATUS</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>Integer</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>RESET_STATUS</SoftwareModuleKey>
+							<Units/>
+							<Value>0</Value>
+						</IviInteger>
+						<IviInteger id="p70">
+							<Name>REVISION_QUERY_STATUS</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>Integer</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>REVISION_QUERY_STATUS</SoftwareModuleKey>
+							<Units/>
+							<Value>0</Value>
+						</IviInteger>
+						<IviInteger id="p71">
+							<Name>SELF_TEST_CODE</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>Integer</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>SELF_TEST_CODE</SoftwareModuleKey>
+							<Units/>
+							<Value>0</Value>
+						</IviInteger>
+						<IviString id="p72">
+							<Name>SELF_TEST_MSG</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>String</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>SELF_TEST_MSG</SoftwareModuleKey>
+							<Value>No error</Value>
+						</IviString>
+						<IviInteger id="p73">
+							<Name>SELF_TEST_STATUS</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>Integer</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>SELF_TEST_STATUS</SoftwareModuleKey>
+							<Units/>
+							<Value>0</Value>
+						</IviInteger>
+						<IviInteger id="p74">
+							<Name>SEND_SOFTWARE_TRIGGER_STATUS</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>Integer</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>SEND_SOFTWARE_TRIGGER_STATUS</SoftwareModuleKey>
+							<Units/>
+							<Value>0</Value>
+						</IviInteger>
+						<IviBoolean id="p75">
+							<Name>SIMULATE_STATUS_CODES</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>Boolean</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>SIMULATE_STATUS_CODES</SoftwareModuleKey>
+							<Value>1</Value>
+						</IviBoolean>
+					</DataComponents>
+				</IviStructure>
+			</DataComponents>
+			<ModulePath>nisDCPwr.dll</ModulePath>
+			<Prefix>nisDCPwr</Prefix>
+			<ProgID/>
+			<SupportedInstrumentModels/>
+			<PhysicalNames/>
+			<PublishedAPIs>
+				<IviPublishedAPI idref="p1"/>
+				<IviPublishedAPI idref="p4"/>
+				<IviPublishedAPI idref="p10"/>
+			</PublishedAPIs>
+			<AssemblyQualifiedClassName/>
+			<ModulePath64/>
+		</IviSoftwareModule>
+		<IviSoftwareModule id="p76">
+			<Name>nisDmm</Name>
+			<Description>National Instruments Dmm Class Simulation Driver</Description>
+			<DataComponents>
+				<IviStructure id="p77">
+					<Name>Configurable Initial Settings</Name>
+					<Description/>
+					<ReadOnly>1</ReadOnly>
+					<UsedInSession>None</UsedInSession>
+					<Type>Structure</Type>
+					<HelpContextID>0</HelpContextID>
+					<HelpFilePath/>
+					<SoftwareModuleKey/>
+					<DataComponents>
+						<IviInteger id="p78">
+							<Name>ABORT_STATUS</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>Integer</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>ABORT_STATUS</SoftwareModuleKey>
+							<Units/>
+							<Value>0</Value>
+						</IviInteger>
+						<IviInteger id="p79">
+							<Name>CONFIGURE_AC_BANDWIDTH_STATUS</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>Integer</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>CONFIGURE_AC_BANDWIDTH_STATUS</SoftwareModuleKey>
+							<Units/>
+							<Value>0</Value>
+						</IviInteger>
+						<IviInteger id="p80">
+							<Name>CONFIGURE_AUTO_ZERO_MODE_STATUS</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>Integer</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>CONFIGURE_AUTO_ZERO_MODE_STATUS</SoftwareModuleKey>
+							<Units/>
+							<Value>0</Value>
+						</IviInteger>
+						<IviInteger id="p81">
+							<Name>CONFIGURE_FIXED_REF_JUNCT_STATUS</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>Integer</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>CONFIGURE_FIXED_REF_JUNCT_STATUS</SoftwareModuleKey>
+							<Units/>
+							<Value>0</Value>
+						</IviInteger>
+						<IviInteger id="p82">
+							<Name>CONFIGURE_FREQ_VOLT_RANGE_STATUS</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>Integer</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>CONFIGURE_FREQ_VOLT_RANGE_STATUS</SoftwareModuleKey>
+							<Units/>
+							<Value>0</Value>
+						</IviInteger>
+						<IviInteger id="p83">
+							<Name>CONFIGURE_MEAS_COMPL_DEST_STATUS</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>Integer</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>CONFIGURE_MEAS_COMPL_DEST_STATUS</SoftwareModuleKey>
+							<Units/>
+							<Value>0</Value>
+						</IviInteger>
+						<IviInteger id="p84">
+							<Name>CONFIGURE_MEASUREMENT_STATUS</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>Integer</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>CONFIGURE_MEASUREMENT_STATUS</SoftwareModuleKey>
+							<Units/>
+							<Value>0</Value>
+						</IviInteger>
+						<IviInteger id="p85">
+							<Name>CONFIGURE_MULTI_POINT_STATUS</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>Integer</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>CONFIGURE_MULTI_POINT_STATUS</SoftwareModuleKey>
+							<Units/>
+							<Value>0</Value>
+						</IviInteger>
+						<IviInteger id="p86">
+							<Name>CONFIGURE_POWER_LINE_FREQ_STATUS</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>Integer</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>CONFIGURE_POWER_LINE_FREQ_STATUS</SoftwareModuleKey>
+							<Units/>
+							<Value>0</Value>
+						</IviInteger>
+						<IviInteger id="p87">
+							<Name>CONFIGURE_RTD_STATUS</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>Integer</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>CONFIGURE_RTD_STATUS</SoftwareModuleKey>
+							<Units/>
+							<Value>0</Value>
+						</IviInteger>
+						<IviInteger id="p88">
+							<Name>CONFIGURE_THERMISTOR_STATUS</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>Integer</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>CONFIGURE_THERMISTOR_STATUS</SoftwareModuleKey>
+							<Units/>
+							<Value>0</Value>
+						</IviInteger>
+						<IviInteger id="p89">
+							<Name>CONFIGURE_THERMOCOUPLE_STATUS</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>Integer</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>CONFIGURE_THERMOCOUPLE_STATUS</SoftwareModuleKey>
+							<Units/>
+							<Value>0</Value>
+						</IviInteger>
+						<IviInteger id="p90">
+							<Name>CONFIGURE_TRANSDUCER_TYPE_STATUS</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>Integer</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>CONFIGURE_TRANSDUCER_TYPE_STATUS</SoftwareModuleKey>
+							<Units/>
+							<Value>0</Value>
+						</IviInteger>
+						<IviInteger id="p91">
+							<Name>CONFIGURE_TRIGGER_SLOPE_STATUS</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>Integer</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>CONFIGURE_TRIGGER_SLOPE_STATUS</SoftwareModuleKey>
+							<Units/>
+							<Value>0</Value>
+						</IviInteger>
+						<IviInteger id="p92">
+							<Name>CONFIGURE_TRIGGER_STATUS</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>Integer</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>CONFIGURE_TRIGGER_STATUS</SoftwareModuleKey>
+							<Units/>
+							<Value>0</Value>
+						</IviInteger>
+						<IviInteger id="p93">
+							<Name>DISABLE_STATUS</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>Integer</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>DISABLE_STATUS</SoftwareModuleKey>
+							<Units/>
+							<Value>0</Value>
+						</IviInteger>
+						<IviString id="p94">
+							<Name>DRIVER_REV_QUERY</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>String</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>DRIVER_REV_QUERY</SoftwareModuleKey>
+							<Value>Driver:&lt;Driver Prefix&gt; 2.0, Compiler: CVI 5.5, Components: IVIEngine 1.5, VISA-Spec 2.0.</Value>
+						</IviString>
+						<IviInteger id="p95">
+							<Name>ERROR_MESSAGE_STATUS</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>Integer</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>ERROR_MESSAGE_STATUS</SoftwareModuleKey>
+							<Units/>
+							<Value>0</Value>
+						</IviInteger>
+						<IviInteger id="p96">
+							<Name>ERROR_QUERY_CODE</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>Integer</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>ERROR_QUERY_CODE</SoftwareModuleKey>
+							<Units/>
+							<Value>0</Value>
+						</IviInteger>
+						<IviString id="p97">
+							<Name>ERROR_QUERY_MSG</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>String</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>ERROR_QUERY_MSG</SoftwareModuleKey>
+							<Value>No error</Value>
+						</IviString>
+						<IviInteger id="p98">
+							<Name>ERROR_QUERY_STATUS</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>Integer</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>ERROR_QUERY_STATUS</SoftwareModuleKey>
+							<Units/>
+							<Value>0</Value>
+						</IviInteger>
+						<IviInteger id="p99">
+							<Name>FETCH_MULTI_POINT_STATUS</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>Integer</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>FETCH_MULTI_POINT_STATUS</SoftwareModuleKey>
+							<Units/>
+							<Value>0</Value>
+						</IviInteger>
+						<IviInteger id="p100">
+							<Name>FETCH_STATUS</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>Integer</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>FETCH_STATUS</SoftwareModuleKey>
+							<Units/>
+							<Value>0</Value>
+						</IviInteger>
+						<IviBoolean id="p101">
+							<Name>FORCE_OVERRANGE</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>Boolean</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>FORCE_OVERRANGE</SoftwareModuleKey>
+							<Value>0</Value>
+						</IviBoolean>
+						<IviInteger id="p102">
+							<Name>GET_APERTURE_TIME_INFO_STATUS</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>Integer</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>GET_APERTURE_TIME_INFO_STATUS</SoftwareModuleKey>
+							<Units/>
+							<Value>0</Value>
+						</IviInteger>
+						<IviInteger id="p103">
+							<Name>GET_AUTO_RANGE_VALUE_STATUS</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>Integer</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>GET_AUTO_RANGE_VALUE_STATUS</SoftwareModuleKey>
+							<Units/>
+							<Value>0</Value>
+						</IviInteger>
+						<IviInteger id="p104">
+							<Name>INIT_STATUS</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>Integer</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>INIT_STATUS</SoftwareModuleKey>
+							<Units/>
+							<Value>0</Value>
+						</IviInteger>
+						<IviInteger id="p105">
+							<Name>INITIATE_STATUS</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>Integer</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>INITIATE_STATUS</SoftwareModuleKey>
+							<Units/>
+							<Value>0</Value>
+						</IviInteger>
+						<IviString id="p106">
+							<Name>INSTR_REV_QUERY</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>String</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>INSTR_REV_QUERY</SoftwareModuleKey>
+							<Value>A0.01.01</Value>
+						</IviString>
+						<IviBoolean id="p107">
+							<Name>INTERACTIVE_SIMULATION</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>Boolean</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>INTERACTIVE_SIMULATION</SoftwareModuleKey>
+							<Value>1</Value>
+						</IviBoolean>
+						<IviInteger id="p108">
+							<Name>INVALIDATE_STATUS</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>Integer</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>INVALIDATE_STATUS</SoftwareModuleKey>
+							<Units/>
+							<Value>0</Value>
+						</IviInteger>
+						<IviInteger id="p109">
+							<Name>IS_OVERRANGE_STATUS</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>Integer</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>IS_OVERRANGE_STATUS</SoftwareModuleKey>
+							<Units/>
+							<Value>0</Value>
+						</IviInteger>
+						<IviInteger id="p110">
+							<Name>READ_MULTI_POINT_STATUS</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>Integer</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>READ_MULTI_POINT_STATUS</SoftwareModuleKey>
+							<Units/>
+							<Value>0</Value>
+						</IviInteger>
+						<IviInteger id="p111">
+							<Name>READ_STATUS</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>Integer</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>READ_STATUS</SoftwareModuleKey>
+							<Units/>
+							<Value>0</Value>
+						</IviInteger>
+						<IviReal id="p112">
+							<Name>READING_BASE</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>Real</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>READING_BASE</SoftwareModuleKey>
+							<Units/>
+							<Value>10</Value>
+						</IviReal>
+						<IviReal id="p113">
+							<Name>READING_NOISE</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>Real</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>READING_NOISE</SoftwareModuleKey>
+							<Units/>
+							<Value>1</Value>
+						</IviReal>
+						<IviInteger id="p114">
+							<Name>RESET_DEFAULT_STATUS</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>Integer</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>RESET_DEFAULT_STATUS</SoftwareModuleKey>
+							<Units/>
+							<Value>0</Value>
+						</IviInteger>
+						<IviInteger id="p115">
+							<Name>RESET_STATUS</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>Integer</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>RESET_STATUS</SoftwareModuleKey>
+							<Units/>
+							<Value>0</Value>
+						</IviInteger>
+						<IviInteger id="p116">
+							<Name>REVISION_QUERY_STATUS</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>Integer</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>REVISION_QUERY_STATUS</SoftwareModuleKey>
+							<Units/>
+							<Value>0</Value>
+						</IviInteger>
+						<IviInteger id="p117">
+							<Name>SELF_TEST_CODE</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>Integer</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>SELF_TEST_CODE</SoftwareModuleKey>
+							<Units/>
+							<Value>0</Value>
+						</IviInteger>
+						<IviString id="p118">
+							<Name>SELF_TEST_MSG</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>String</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>SELF_TEST_MSG</SoftwareModuleKey>
+							<Value>No error</Value>
+						</IviString>
+						<IviInteger id="p119">
+							<Name>SELF_TEST_STATUS</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>Integer</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>SELF_TEST_STATUS</SoftwareModuleKey>
+							<Units/>
+							<Value>0</Value>
+						</IviInteger>
+						<IviInteger id="p120">
+							<Name>SEND_SOFTWARE_TRIGGER_STATUS</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>Integer</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>SEND_SOFTWARE_TRIGGER_STATUS</SoftwareModuleKey>
+							<Units/>
+							<Value>0</Value>
+						</IviInteger>
+						<IviBoolean id="p121">
+							<Name>SIMULATE_STATUS_CODES</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>Boolean</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>SIMULATE_STATUS_CODES</SoftwareModuleKey>
+							<Value>1</Value>
+						</IviBoolean>
+					</DataComponents>
+				</IviStructure>
+			</DataComponents>
+			<ModulePath>nisDmm.dll</ModulePath>
+			<Prefix>nisDmm</Prefix>
+			<ProgID/>
+			<SupportedInstrumentModels/>
+			<PhysicalNames/>
+			<PublishedAPIs>
+				<IviPublishedAPI idref="p2"/>
+				<IviPublishedAPI idref="p4"/>
+				<IviPublishedAPI idref="p10"/>
+			</PublishedAPIs>
+			<AssemblyQualifiedClassName/>
+			<ModulePath64/>
+		</IviSoftwareModule>
+		<IviSoftwareModule id="p122">
+			<Name>nisFgen</Name>
+			<Description>National Instruments FGen Class Simulation Driver</Description>
+			<DataComponents>
+				<IviStructure id="p123">
+					<Name>Configurable Initial Settings</Name>
+					<Description/>
+					<ReadOnly>1</ReadOnly>
+					<UsedInSession>None</UsedInSession>
+					<Type>Structure</Type>
+					<HelpContextID>0</HelpContextID>
+					<HelpFilePath/>
+					<SoftwareModuleKey/>
+					<DataComponents>
+						<IviInteger id="p124">
+							<Name>ABORT_GENERATION_STATUS</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>Integer</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>ABORT_GENERATION_STATUS</SoftwareModuleKey>
+							<Units/>
+							<Value>0</Value>
+						</IviInteger>
+						<IviInteger id="p125">
+							<Name>CLEAR_ARB_MEMORY_STATUS</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>Integer</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>CLEAR_ARB_MEMORY_STATUS</SoftwareModuleKey>
+							<Units/>
+							<Value>0</Value>
+						</IviInteger>
+						<IviInteger id="p126">
+							<Name>CLEAR_ARB_SEQUENCE_STATUS</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>Integer</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>CLEAR_ARB_SEQUENCE_STATUS</SoftwareModuleKey>
+							<Units/>
+							<Value>0</Value>
+						</IviInteger>
+						<IviInteger id="p127">
+							<Name>CLEAR_ARB_WAVEFORM_STATUS</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>Integer</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>CLEAR_ARB_WAVEFORM_STATUS</SoftwareModuleKey>
+							<Units/>
+							<Value>0</Value>
+						</IviInteger>
+						<IviInteger id="p128">
+							<Name>CONFIGURE_AM_ENABLED_STATUS</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>Integer</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>CONFIGURE_AM_ENABLED_STATUS</SoftwareModuleKey>
+							<Units/>
+							<Value>0</Value>
+						</IviInteger>
+						<IviInteger id="p129">
+							<Name>CONFIGURE_AM_INTERNAL_STATUS</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>Integer</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>CONFIGURE_AM_INTERNAL_STATUS</SoftwareModuleKey>
+							<Units/>
+							<Value>0</Value>
+						</IviInteger>
+						<IviInteger id="p130">
+							<Name>CONFIGURE_AM_SOURCE_STATUS</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>Integer</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>CONFIGURE_AM_SOURCE_STATUS</SoftwareModuleKey>
+							<Units/>
+							<Value>0</Value>
+						</IviInteger>
+						<IviInteger id="p131">
+							<Name>CONFIGURE_ARB_FREQUENCY_STATUS</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>Integer</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>CONFIGURE_ARB_FREQUENCY_STATUS</SoftwareModuleKey>
+							<Units/>
+							<Value>0</Value>
+						</IviInteger>
+						<IviInteger id="p132">
+							<Name>CONFIGURE_ARB_SEQUENCE_STATUS</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>Integer</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>CONFIGURE_ARB_SEQUENCE_STATUS</SoftwareModuleKey>
+							<Units/>
+							<Value>0</Value>
+						</IviInteger>
+						<IviInteger id="p133">
+							<Name>CONFIGURE_ARB_WAVEFORM_STATUS</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>Integer</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>CONFIGURE_ARB_WAVEFORM_STATUS</SoftwareModuleKey>
+							<Units/>
+							<Value>0</Value>
+						</IviInteger>
+						<IviInteger id="p134">
+							<Name>CONFIGURE_BURST_COUNT_STATUS</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>Integer</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>CONFIGURE_BURST_COUNT_STATUS</SoftwareModuleKey>
+							<Units/>
+							<Value>0</Value>
+						</IviInteger>
+						<IviInteger id="p135">
+							<Name>CONFIGURE_FM_ENABLED_STATUS</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>Integer</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>CONFIGURE_FM_ENABLED_STATUS</SoftwareModuleKey>
+							<Units/>
+							<Value>0</Value>
+						</IviInteger>
+						<IviInteger id="p136">
+							<Name>CONFIGURE_FM_INTERNAL_STATUS</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>Integer</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>CONFIGURE_FM_INTERNAL_STATUS</SoftwareModuleKey>
+							<Units/>
+							<Value>0</Value>
+						</IviInteger>
+						<IviInteger id="p137">
+							<Name>CONFIGURE_FM_SOURCE_STATUS</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>Integer</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>CONFIGURE_FM_SOURCE_STATUS</SoftwareModuleKey>
+							<Units/>
+							<Value>0</Value>
+						</IviInteger>
+						<IviInteger id="p138">
+							<Name>CONFIGURE_INTERNAL_TRIGGER_RATE_STATUS</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>Integer</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>CONFIGURE_INTERNAL_TRIGGER_RATE_STATUS</SoftwareModuleKey>
+							<Units/>
+							<Value>0</Value>
+						</IviInteger>
+						<IviInteger id="p139">
+							<Name>CONFIGURE_OPERATION_MODE_STATUS</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>Integer</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>CONFIGURE_OPERATION_MODE_STATUS</SoftwareModuleKey>
+							<Units/>
+							<Value>0</Value>
+						</IviInteger>
+						<IviInteger id="p140">
+							<Name>CONFIGURE_OUTPUT_ENABLED_STATUS</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>Integer</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>CONFIGURE_OUTPUT_ENABLED_STATUS</SoftwareModuleKey>
+							<Units/>
+							<Value>0</Value>
+						</IviInteger>
+						<IviInteger id="p141">
+							<Name>CONFIGURE_OUTPUT_IMPEDANCE_STATUS</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>Integer</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>CONFIGURE_OUTPUT_IMPEDANCE_STATUS</SoftwareModuleKey>
+							<Units/>
+							<Value>0</Value>
+						</IviInteger>
+						<IviInteger id="p142">
+							<Name>CONFIGURE_OUTPUT_MODE_STATUS</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>Integer</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>CONFIGURE_OUTPUT_MODE_STATUS</SoftwareModuleKey>
+							<Units/>
+							<Value>0</Value>
+						</IviInteger>
+						<IviInteger id="p143">
+							<Name>CONFIGURE_REF_CLOCK_SOURCE_STATUS</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>Integer</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>CONFIGURE_REF_CLOCK_SOURCE_STATUS</SoftwareModuleKey>
+							<Units/>
+							<Value>0</Value>
+						</IviInteger>
+						<IviInteger id="p144">
+							<Name>CONFIGURE_SAMPLE_RATE_STATUS</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>Integer</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>CONFIGURE_SAMPLE_RATE_STATUS</SoftwareModuleKey>
+							<Units/>
+							<Value>0</Value>
+						</IviInteger>
+						<IviInteger id="p145">
+							<Name>CONFIGURE_STANDARD_WAVEFORM_STATUS</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>Integer</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>CONFIGURE_STANDARD_WAVEFORM_STATUS</SoftwareModuleKey>
+							<Units/>
+							<Value>0</Value>
+						</IviInteger>
+						<IviInteger id="p146">
+							<Name>CONFIGURE_TRIGGER_SOURCE_STATUS</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>Integer</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>CONFIGURE_TRIGGER_SOURCE_STATUS</SoftwareModuleKey>
+							<Units/>
+							<Value>0</Value>
+						</IviInteger>
+						<IviInteger id="p147">
+							<Name>CREATE_ARB_SEQUENCE_STATUS</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>Integer</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>CREATE_ARB_SEQUENCE_STATUS</SoftwareModuleKey>
+							<Units/>
+							<Value>0</Value>
+						</IviInteger>
+						<IviInteger id="p148">
+							<Name>CREATE_ARB_WAVEFORM_STATUS</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>Integer</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>CREATE_ARB_WAVEFORM_STATUS</SoftwareModuleKey>
+							<Units/>
+							<Value>0</Value>
+						</IviInteger>
+						<IviInteger id="p149">
+							<Name>DISABLE_STATUS</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>Integer</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>DISABLE_STATUS</SoftwareModuleKey>
+							<Units/>
+							<Value>0</Value>
+						</IviInteger>
+						<IviString id="p150">
+							<Name>DRIVER_REV_QUERY</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>String</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>DRIVER_REV_QUERY</SoftwareModuleKey>
+							<Value>Driver:&lt;Driver Prefix&gt; 2.0, Compiler: CVI 5.5, Components: IVIEngine 1.5, VISA-Spec 2.0.</Value>
+						</IviString>
+						<IviInteger id="p151">
+							<Name>ERROR_MESSAGE_STATUS</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>Integer</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>ERROR_MESSAGE_STATUS</SoftwareModuleKey>
+							<Units/>
+							<Value>0</Value>
+						</IviInteger>
+						<IviInteger id="p152">
+							<Name>ERROR_QUERY_CODE</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>Integer</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>ERROR_QUERY_CODE</SoftwareModuleKey>
+							<Units/>
+							<Value>0</Value>
+						</IviInteger>
+						<IviString id="p153">
+							<Name>ERROR_QUERY_MSG</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>String</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>ERROR_QUERY_MSG</SoftwareModuleKey>
+							<Value>No error</Value>
+						</IviString>
+						<IviInteger id="p154">
+							<Name>ERROR_QUERY_STATUS</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>Integer</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>ERROR_QUERY_STATUS</SoftwareModuleKey>
+							<Units/>
+							<Value>0</Value>
+						</IviInteger>
+						<IviInteger id="p155">
+							<Name>GET_CH_NAME_STATUS</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>Integer</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>GET_CH_NAME_STATUS</SoftwareModuleKey>
+							<Units/>
+							<Value>0</Value>
+						</IviInteger>
+						<IviInteger id="p156">
+							<Name>INIT_STATUS</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>Integer</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>INIT_STATUS</SoftwareModuleKey>
+							<Units/>
+							<Value>0</Value>
+						</IviInteger>
+						<IviInteger id="p157">
+							<Name>INITIATE_GENERATION_STATUS</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>Integer</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>INITIATE_GENERATION_STATUS</SoftwareModuleKey>
+							<Units/>
+							<Value>0</Value>
+						</IviInteger>
+						<IviString id="p158">
+							<Name>INSTR_REV_QUERY</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>String</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>INSTR_REV_QUERY</SoftwareModuleKey>
+							<Value>A0.01.01</Value>
+						</IviString>
+						<IviBoolean id="p159">
+							<Name>INTERACTIVE_SIMULATION</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>Boolean</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>INTERACTIVE_SIMULATION</SoftwareModuleKey>
+							<Value>1</Value>
+						</IviBoolean>
+						<IviInteger id="p160">
+							<Name>INVALIDATE_STATUS</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>Integer</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>INVALIDATE_STATUS</SoftwareModuleKey>
+							<Units/>
+							<Value>0</Value>
+						</IviInteger>
+						<IviInteger id="p161">
+							<Name>QUERY_ARB_SEQ_CAPABILITIES_STATUS</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>Integer</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>QUERY_ARB_SEQ_CAPABILITIES_STATUS</SoftwareModuleKey>
+							<Units/>
+							<Value>0</Value>
+						</IviInteger>
+						<IviInteger id="p162">
+							<Name>QUERY_ARB_WFM_CAPABILITIES_STATUS</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>Integer</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>QUERY_ARB_WFM_CAPABILITIES_STATUS</SoftwareModuleKey>
+							<Units/>
+							<Value>0</Value>
+						</IviInteger>
+						<IviInteger id="p163">
+							<Name>RESET_DEFAULT_STATUS</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>Integer</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>RESET_DEFAULT_STATUS</SoftwareModuleKey>
+							<Units/>
+							<Value>0</Value>
+						</IviInteger>
+						<IviInteger id="p164">
+							<Name>RESET_STATUS</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>Integer</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>RESET_STATUS</SoftwareModuleKey>
+							<Units/>
+							<Value>0</Value>
+						</IviInteger>
+						<IviInteger id="p165">
+							<Name>REVISION_QUERY_STATUS</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>Integer</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>REVISION_QUERY_STATUS</SoftwareModuleKey>
+							<Units/>
+							<Value>0</Value>
+						</IviInteger>
+						<IviInteger id="p166">
+							<Name>SELF_TEST_CODE</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>Integer</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>SELF_TEST_CODE</SoftwareModuleKey>
+							<Units/>
+							<Value>0</Value>
+						</IviInteger>
+						<IviString id="p167">
+							<Name>SELF_TEST_MSG</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>String</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>SELF_TEST_MSG</SoftwareModuleKey>
+							<Value>No error</Value>
+						</IviString>
+						<IviInteger id="p168">
+							<Name>SELF_TEST_STATUS</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>Integer</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>SELF_TEST_STATUS</SoftwareModuleKey>
+							<Units/>
+							<Value>0</Value>
+						</IviInteger>
+						<IviInteger id="p169">
+							<Name>SEND_SOFTWARE_TRIGGER_STATUS</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>Integer</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>SEND_SOFTWARE_TRIGGER_STATUS</SoftwareModuleKey>
+							<Units/>
+							<Value>0</Value>
+						</IviInteger>
+						<IviBoolean id="p170">
+							<Name>SIMULATE_STATUS_CODES</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>Boolean</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>SIMULATE_STATUS_CODES</SoftwareModuleKey>
+							<Value>1</Value>
+						</IviBoolean>
+					</DataComponents>
+				</IviStructure>
+			</DataComponents>
+			<ModulePath>nisFGen.dll</ModulePath>
+			<Prefix>nisFgen</Prefix>
+			<ProgID/>
+			<SupportedInstrumentModels/>
+			<PhysicalNames/>
+			<PublishedAPIs>
+				<IviPublishedAPI idref="p4"/>
+				<IviPublishedAPI idref="p7"/>
+				<IviPublishedAPI idref="p10"/>
+			</PublishedAPIs>
+			<AssemblyQualifiedClassName/>
+			<ModulePath64/>
+		</IviSoftwareModule>
+		<IviSoftwareModule id="p171">
+			<Name>nisScope</Name>
+			<Description>National Instruments Scope Class Simulation Driver</Description>
+			<DataComponents>
+				<IviStructure id="p172">
+					<Name>Configurable Initial Settings</Name>
+					<Description/>
+					<ReadOnly>1</ReadOnly>
+					<UsedInSession>None</UsedInSession>
+					<Type>Structure</Type>
+					<HelpContextID>0</HelpContextID>
+					<HelpFilePath/>
+					<SoftwareModuleKey/>
+					<DataComponents>
+						<IviInteger id="p173">
+							<Name>ABORT_STATUS</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>Integer</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>ABORT_STATUS</SoftwareModuleKey>
+							<Units/>
+							<Value>0</Value>
+						</IviInteger>
+						<IviInteger id="p174">
+							<Name>ACQUISITION_STATUS_STATUS</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>Integer</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>ACQUISITION_STATUS_STATUS</SoftwareModuleKey>
+							<Units/>
+							<Value>0</Value>
+						</IviInteger>
+						<IviInteger id="p175">
+							<Name>ACTUAL_RECORD_LENGTH_STATUS</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>Integer</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>ACTUAL_RECORD_LENGTH_STATUS</SoftwareModuleKey>
+							<Units/>
+							<Value>0</Value>
+						</IviInteger>
+						<IviReal id="p176">
+							<Name>AMPLITUDE</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>Real</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>AMPLITUDE</SoftwareModuleKey>
+							<Units/>
+							<Value>5</Value>
+						</IviReal>
+						<IviInteger id="p177">
+							<Name>AUTO_PROBE_SENSE_VALUE_STATUS</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>Integer</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>AUTO_PROBE_SENSE_VALUE_STATUS</SoftwareModuleKey>
+							<Units/>
+							<Value>0</Value>
+						</IviInteger>
+						<IviInteger id="p178">
+							<Name>AUTO_SETUP_STATUS</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>Integer</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>AUTO_SETUP_STATUS</SoftwareModuleKey>
+							<Units/>
+							<Value>0</Value>
+						</IviInteger>
+						<IviInteger id="p179">
+							<Name>CONFIGURE_AC_LINE_TRIGGER_SLOPE_STATUS</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>Integer</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>CONFIGURE_AC_LINE_TRIGGER_SLOPE_STATUS</SoftwareModuleKey>
+							<Units/>
+							<Value>0</Value>
+						</IviInteger>
+						<IviInteger id="p180">
+							<Name>CONFIGURE_ACQUISITION_RECORD_STATUS</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>Integer</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>CONFIGURE_ACQUISITION_RECORD_STATUS</SoftwareModuleKey>
+							<Units/>
+							<Value>0</Value>
+						</IviInteger>
+						<IviInteger id="p181">
+							<Name>CONFIGURE_ACQUISITION_TYPE_STATUS</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>Integer</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>CONFIGURE_ACQUISITION_TYPE_STATUS</SoftwareModuleKey>
+							<Units/>
+							<Value>0</Value>
+						</IviInteger>
+						<IviInteger id="p182">
+							<Name>CONFIGURE_CHAN_CHARACTERISTICS_STATUS</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>Integer</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>CONFIGURE_CHAN_CHARACTERISTICS_STATUS</SoftwareModuleKey>
+							<Units/>
+							<Value>0</Value>
+						</IviInteger>
+						<IviInteger id="p183">
+							<Name>CONFIGURE_CHANNEL_STATUS</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>Integer</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>CONFIGURE_CHANNEL_STATUS</SoftwareModuleKey>
+							<Units/>
+							<Value>0</Value>
+						</IviInteger>
+						<IviInteger id="p184">
+							<Name>CONFIGURE_EDGE_TRIGGER_SOURCE_STATUS</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>Integer</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>CONFIGURE_EDGE_TRIGGER_SOURCE_STATUS</SoftwareModuleKey>
+							<Units/>
+							<Value>0</Value>
+						</IviInteger>
+						<IviInteger id="p185">
+							<Name>CONFIGURE_GLITCH_TRIGGER_SOURCE_STATUS</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>Integer</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>CONFIGURE_GLITCH_TRIGGER_SOURCE_STATUS</SoftwareModuleKey>
+							<Units/>
+							<Value>0</Value>
+						</IviInteger>
+						<IviInteger id="p186">
+							<Name>CONFIGURE_INITIATE_CONTINUOUS_STATUS</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>Integer</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>CONFIGURE_INITIATE_CONTINUOUS_STATUS</SoftwareModuleKey>
+							<Units/>
+							<Value>0</Value>
+						</IviInteger>
+						<IviInteger id="p187">
+							<Name>CONFIGURE_INTERPOLATION_STATUS</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>Integer</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>CONFIGURE_INTERPOLATION_STATUS</SoftwareModuleKey>
+							<Units/>
+							<Value>0</Value>
+						</IviInteger>
+						<IviInteger id="p188">
+							<Name>CONFIGURE_NUM_AVERAGES_STATUS</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>Integer</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>CONFIGURE_NUM_AVERAGES_STATUS</SoftwareModuleKey>
+							<Units/>
+							<Value>0</Value>
+						</IviInteger>
+						<IviInteger id="p189">
+							<Name>CONFIGURE_NUM_ENVELOPES_STATUS</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>Integer</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>CONFIGURE_NUM_ENVELOPES_STATUS</SoftwareModuleKey>
+							<Units/>
+							<Value>0</Value>
+						</IviInteger>
+						<IviInteger id="p190">
+							<Name>CONFIGURE_REF_LEVELS_STATUS</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>Integer</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>CONFIGURE_REF_LEVELS_STATUS</SoftwareModuleKey>
+							<Units/>
+							<Value>0</Value>
+						</IviInteger>
+						<IviInteger id="p191">
+							<Name>CONFIGURE_RUNT_TRIGGER_SOURCE_STATUS</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>Integer</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>CONFIGURE_RUNT_TRIGGER_SOURCE_STATUS</SoftwareModuleKey>
+							<Units/>
+							<Value>0</Value>
+						</IviInteger>
+						<IviInteger id="p192">
+							<Name>CONFIGURE_TRIGGER_COUPLING_STATUS</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>Integer</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>CONFIGURE_TRIGGER_COUPLING_STATUS</SoftwareModuleKey>
+							<Units/>
+							<Value>0</Value>
+						</IviInteger>
+						<IviInteger id="p193">
+							<Name>CONFIGURE_TRIGGER_MODIFIER_STATUS</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>Integer</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>CONFIGURE_TRIGGER_MODIFIER_STATUS</SoftwareModuleKey>
+							<Units/>
+							<Value>0</Value>
+						</IviInteger>
+						<IviInteger id="p194">
+							<Name>CONFIGURE_TRIGGER_STATUS</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>Integer</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>CONFIGURE_TRIGGER_STATUS</SoftwareModuleKey>
+							<Units/>
+							<Value>0</Value>
+						</IviInteger>
+						<IviInteger id="p195">
+							<Name>CONFIGURE_TV_TRIGGER_LINE_NUMBER_STATUS</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>Integer</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>CONFIGURE_TV_TRIGGER_LINE_NUMBER_STATUS</SoftwareModuleKey>
+							<Units/>
+							<Value>0</Value>
+						</IviInteger>
+						<IviInteger id="p196">
+							<Name>CONFIGURE_TV_TRIGGER_SOURCE_STATUS</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>Integer</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>CONFIGURE_TV_TRIGGER_SOURCE_STATUS</SoftwareModuleKey>
+							<Units/>
+							<Value>0</Value>
+						</IviInteger>
+						<IviInteger id="p197">
+							<Name>CONFIGURE_WIDTH_TRIGGER_SOURCE_STATUS</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>Integer</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>CONFIGURE_WIDTH_TRIGGER_SOURCE_STATUS</SoftwareModuleKey>
+							<Units/>
+							<Value>0</Value>
+						</IviInteger>
+						<IviReal id="p198">
+							<Name>DC_OFFSET</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>Real</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>DC_OFFSET</SoftwareModuleKey>
+							<Units/>
+							<Value>0</Value>
+						</IviReal>
+						<IviInteger id="p199">
+							<Name>DISABLE_STATUS</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>Integer</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>DISABLE_STATUS</SoftwareModuleKey>
+							<Units/>
+							<Value>0</Value>
+						</IviInteger>
+						<IviString id="p200">
+							<Name>DRIVER_REV_QUERY</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>String</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>DRIVER_REV_QUERY</SoftwareModuleKey>
+							<Value>Driver:&lt;Driver Prefix&gt; 2.0, Compiler: CVI 5.5, Components: IVIEngine 1.5, VISA-Spec 2.0.</Value>
+						</IviString>
+						<IviReal id="p201">
+							<Name>DUTY_CYCLE</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>Real</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>DUTY_CYCLE</SoftwareModuleKey>
+							<Units/>
+							<Value>50</Value>
+						</IviReal>
+						<IviInteger id="p202">
+							<Name>ERROR_MESSAGE_STATUS</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>Integer</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>ERROR_MESSAGE_STATUS</SoftwareModuleKey>
+							<Units/>
+							<Value>0</Value>
+						</IviInteger>
+						<IviInteger id="p203">
+							<Name>ERROR_QUERY_CODE</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>Integer</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>ERROR_QUERY_CODE</SoftwareModuleKey>
+							<Units/>
+							<Value>0</Value>
+						</IviInteger>
+						<IviString id="p204">
+							<Name>ERROR_QUERY_MSG</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>String</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>ERROR_QUERY_MSG</SoftwareModuleKey>
+							<Value>No error</Value>
+						</IviString>
+						<IviInteger id="p205">
+							<Name>ERROR_QUERY_STATUS</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>Integer</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>ERROR_QUERY_STATUS</SoftwareModuleKey>
+							<Units/>
+							<Value>0</Value>
+						</IviInteger>
+						<IviInteger id="p206">
+							<Name>FETCH_MIN_MAX_WAVEFORM_STATUS</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>Integer</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>FETCH_MIN_MAX_WAVEFORM_STATUS</SoftwareModuleKey>
+							<Units/>
+							<Value>0</Value>
+						</IviInteger>
+						<IviInteger id="p207">
+							<Name>FETCH_WAVEFORM_MEASUREMENT_STATUS</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>Integer</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>FETCH_WAVEFORM_MEASUREMENT_STATUS</SoftwareModuleKey>
+							<Units/>
+							<Value>0</Value>
+						</IviInteger>
+						<IviInteger id="p208">
+							<Name>FETCH_WAVEFORM_STATUS</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>Integer</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>FETCH_WAVEFORM_STATUS</SoftwareModuleKey>
+							<Units/>
+							<Value>0</Value>
+						</IviInteger>
+						<IviReal id="p209">
+							<Name>FREQUENCY</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>Real</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>FREQUENCY</SoftwareModuleKey>
+							<Units/>
+							<Value>1000</Value>
+						</IviReal>
+						<IviInteger id="p210">
+							<Name>GET_CH_NAME_STATUS</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>Integer</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>GET_CH_NAME_STATUS</SoftwareModuleKey>
+							<Units/>
+							<Value>0</Value>
+						</IviInteger>
+						<IviInteger id="p211">
+							<Name>INIT_STATUS</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>Integer</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>INIT_STATUS</SoftwareModuleKey>
+							<Units/>
+							<Value>0</Value>
+						</IviInteger>
+						<IviInteger id="p212">
+							<Name>INITIATE_ACQUISITION_STATUS</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>Integer</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>INITIATE_ACQUISITION_STATUS</SoftwareModuleKey>
+							<Units/>
+							<Value>0</Value>
+						</IviInteger>
+						<IviString id="p213">
+							<Name>INSTR_REV_QUERY</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>String</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>INSTR_REV_QUERY</SoftwareModuleKey>
+							<Value>A0.01.01</Value>
+						</IviString>
+						<IviBoolean id="p214">
+							<Name>INTERACTIVE_SIMULATION</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>Boolean</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>INTERACTIVE_SIMULATION</SoftwareModuleKey>
+							<Value>1</Value>
+						</IviBoolean>
+						<IviInteger id="p215">
+							<Name>INVALIDATE_STATUS</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>Integer</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>INVALIDATE_STATUS</SoftwareModuleKey>
+							<Units/>
+							<Value>0</Value>
+						</IviInteger>
+						<IviInteger id="p216">
+							<Name>IS_INVALID_WFM_ELEMENT_STATUS</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>Integer</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>IS_INVALID_WFM_ELEMENT_STATUS</SoftwareModuleKey>
+							<Units/>
+							<Value>0</Value>
+						</IviInteger>
+						<IviReal id="p217">
+							<Name>PHASE_SHIFT</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>Real</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>PHASE_SHIFT</SoftwareModuleKey>
+							<Units/>
+							<Value>0</Value>
+						</IviReal>
+						<IviInteger id="p218">
+							<Name>READ_MIN_MAX_WAVEFORM_STATUS</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>Integer</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>READ_MIN_MAX_WAVEFORM_STATUS</SoftwareModuleKey>
+							<Units/>
+							<Value>0</Value>
+						</IviInteger>
+						<IviInteger id="p219">
+							<Name>READ_WAVEFORM_MEASUREMENT_STATUS</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>Integer</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>READ_WAVEFORM_MEASUREMENT_STATUS</SoftwareModuleKey>
+							<Units/>
+							<Value>0</Value>
+						</IviInteger>
+						<IviInteger id="p220">
+							<Name>READ_WAVEFORM_STATUS</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>Integer</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>READ_WAVEFORM_STATUS</SoftwareModuleKey>
+							<Units/>
+							<Value>0</Value>
+						</IviInteger>
+						<IviInteger id="p221">
+							<Name>RESET_DEFAULT_STATUS</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>Integer</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>RESET_DEFAULT_STATUS</SoftwareModuleKey>
+							<Units/>
+							<Value>0</Value>
+						</IviInteger>
+						<IviInteger id="p222">
+							<Name>RESET_STATUS</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>Integer</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>RESET_STATUS</SoftwareModuleKey>
+							<Units/>
+							<Value>0</Value>
+						</IviInteger>
+						<IviInteger id="p223">
+							<Name>REVISION_QUERY_STATUS</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>Integer</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>REVISION_QUERY_STATUS</SoftwareModuleKey>
+							<Units/>
+							<Value>0</Value>
+						</IviInteger>
+						<IviInteger id="p224">
+							<Name>SAMPLE_MODE_STATUS</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>Integer</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>SAMPLE_MODE_STATUS</SoftwareModuleKey>
+							<Units/>
+							<Value>0</Value>
+						</IviInteger>
+						<IviInteger id="p225">
+							<Name>SAMPLE_RATE_STATUS</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>Integer</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>SAMPLE_RATE_STATUS</SoftwareModuleKey>
+							<Units/>
+							<Value>0</Value>
+						</IviInteger>
+						<IviInteger id="p226">
+							<Name>SELF_TEST_CODE</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>Integer</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>SELF_TEST_CODE</SoftwareModuleKey>
+							<Units/>
+							<Value>0</Value>
+						</IviInteger>
+						<IviString id="p227">
+							<Name>SELF_TEST_MSG</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>String</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>SELF_TEST_MSG</SoftwareModuleKey>
+							<Value>No error</Value>
+						</IviString>
+						<IviInteger id="p228">
+							<Name>SELF_TEST_STATUS</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>Integer</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>SELF_TEST_STATUS</SoftwareModuleKey>
+							<Units/>
+							<Value>0</Value>
+						</IviInteger>
+						<IviBoolean id="p229">
+							<Name>SIMULATE_STATUS_CODES</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>Boolean</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>SIMULATE_STATUS_CODES</SoftwareModuleKey>
+							<Value>1</Value>
+						</IviBoolean>
+						<IviReal id="p230">
+							<Name>SNR</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>Real</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>SNR</SoftwareModuleKey>
+							<Units/>
+							<Value>50</Value>
+						</IviReal>
+						<IviInteger id="p231">
+							<Name>WAVEFORM</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>Integer</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>WAVEFORM</SoftwareModuleKey>
+							<Units/>
+							<Value>1</Value>
+						</IviInteger>
+					</DataComponents>
+				</IviStructure>
+			</DataComponents>
+			<ModulePath>nisScope.dll</ModulePath>
+			<Prefix>nisScope</Prefix>
+			<ProgID/>
+			<SupportedInstrumentModels/>
+			<PhysicalNames/>
+			<PublishedAPIs>
+				<IviPublishedAPI idref="p4"/>
+				<IviPublishedAPI idref="p8"/>
+				<IviPublishedAPI idref="p10"/>
+			</PublishedAPIs>
+			<AssemblyQualifiedClassName/>
+			<ModulePath64/>
+		</IviSoftwareModule>
+		<IviSoftwareModule id="p232">
+			<Name>nisSwtch</Name>
+			<Description>National Instruments Switch Class Simulation Driver</Description>
+			<DataComponents>
+				<IviStructure id="p233">
+					<Name>Configurable Initial Settings</Name>
+					<Description/>
+					<ReadOnly>1</ReadOnly>
+					<UsedInSession>None</UsedInSession>
+					<Type>Structure</Type>
+					<HelpContextID>0</HelpContextID>
+					<HelpFilePath/>
+					<SoftwareModuleKey/>
+					<DataComponents>
+						<IviInteger id="p234">
+							<Name>ABORT_SCAN_STATUS</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>Integer</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>ABORT_SCAN_STATUS</SoftwareModuleKey>
+							<Units/>
+							<Value>0</Value>
+						</IviInteger>
+						<IviInteger id="p235">
+							<Name>CAN_CONNECT_STATUS</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>Integer</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>CAN_CONNECT_STATUS</SoftwareModuleKey>
+							<Units/>
+							<Value>0</Value>
+						</IviInteger>
+						<IviInteger id="p236">
+							<Name>CONFIGURE_SCAN_LIST_STATUS</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>Integer</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>CONFIGURE_SCAN_LIST_STATUS</SoftwareModuleKey>
+							<Units/>
+							<Value>0</Value>
+						</IviInteger>
+						<IviInteger id="p237">
+							<Name>CONFIGURE_SCAN_TRIGGER_STATUS</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>Integer</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>CONFIGURE_SCAN_TRIGGER_STATUS</SoftwareModuleKey>
+							<Units/>
+							<Value>0</Value>
+						</IviInteger>
+						<IviInteger id="p238">
+							<Name>CONNECT_STATUS</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>Integer</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>CONNECT_STATUS</SoftwareModuleKey>
+							<Units/>
+							<Value>0</Value>
+						</IviInteger>
+						<IviInteger id="p239">
+							<Name>DISABLE_STATUS</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>Integer</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>DISABLE_STATUS</SoftwareModuleKey>
+							<Units/>
+							<Value>0</Value>
+						</IviInteger>
+						<IviInteger id="p240">
+							<Name>DISCONNECT_ALL_STATUS</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>Integer</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>DISCONNECT_ALL_STATUS</SoftwareModuleKey>
+							<Units/>
+							<Value>0</Value>
+						</IviInteger>
+						<IviInteger id="p241">
+							<Name>DISCONNECT_STATUS</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>Integer</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>DISCONNECT_STATUS</SoftwareModuleKey>
+							<Units/>
+							<Value>0</Value>
+						</IviInteger>
+						<IviString id="p242">
+							<Name>DRIVER_REV_QUERY</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>String</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>DRIVER_REV_QUERY</SoftwareModuleKey>
+							<Value>Driver:&lt;Driver Prefix&gt; 2.0, Compiler: CVI 5.5, Components: IVIEngine 1.5, VISA-Spec 2.0.</Value>
+						</IviString>
+						<IviInteger id="p243">
+							<Name>ERROR_MESSAGE_STATUS</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>Integer</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>ERROR_MESSAGE_STATUS</SoftwareModuleKey>
+							<Units/>
+							<Value>0</Value>
+						</IviInteger>
+						<IviInteger id="p244">
+							<Name>ERROR_QUERY_CODE</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>Integer</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>ERROR_QUERY_CODE</SoftwareModuleKey>
+							<Units/>
+							<Value>0</Value>
+						</IviInteger>
+						<IviString id="p245">
+							<Name>ERROR_QUERY_MSG</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>String</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>ERROR_QUERY_MSG</SoftwareModuleKey>
+							<Value>No error</Value>
+						</IviString>
+						<IviInteger id="p246">
+							<Name>ERROR_QUERY_STATUS</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>Integer</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>ERROR_QUERY_STATUS</SoftwareModuleKey>
+							<Units/>
+							<Value>0</Value>
+						</IviInteger>
+						<IviInteger id="p247">
+							<Name>GET_CH_NAME_STATUS</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>Integer</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>GET_CH_NAME_STATUS</SoftwareModuleKey>
+							<Units/>
+							<Value>0</Value>
+						</IviInteger>
+						<IviInteger id="p248">
+							<Name>GET_PATH_STATUS</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>Integer</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>GET_PATH_STATUS</SoftwareModuleKey>
+							<Units/>
+							<Value>0</Value>
+						</IviInteger>
+						<IviInteger id="p249">
+							<Name>INIT_STATUS</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>Integer</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>INIT_STATUS</SoftwareModuleKey>
+							<Units/>
+							<Value>0</Value>
+						</IviInteger>
+						<IviInteger id="p250">
+							<Name>INITIATE_SCAN_STATUS</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>Integer</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>INITIATE_SCAN_STATUS</SoftwareModuleKey>
+							<Units/>
+							<Value>0</Value>
+						</IviInteger>
+						<IviString id="p251">
+							<Name>INSTR_REV_QUERY</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>String</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>INSTR_REV_QUERY</SoftwareModuleKey>
+							<Value>A0.01.01</Value>
+						</IviString>
+						<IviBoolean id="p252">
+							<Name>INTERACTIVE_SIMULATION</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>Boolean</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>INTERACTIVE_SIMULATION</SoftwareModuleKey>
+							<Value>1</Value>
+						</IviBoolean>
+						<IviInteger id="p253">
+							<Name>INVALIDATE_STATUS</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>Integer</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>INVALIDATE_STATUS</SoftwareModuleKey>
+							<Units/>
+							<Value>0</Value>
+						</IviInteger>
+						<IviInteger id="p254">
+							<Name>IS_DEBOUNCED_STATUS</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>Integer</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>IS_DEBOUNCED_STATUS</SoftwareModuleKey>
+							<Units/>
+							<Value>0</Value>
+						</IviInteger>
+						<IviInteger id="p255">
+							<Name>IS_SCANNING_STATUS</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>Integer</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>IS_SCANNING_STATUS</SoftwareModuleKey>
+							<Units/>
+							<Value>0</Value>
+						</IviInteger>
+						<IviInteger id="p256">
+							<Name>RESET_DEFAULT_STATUS</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>Integer</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>RESET_DEFAULT_STATUS</SoftwareModuleKey>
+							<Units/>
+							<Value>0</Value>
+						</IviInteger>
+						<IviInteger id="p257">
+							<Name>RESET_STATUS</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>Integer</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>RESET_STATUS</SoftwareModuleKey>
+							<Units/>
+							<Value>0</Value>
+						</IviInteger>
+						<IviInteger id="p258">
+							<Name>REVISION_QUERY_STATUS</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>Integer</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>REVISION_QUERY_STATUS</SoftwareModuleKey>
+							<Units/>
+							<Value>0</Value>
+						</IviInteger>
+						<IviInteger id="p259">
+							<Name>SELF_TEST_CODE</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>Integer</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>SELF_TEST_CODE</SoftwareModuleKey>
+							<Units/>
+							<Value>0</Value>
+						</IviInteger>
+						<IviString id="p260">
+							<Name>SELF_TEST_MSG</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>String</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>SELF_TEST_MSG</SoftwareModuleKey>
+							<Value>No error</Value>
+						</IviString>
+						<IviInteger id="p261">
+							<Name>SELF_TEST_STATUS</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>Integer</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>SELF_TEST_STATUS</SoftwareModuleKey>
+							<Units/>
+							<Value>0</Value>
+						</IviInteger>
+						<IviInteger id="p262">
+							<Name>SEND_SOFTWARE_TRIGGER_STATUS</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>Integer</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>SEND_SOFTWARE_TRIGGER_STATUS</SoftwareModuleKey>
+							<Units/>
+							<Value>0</Value>
+						</IviInteger>
+						<IviInteger id="p263">
+							<Name>SET_CONTINUOUS_SCAN_STATUS</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>Integer</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>SET_CONTINUOUS_SCAN_STATUS</SoftwareModuleKey>
+							<Units/>
+							<Value>0</Value>
+						</IviInteger>
+						<IviInteger id="p264">
+							<Name>SET_PATH_STATUS</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>Integer</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>SET_PATH_STATUS</SoftwareModuleKey>
+							<Units/>
+							<Value>0</Value>
+						</IviInteger>
+						<IviBoolean id="p265">
+							<Name>SIMULATE_STATUS_CODES</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>Boolean</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>SIMULATE_STATUS_CODES</SoftwareModuleKey>
+							<Value>1</Value>
+						</IviBoolean>
+						<IviInteger id="p266">
+							<Name>WAIT_FOR_DEBOUNCE_STATUS</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>Integer</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>WAIT_FOR_DEBOUNCE_STATUS</SoftwareModuleKey>
+							<Units/>
+							<Value>0</Value>
+						</IviInteger>
+						<IviInteger id="p267">
+							<Name>WAIT_FOR_SCAN_COMPLETE_STATUS</Name>
+							<Description/>
+							<ReadOnly>1</ReadOnly>
+							<UsedInSession>Optional</UsedInSession>
+							<Type>Integer</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey>WAIT_FOR_SCAN_COMPLETE_STATUS</SoftwareModuleKey>
+							<Units/>
+							<Value>0</Value>
+						</IviInteger>
+					</DataComponents>
+				</IviStructure>
+			</DataComponents>
+			<ModulePath>nisSwtch.dll</ModulePath>
+			<Prefix>nisSwtch</Prefix>
+			<ProgID/>
+			<SupportedInstrumentModels/>
+			<PhysicalNames/>
+			<PublishedAPIs>
+				<IviPublishedAPI idref="p4"/>
+				<IviPublishedAPI idref="p9"/>
+				<IviPublishedAPI idref="p10"/>
+			</PublishedAPIs>
+			<AssemblyQualifiedClassName/>
+			<ModulePath64/>
+		</IviSoftwareModule>
+		<IviSoftwareModule id="p268">
+			<Name>niSwitch</Name>
+			<Description>National Instruments Switch</Description>
+			<DataComponents/>
+			<ModulePath>niSwitch_32.dll</ModulePath>
+			<Prefix>niSwitch</Prefix>
+			<ProgID/>
+			<SupportedInstrumentModels>SCXI-1127, SCXI-1128, SCXI-1129, SCXI-1130, SCXI-1160, SCXI-1161, SCXI-1163R, SCXI-1166, SCXI-1167, SCXI-1169, SCXI-1175, SCXI-1190, SCXI-1191, SCXI-1192, SCXI-1193, SCXI-1194, SCXI-1195, PXI-2501, PXI-2503, PXI-2527, PXI-2529, PXI-2530, PXI-2532, PXI-2533, PXI-2534, PXI-2535, PXI-2536, PXI-2545, PXI-2546, PXI-2547, PXI-2548, PXI-2549, PXI-2554, PXI-2555, PXI-2556, PXI-2557, PXI-2558, PXI-2559, PXI-2564, PXI-2565, PXI-2566, PXI-2567, PXI-2568, PXI-2569, PXI-2570, PXI-2575, PXI-2576, PXI-2584, PXI-2585, PXI-2586, PXI-2590, PXI-2591, PXI-2593, PXI-2594, PXI-2595, PXI-2596, PXI-2597, PXI-2598, PXI-2599, PXIe-2527, PXIe-2529, PXIe-2530, PXIe-2532, PXIe-2569, PXIe-2575, PXIe-2593</SupportedInstrumentModels>
+			<PhysicalNames/>
+			<PublishedAPIs>
+				<IviPublishedAPI idref="p4"/>
+				<IviPublishedAPI idref="p9"/>
+			</PublishedAPIs>
+			<AssemblyQualifiedClassName/>
+			<ModulePath64/>
+		</IviSoftwareModule>
+		<IviSoftwareModule id="p269">
+			<Name>sampleSwitch</Name>
+			<Description>Sample Switch Driver, varying configurations</Description>
+			<DataComponents/>
+			<ModulePath>sampleSwitch_32.dll</ModulePath>
+			<Prefix>sampleSwitch</Prefix>
+			<ProgID/>
+			<SupportedInstrumentModels/>
+			<PhysicalNames/>
+			<PublishedAPIs>
+				<IviPublishedAPI idref="p4"/>
+				<IviPublishedAPI idref="p9"/>
+			</PublishedAPIs>
+			<AssemblyQualifiedClassName/>
+			<ModulePath64/>
+		</IviSoftwareModule>
+		<IviSoftwareModule id="p270">
+			<Name>SorensenDC</Name>
+			<Description/>
+			<DataComponents/>
+			<ModulePath>C:\Program Files\IVI Foundation\IVI\Bin\SorensenDC.dll</ModulePath>
+			<Prefix>SorensenDC</Prefix>
+			<ProgID/>
+			<SupportedInstrumentModels/>
+			<PhysicalNames/>
+			<PublishedAPIs>
+				<IviPublishedAPI idref="p1"/>
+				<IviPublishedAPI idref="p4"/>
+			</PublishedAPIs>
+			<AssemblyQualifiedClassName/>
+			<ModulePath64/>
+		</IviSoftwareModule>
+	</SoftwareModules>
+	<HardwareAssets>
+		<IviHardwareAsset id="p271">
+			<Name>AO_Mux_ivi</Name>
+			<Description>PXI-2576</Description>
+			<DataComponents/>
+			<IOResourceDescriptor>AO_Mux</IOResourceDescriptor>
+		</IviHardwareAsset>
+		<IviHardwareAsset id="p272">
+			<Name>DMM_Mux_ivi</Name>
+			<Description>PXI-2576</Description>
+			<DataComponents/>
+			<IOResourceDescriptor>DMM_Mux</IOResourceDescriptor>
+		</IviHardwareAsset>
+		<IviHardwareAsset id="p273">
+			<Name>Hi_Current_SPST_ivi</Name>
+			<Description>PXI-2586</Description>
+			<DataComponents/>
+			<IOResourceDescriptor>Hi_Current_SPST</IOResourceDescriptor>
+		</IviHardwareAsset>
+		<IviHardwareAsset id="p274">
+			<Name>Lo_Current_SPST_ivi</Name>
+			<Description>PXI-2569</Description>
+			<DataComponents/>
+			<IOResourceDescriptor>Lo_Current_SPST</IOResourceDescriptor>
+		</IviHardwareAsset>
+		<IviHardwareAsset id="p275">
+			<Name>Measurement_ivi</Name>
+			<Description>PXI-2530</Description>
+			<DataComponents/>
+			<IOResourceDescriptor>Measurement</IOResourceDescriptor>
+		</IviHardwareAsset>
+		<IviHardwareAsset id="p276">
+			<Name>Measurement_ivi_2</Name>
+			<Description>PXI-2530</Description>
+			<DataComponents/>
+			<IOResourceDescriptor>Measurement</IOResourceDescriptor>
+		</IviHardwareAsset>
+		<IviHardwareAsset id="p277">
+			<Name>Measurement_ivi_ivi</Name>
+			<Description>PXIe-2530</Description>
+			<DataComponents/>
+			<IOResourceDescriptor>Measurement_ivi</IOResourceDescriptor>
+		</IviHardwareAsset>
+		<IviHardwareAsset id="p278">
+			<Name>PXI1Slot10_ivi</Name>
+			<Description>PXI-2576</Description>
+			<DataComponents/>
+			<IOResourceDescriptor>PXI1Slot10</IOResourceDescriptor>
+		</IviHardwareAsset>
+		<IviHardwareAsset id="p279">
+			<Name>PXI1Slot11_ivi</Name>
+			<Description>PXI-2570</Description>
+			<DataComponents/>
+			<IOResourceDescriptor>PXI1Slot11</IOResourceDescriptor>
+		</IviHardwareAsset>
+		<IviHardwareAsset id="p280">
+			<Name>PXI1Slot12_ivi</Name>
+			<Description>PXI-2586</Description>
+			<DataComponents/>
+			<IOResourceDescriptor>PXI1Slot12</IOResourceDescriptor>
+		</IviHardwareAsset>
+		<IviHardwareAsset id="p281">
+			<Name>PXI1Slot13_ivi</Name>
+			<Description>PXI-2567</Description>
+			<DataComponents/>
+			<IOResourceDescriptor>PXI1Slot13</IOResourceDescriptor>
+		</IviHardwareAsset>
+		<IviHardwareAsset id="p282">
+			<Name>PXI1Slot2_ivi</Name>
+			<Description>PXI-2570</Description>
+			<DataComponents/>
+			<IOResourceDescriptor>PXI1Slot2</IOResourceDescriptor>
+		</IviHardwareAsset>
+		<IviHardwareAsset id="p283">
+			<Name>PXI1Slot8_ivi</Name>
+			<Description>PXI-2569</Description>
+			<DataComponents/>
+			<IOResourceDescriptor>PXI1Slot8</IOResourceDescriptor>
+		</IviHardwareAsset>
+		<IviHardwareAsset id="p284">
+			<Name>PXI1Slot9_ivi</Name>
+			<Description>PXI-2576</Description>
+			<DataComponents/>
+			<IOResourceDescriptor>PXI1Slot9</IOResourceDescriptor>
+		</IviHardwareAsset>
+		<IviHardwareAsset id="p285">
+			<Name>PXI2Slot3_ivi</Name>
+			<Description>PXI-2576</Description>
+			<DataComponents/>
+			<IOResourceDescriptor>PXI2Slot3</IOResourceDescriptor>
+		</IviHardwareAsset>
+		<IviHardwareAsset id="p286">
+			<Name>PXI2Slot4_ivi</Name>
+			<Description>PXI-2567</Description>
+			<DataComponents/>
+			<IOResourceDescriptor>PXI2Slot4</IOResourceDescriptor>
+		</IviHardwareAsset>
+		<IviHardwareAsset id="p287">
+			<Name>RLYDRV_ivi</Name>
+			<Description>PXI-2567</Description>
+			<DataComponents/>
+			<IOResourceDescriptor>RLYDRV</IOResourceDescriptor>
+		</IviHardwareAsset>
+		<IviHardwareAsset id="p288">
+			<Name>SPDT_1_ivi</Name>
+			<Description>PXI-2570</Description>
+			<DataComponents/>
+			<IOResourceDescriptor>SPDT_1</IOResourceDescriptor>
+		</IviHardwareAsset>
+		<IviHardwareAsset id="p289">
+			<Name>SPDT_2_ivi</Name>
+			<Description>PXI-2570</Description>
+			<DataComponents/>
+			<IOResourceDescriptor>SPDT_2</IOResourceDescriptor>
+		</IviHardwareAsset>
+		<IviHardwareAsset id="p290">
+			<Name>Stimulus_ivi</Name>
+			<Description>PXI-2503</Description>
+			<DataComponents/>
+			<IOResourceDescriptor>Stimulus</IOResourceDescriptor>
+		</IviHardwareAsset>
+	</HardwareAssets>
+	<DriverSessions>
+		<IviDriverSession id="p291">
+			<Name>ag6000</Name>
+			<Description>Agilent 6000 Series Oscilloscopes</Description>
+			<DataComponents/>
+			<IviSoftwareModuleRef idref="p11"/>
+			<VirtualNames>
+				<IviVirtualName id="p292">
+					<Name>CHANNEL1</Name>
+					<MapTo>CHAN1</MapTo>
+					<VirtualRanges/>
+				</IviVirtualName>
+				<IviVirtualName id="p293">
+					<Name>CHANNEL2</Name>
+					<MapTo>CHAN2</MapTo>
+					<VirtualRanges/>
+				</IviVirtualName>
+				<IviVirtualName id="p294">
+					<Name>CHANNEL3</Name>
+					<MapTo>CHAN3</MapTo>
+					<VirtualRanges/>
+				</IviVirtualName>
+				<IviVirtualName id="p295">
+					<Name>CHANNEL4</Name>
+					<MapTo>CHAN4</MapTo>
+					<VirtualRanges/>
+				</IviVirtualName>
+			</VirtualNames>
+			<SoftwareModuleName>ag6000</SoftwareModuleName>
+			<Cache>1</Cache>
+			<DriverSetup/>
+			<InterchangeCheck>0</InterchangeCheck>
+			<QueryInstrStatus>0</QueryInstrStatus>
+			<RangeCheck>1</RangeCheck>
+			<RecordCoercions>0</RecordCoercions>
+			<Simulate>1</Simulate>
+		</IviDriverSession>
+		<IviDriverSession id="p296">
+			<Name>agn6700</Name>
+			<Description/>
+			<DataComponents/>
+			<IviSoftwareModuleRef idref="p16"/>
+			<VirtualNames/>
+			<SoftwareModuleName>agn6700</SoftwareModuleName>
+			<Cache>1</Cache>
+			<DriverSetup/>
+			<InterchangeCheck>0</InterchangeCheck>
+			<QueryInstrStatus>0</QueryInstrStatus>
+			<RangeCheck>1</RangeCheck>
+			<RecordCoercions>0</RecordCoercions>
+			<Simulate>1</Simulate>
+		</IviDriverSession>
+		<IviDriverSession id="p297">
+			<Name>AO_Mux_ivi</Name>
+			<Description>PXI-2576</Description>
+			<DataComponents/>
+			<IviHardwareAsset idref="p271"/>
+			<IviSoftwareModuleRef idref="p268"/>
+			<VirtualNames/>
+			<SoftwareModuleName>niSwitch</SoftwareModuleName>
+			<Cache>1</Cache>
+			<DriverSetup>Topology:2576/2-Wire 64x1 Mux</DriverSetup>
+			<InterchangeCheck>0</InterchangeCheck>
+			<QueryInstrStatus>0</QueryInstrStatus>
+			<RangeCheck>1</RangeCheck>
+			<RecordCoercions>0</RecordCoercions>
+			<Simulate>0</Simulate>
+		</IviDriverSession>
+		<IviDriverSession id="p298">
+			<Name>DMM_Mux_ivi</Name>
+			<Description>PXI-2576</Description>
+			<DataComponents/>
+			<IviHardwareAsset idref="p272"/>
+			<IviSoftwareModuleRef idref="p268"/>
+			<VirtualNames/>
+			<SoftwareModuleName>niSwitch</SoftwareModuleName>
+			<Cache>1</Cache>
+			<DriverSetup>Topology:2576/2-Wire 64x1 Mux</DriverSetup>
+			<InterchangeCheck>0</InterchangeCheck>
+			<QueryInstrStatus>0</QueryInstrStatus>
+			<RangeCheck>1</RangeCheck>
+			<RecordCoercions>0</RecordCoercions>
+			<Simulate>0</Simulate>
+		</IviDriverSession>
+		<IviDriverSession id="p299">
+			<Name>Hi_Current_SPST_ivi</Name>
+			<Description>PXI-2586</Description>
+			<DataComponents/>
+			<IviHardwareAsset idref="p273"/>
+			<IviSoftwareModuleRef idref="p268"/>
+			<VirtualNames/>
+			<SoftwareModuleName>niSwitch</SoftwareModuleName>
+			<Cache>1</Cache>
+			<DriverSetup>Topology:2586/10-SPST</DriverSetup>
+			<InterchangeCheck>0</InterchangeCheck>
+			<QueryInstrStatus>0</QueryInstrStatus>
+			<RangeCheck>1</RangeCheck>
+			<RecordCoercions>0</RecordCoercions>
+			<Simulate>0</Simulate>
+		</IviDriverSession>
+		<IviDriverSession id="p300">
+			<Name>hp33120a</Name>
+			<Description>Hewlett-Packard 33120A Function/Arbitrary Waveform Generator</Description>
+			<DataComponents/>
+			<IviSoftwareModuleRef idref="p18"/>
+			<VirtualNames>
+				<IviVirtualName id="p301">
+					<Name>CHANNEL1</Name>
+					<MapTo>1</MapTo>
+					<VirtualRanges/>
+				</IviVirtualName>
+			</VirtualNames>
+			<SoftwareModuleName>hp33120a</SoftwareModuleName>
+			<Cache>1</Cache>
+			<DriverSetup/>
+			<InterchangeCheck>0</InterchangeCheck>
+			<QueryInstrStatus>1</QueryInstrStatus>
+			<RangeCheck>1</RangeCheck>
+			<RecordCoercions>0</RecordCoercions>
+			<Simulate>1</Simulate>
+		</IviDriverSession>
+		<IviDriverSession id="p302">
+			<Name>hp34401a</Name>
+			<Description>Hewlett-Packard 34401A Digital Multimeter</Description>
+			<DataComponents/>
+			<IviSoftwareModuleRef idref="p20"/>
+			<VirtualNames/>
+			<SoftwareModuleName>hp34401a</SoftwareModuleName>
+			<Cache>1</Cache>
+			<DriverSetup/>
+			<InterchangeCheck>0</InterchangeCheck>
+			<QueryInstrStatus>1</QueryInstrStatus>
+			<RangeCheck>1</RangeCheck>
+			<RecordCoercions>0</RecordCoercions>
+			<Simulate>1</Simulate>
+		</IviDriverSession>
+		<IviDriverSession id="p303">
+			<Name>Lo_Current_SPST_ivi</Name>
+			<Description>PXI-2569</Description>
+			<DataComponents/>
+			<IviHardwareAsset idref="p274"/>
+			<IviSoftwareModuleRef idref="p268"/>
+			<VirtualNames/>
+			<SoftwareModuleName>niSwitch</SoftwareModuleName>
+			<Cache>1</Cache>
+			<DriverSetup>Topology:2569/100-SPST</DriverSetup>
+			<InterchangeCheck>0</InterchangeCheck>
+			<QueryInstrStatus>0</QueryInstrStatus>
+			<RangeCheck>1</RangeCheck>
+			<RecordCoercions>0</RecordCoercions>
+			<Simulate>0</Simulate>
+		</IviDriverSession>
+		<IviDriverSession id="p304">
+			<Name>Measurement_ivi</Name>
+			<Description>PXI-2530</Description>
+			<DataComponents/>
+			<IviHardwareAsset idref="p276"/>
+			<IviSoftwareModuleRef idref="p268"/>
+			<VirtualNames/>
+			<SoftwareModuleName>niSwitch</SoftwareModuleName>
+			<Cache>0</Cache>
+			<DriverSetup>Topology:2533/1-Wire 4x64 Matrix</DriverSetup>
+			<InterchangeCheck>0</InterchangeCheck>
+			<QueryInstrStatus>1</QueryInstrStatus>
+			<RangeCheck>1</RangeCheck>
+			<RecordCoercions>1</RecordCoercions>
+			<Simulate>0</Simulate>
+		</IviDriverSession>
+		<IviDriverSession id="p305">
+			<Name>ni5401</Name>
+			<Description/>
+			<DataComponents/>
+			<IviSoftwareModuleRef idref="p29"/>
+			<VirtualNames>
+				<IviVirtualName id="p306">
+					<Name>CHANNEL1</Name>
+					<MapTo>0</MapTo>
+					<VirtualRanges/>
+				</IviVirtualName>
+			</VirtualNames>
+			<SoftwareModuleName>NI-FGEN</SoftwareModuleName>
+			<Cache>1</Cache>
+			<DriverSetup>Model:5401;BoardType:PXI</DriverSetup>
+			<InterchangeCheck>0</InterchangeCheck>
+			<QueryInstrStatus>1</QueryInstrStatus>
+			<RangeCheck>1</RangeCheck>
+			<RecordCoercions>0</RecordCoercions>
+			<Simulate>1</Simulate>
+		</IviDriverSession>
+		<IviDriverSession id="p307">
+			<Name>ni5402</Name>
+			<Description/>
+			<DataComponents/>
+			<IviSoftwareModuleRef idref="p29"/>
+			<VirtualNames>
+				<IviVirtualName id="p308">
+					<Name>CHANNEL1</Name>
+					<MapTo>0</MapTo>
+					<VirtualRanges/>
+				</IviVirtualName>
+			</VirtualNames>
+			<SoftwareModuleName>NI-FGEN</SoftwareModuleName>
+			<Cache>1</Cache>
+			<DriverSetup>Model:5402;BoardType:PXI;MemorySize:32000000</DriverSetup>
+			<InterchangeCheck>0</InterchangeCheck>
+			<QueryInstrStatus>1</QueryInstrStatus>
+			<RangeCheck>1</RangeCheck>
+			<RecordCoercions>0</RecordCoercions>
+			<Simulate>1</Simulate>
+		</IviDriverSession>
+		<IviDriverSession id="p309">
+			<Name>ni5404</Name>
+			<Description/>
+			<DataComponents/>
+			<IviSoftwareModuleRef idref="p29"/>
+			<VirtualNames>
+				<IviVirtualName id="p310">
+					<Name>CHANNEL1</Name>
+					<MapTo>0</MapTo>
+					<VirtualRanges/>
+				</IviVirtualName>
+			</VirtualNames>
+			<SoftwareModuleName>NI-FGEN</SoftwareModuleName>
+			<Cache>1</Cache>
+			<DriverSetup>Model:5404;BoardType:PXI</DriverSetup>
+			<InterchangeCheck>0</InterchangeCheck>
+			<QueryInstrStatus>1</QueryInstrStatus>
+			<RangeCheck>1</RangeCheck>
+			<RecordCoercions>0</RecordCoercions>
+			<Simulate>1</Simulate>
+		</IviDriverSession>
+		<IviDriverSession id="p311">
+			<Name>ni5406</Name>
+			<Description/>
+			<DataComponents/>
+			<IviSoftwareModuleRef idref="p29"/>
+			<VirtualNames>
+				<IviVirtualName id="p312">
+					<Name>CHANNEL1</Name>
+					<MapTo>0</MapTo>
+					<VirtualRanges/>
+				</IviVirtualName>
+			</VirtualNames>
+			<SoftwareModuleName>NI-FGEN</SoftwareModuleName>
+			<Cache>1</Cache>
+			<DriverSetup>Model:5406;BoardType:PXI;MemorySize:32000000</DriverSetup>
+			<InterchangeCheck>0</InterchangeCheck>
+			<QueryInstrStatus>1</QueryInstrStatus>
+			<RangeCheck>1</RangeCheck>
+			<RecordCoercions>0</RecordCoercions>
+			<Simulate>1</Simulate>
+		</IviDriverSession>
+		<IviDriverSession id="p313">
+			<Name>ni5411</Name>
+			<Description/>
+			<DataComponents/>
+			<IviSoftwareModuleRef idref="p29"/>
+			<VirtualNames>
+				<IviVirtualName id="p314">
+					<Name>CHANNEL1</Name>
+					<MapTo>0</MapTo>
+					<VirtualRanges/>
+				</IviVirtualName>
+			</VirtualNames>
+			<SoftwareModuleName>NI-FGEN</SoftwareModuleName>
+			<Cache>1</Cache>
+			<DriverSetup>Model:5411;BoardType:PXI;MemorySize:16000000</DriverSetup>
+			<InterchangeCheck>0</InterchangeCheck>
+			<QueryInstrStatus>1</QueryInstrStatus>
+			<RangeCheck>1</RangeCheck>
+			<RecordCoercions>0</RecordCoercions>
+			<Simulate>1</Simulate>
+		</IviDriverSession>
+		<IviDriverSession id="p315">
+			<Name>ni5412</Name>
+			<Description/>
+			<DataComponents/>
+			<IviSoftwareModuleRef idref="p29"/>
+			<VirtualNames>
+				<IviVirtualName id="p316">
+					<Name>CHANNEL1</Name>
+					<MapTo>0</MapTo>
+					<VirtualRanges/>
+				</IviVirtualName>
+			</VirtualNames>
+			<SoftwareModuleName>NI-FGEN</SoftwareModuleName>
+			<Cache>1</Cache>
+			<DriverSetup>Model:5412;BoardType:PXI;MemorySize:268435456</DriverSetup>
+			<InterchangeCheck>0</InterchangeCheck>
+			<QueryInstrStatus>1</QueryInstrStatus>
+			<RangeCheck>1</RangeCheck>
+			<RecordCoercions>0</RecordCoercions>
+			<Simulate>1</Simulate>
+		</IviDriverSession>
+		<IviDriverSession id="p317">
+			<Name>ni5421</Name>
+			<Description/>
+			<DataComponents/>
+			<IviSoftwareModuleRef idref="p29"/>
+			<VirtualNames>
+				<IviVirtualName id="p318">
+					<Name>CHANNEL1</Name>
+					<MapTo>0</MapTo>
+					<VirtualRanges/>
+				</IviVirtualName>
+			</VirtualNames>
+			<SoftwareModuleName>NI-FGEN</SoftwareModuleName>
+			<Cache>1</Cache>
+			<DriverSetup>Model:5421;BoardType:PXI;MemorySize:268435456</DriverSetup>
+			<InterchangeCheck>0</InterchangeCheck>
+			<QueryInstrStatus>1</QueryInstrStatus>
+			<RangeCheck>1</RangeCheck>
+			<RecordCoercions>0</RecordCoercions>
+			<Simulate>1</Simulate>
+		</IviDriverSession>
+		<IviDriverSession id="p319">
+			<Name>ni5422</Name>
+			<Description/>
+			<DataComponents/>
+			<IviSoftwareModuleRef idref="p29"/>
+			<VirtualNames>
+				<IviVirtualName id="p320">
+					<Name>CHANNEL1</Name>
+					<MapTo>0</MapTo>
+					<VirtualRanges/>
+				</IviVirtualName>
+			</VirtualNames>
+			<SoftwareModuleName>NI-FGEN</SoftwareModuleName>
+			<Cache>1</Cache>
+			<DriverSetup>Model:5422;BoardType:PXI;MemorySize:268435456</DriverSetup>
+			<InterchangeCheck>0</InterchangeCheck>
+			<QueryInstrStatus>1</QueryInstrStatus>
+			<RangeCheck>1</RangeCheck>
+			<RecordCoercions>0</RecordCoercions>
+			<Simulate>1</Simulate>
+		</IviDriverSession>
+		<IviDriverSession id="p321">
+			<Name>ni5431</Name>
+			<Description/>
+			<DataComponents/>
+			<IviSoftwareModuleRef idref="p29"/>
+			<VirtualNames>
+				<IviVirtualName id="p322">
+					<Name>CHANNEL1</Name>
+					<MapTo>0</MapTo>
+					<VirtualRanges/>
+				</IviVirtualName>
+			</VirtualNames>
+			<SoftwareModuleName>NI-FGEN</SoftwareModuleName>
+			<Cache>1</Cache>
+			<DriverSetup>Model:5431;BoardType:PXI;MemorySize:16000000</DriverSetup>
+			<InterchangeCheck>0</InterchangeCheck>
+			<QueryInstrStatus>1</QueryInstrStatus>
+			<RangeCheck>1</RangeCheck>
+			<RecordCoercions>0</RecordCoercions>
+			<Simulate>1</Simulate>
+		</IviDriverSession>
+		<IviDriverSession id="p323">
+			<Name>ni5441</Name>
+			<Description/>
+			<DataComponents/>
+			<IviSoftwareModuleRef idref="p29"/>
+			<VirtualNames>
+				<IviVirtualName id="p324">
+					<Name>CHANNEL1</Name>
+					<MapTo>0</MapTo>
+					<VirtualRanges/>
+				</IviVirtualName>
+			</VirtualNames>
+			<SoftwareModuleName>NI-FGEN</SoftwareModuleName>
+			<Cache>1</Cache>
+			<DriverSetup>Model:5441;BoardType:PXI;MemorySize:268435456</DriverSetup>
+			<InterchangeCheck>0</InterchangeCheck>
+			<QueryInstrStatus>1</QueryInstrStatus>
+			<RangeCheck>1</RangeCheck>
+			<RecordCoercions>0</RecordCoercions>
+			<Simulate>1</Simulate>
+		</IviDriverSession>
+		<IviDriverSession id="p325">
+			<Name>ni5442</Name>
+			<Description/>
+			<DataComponents/>
+			<IviSoftwareModuleRef idref="p29"/>
+			<VirtualNames>
+				<IviVirtualName id="p326">
+					<Name>CHANNEL1</Name>
+					<MapTo>0</MapTo>
+					<VirtualRanges/>
+				</IviVirtualName>
+			</VirtualNames>
+			<SoftwareModuleName>NI-FGEN</SoftwareModuleName>
+			<Cache>1</Cache>
+			<DriverSetup>Model:5442;BoardType:PXIe;MemorySize:268435456</DriverSetup>
+			<InterchangeCheck>0</InterchangeCheck>
+			<QueryInstrStatus>1</QueryInstrStatus>
+			<RangeCheck>1</RangeCheck>
+			<RecordCoercions>0</RecordCoercions>
+			<Simulate>1</Simulate>
+		</IviDriverSession>
+		<IviDriverSession id="p327">
+			<Name>ni5450</Name>
+			<Description/>
+			<DataComponents/>
+			<IviSoftwareModuleRef idref="p29"/>
+			<VirtualNames>
+				<IviVirtualName id="p328">
+					<Name>CHANNEL1</Name>
+					<MapTo>0</MapTo>
+					<VirtualRanges/>
+				</IviVirtualName>
+				<IviVirtualName id="p329">
+					<Name>CHANNEL2</Name>
+					<MapTo>1</MapTo>
+					<VirtualRanges/>
+				</IviVirtualName>
+			</VirtualNames>
+			<SoftwareModuleName>NI-FGEN</SoftwareModuleName>
+			<Cache>1</Cache>
+			<DriverSetup>Model:5450;BoardType:PXIe;MemorySize:268435456</DriverSetup>
+			<InterchangeCheck>0</InterchangeCheck>
+			<QueryInstrStatus>1</QueryInstrStatus>
+			<RangeCheck>1</RangeCheck>
+			<RecordCoercions>0</RecordCoercions>
+			<Simulate>1</Simulate>
+		</IviDriverSession>
+		<IviDriverSession id="p330">
+			<Name>niDCPower</Name>
+			<Description/>
+			<DataComponents/>
+			<IviSoftwareModuleRef idref="p22"/>
+			<VirtualNames/>
+			<SoftwareModuleName>NI-DCPower</SoftwareModuleName>
+			<Cache>1</Cache>
+			<DriverSetup/>
+			<InterchangeCheck>0</InterchangeCheck>
+			<QueryInstrStatus>0</QueryInstrStatus>
+			<RangeCheck>1</RangeCheck>
+			<RecordCoercions>0</RecordCoercions>
+			<Simulate>0</Simulate>
+		</IviDriverSession>
+		<IviDriverSession id="p331">
+			<Name>niFgen</Name>
+			<Description/>
+			<DataComponents/>
+			<IviSoftwareModuleRef idref="p29"/>
+			<VirtualNames>
+				<IviVirtualName id="p332">
+					<Name>CHANNEL1</Name>
+					<MapTo>0</MapTo>
+					<VirtualRanges/>
+				</IviVirtualName>
+			</VirtualNames>
+			<SoftwareModuleName>NI-FGEN</SoftwareModuleName>
+			<Cache>1</Cache>
+			<DriverSetup/>
+			<InterchangeCheck>0</InterchangeCheck>
+			<QueryInstrStatus>1</QueryInstrStatus>
+			<RangeCheck>1</RangeCheck>
+			<RecordCoercions>0</RecordCoercions>
+			<Simulate>0</Simulate>
+		</IviDriverSession>
+		<IviDriverSession id="p333">
+			<Name>niScope</Name>
+			<Description/>
+			<DataComponents/>
+			<IviSoftwareModuleRef idref="p33"/>
+			<VirtualNames>
+				<IviVirtualName id="p334">
+					<Name>CHANNEL0</Name>
+					<MapTo>0</MapTo>
+					<VirtualRanges/>
+				</IviVirtualName>
+				<IviVirtualName id="p335">
+					<Name>CHANNEL1</Name>
+					<MapTo>1</MapTo>
+					<VirtualRanges/>
+				</IviVirtualName>
+			</VirtualNames>
+			<SoftwareModuleName>niScope</SoftwareModuleName>
+			<Cache>1</Cache>
+			<DriverSetup/>
+			<InterchangeCheck>0</InterchangeCheck>
+			<QueryInstrStatus>0</QueryInstrStatus>
+			<RangeCheck>1</RangeCheck>
+			<RecordCoercions>0</RecordCoercions>
+			<Simulate>0</Simulate>
+		</IviDriverSession>
+		<IviDriverSession id="p336">
+			<Name>PXI1Slot10_ivi</Name>
+			<Description>PXI-2576</Description>
+			<DataComponents/>
+			<IviHardwareAsset idref="p278"/>
+			<IviSoftwareModuleRef idref="p268"/>
+			<VirtualNames/>
+			<SoftwareModuleName>niSwitch</SoftwareModuleName>
+			<Cache>1</Cache>
+			<DriverSetup>Topology:2576/2-Wire Sixteen 4x1 Mux</DriverSetup>
+			<InterchangeCheck>0</InterchangeCheck>
+			<QueryInstrStatus>0</QueryInstrStatus>
+			<RangeCheck>1</RangeCheck>
+			<RecordCoercions>0</RecordCoercions>
+			<Simulate>0</Simulate>
+		</IviDriverSession>
+		<IviDriverSession id="p337">
+			<Name>PXI1Slot11_ivi</Name>
+			<Description>PXI-2570</Description>
+			<DataComponents/>
+			<IviHardwareAsset idref="p279"/>
+			<IviSoftwareModuleRef idref="p268"/>
+			<VirtualNames/>
+			<SoftwareModuleName>niSwitch</SoftwareModuleName>
+			<Cache>1</Cache>
+			<DriverSetup>Topology:2570/40-SPDT</DriverSetup>
+			<InterchangeCheck>0</InterchangeCheck>
+			<QueryInstrStatus>0</QueryInstrStatus>
+			<RangeCheck>1</RangeCheck>
+			<RecordCoercions>0</RecordCoercions>
+			<Simulate>0</Simulate>
+		</IviDriverSession>
+		<IviDriverSession id="p338">
+			<Name>PXI1Slot12_ivi</Name>
+			<Description>PXI-2586</Description>
+			<DataComponents/>
+			<IviHardwareAsset idref="p280"/>
+			<IviSoftwareModuleRef idref="p268"/>
+			<VirtualNames/>
+			<SoftwareModuleName>niSwitch</SoftwareModuleName>
+			<Cache>1</Cache>
+			<DriverSetup>Topology:2586/10-SPST</DriverSetup>
+			<InterchangeCheck>0</InterchangeCheck>
+			<QueryInstrStatus>0</QueryInstrStatus>
+			<RangeCheck>1</RangeCheck>
+			<RecordCoercions>0</RecordCoercions>
+			<Simulate>0</Simulate>
+		</IviDriverSession>
+		<IviDriverSession id="p339">
+			<Name>PXI1Slot13_ivi</Name>
+			<Description>PXI-2567</Description>
+			<DataComponents/>
+			<IviHardwareAsset idref="p281"/>
+			<IviSoftwareModuleRef idref="p268"/>
+			<VirtualNames/>
+			<SoftwareModuleName>niSwitch</SoftwareModuleName>
+			<Cache>1</Cache>
+			<DriverSetup>Topology:2567/Independent</DriverSetup>
+			<InterchangeCheck>0</InterchangeCheck>
+			<QueryInstrStatus>0</QueryInstrStatus>
+			<RangeCheck>1</RangeCheck>
+			<RecordCoercions>0</RecordCoercions>
+			<Simulate>0</Simulate>
+		</IviDriverSession>
+		<IviDriverSession id="p340">
+			<Name>PXI1Slot2_ivi</Name>
+			<Description>PXI-2570</Description>
+			<DataComponents/>
+			<IviHardwareAsset idref="p282"/>
+			<IviSoftwareModuleRef idref="p268"/>
+			<VirtualNames/>
+			<SoftwareModuleName>niSwitch</SoftwareModuleName>
+			<Cache>1</Cache>
+			<DriverSetup>Topology:2570/40-SPDT</DriverSetup>
+			<InterchangeCheck>0</InterchangeCheck>
+			<QueryInstrStatus>0</QueryInstrStatus>
+			<RangeCheck>1</RangeCheck>
+			<RecordCoercions>0</RecordCoercions>
+			<Simulate>0</Simulate>
+		</IviDriverSession>
+		<IviDriverSession id="p341">
+			<Name>PXI1Slot8_ivi</Name>
+			<Description>PXI-2569</Description>
+			<DataComponents/>
+			<IviHardwareAsset idref="p283"/>
+			<IviSoftwareModuleRef idref="p268"/>
+			<VirtualNames/>
+			<SoftwareModuleName>niSwitch</SoftwareModuleName>
+			<Cache>1</Cache>
+			<DriverSetup>Topology:2569/100-SPST</DriverSetup>
+			<InterchangeCheck>0</InterchangeCheck>
+			<QueryInstrStatus>0</QueryInstrStatus>
+			<RangeCheck>1</RangeCheck>
+			<RecordCoercions>0</RecordCoercions>
+			<Simulate>0</Simulate>
+		</IviDriverSession>
+		<IviDriverSession id="p342">
+			<Name>PXI1Slot9_ivi</Name>
+			<Description>PXI-2576</Description>
+			<DataComponents/>
+			<IviHardwareAsset idref="p284"/>
+			<IviSoftwareModuleRef idref="p268"/>
+			<VirtualNames/>
+			<SoftwareModuleName>niSwitch</SoftwareModuleName>
+			<Cache>1</Cache>
+			<DriverSetup>Topology:2576/2-Wire Sixteen 4x1 Mux</DriverSetup>
+			<InterchangeCheck>0</InterchangeCheck>
+			<QueryInstrStatus>0</QueryInstrStatus>
+			<RangeCheck>1</RangeCheck>
+			<RecordCoercions>0</RecordCoercions>
+			<Simulate>0</Simulate>
+		</IviDriverSession>
+		<IviDriverSession id="p343">
+			<Name>PXI2Slot3_ivi</Name>
+			<Description>PXI-2576</Description>
+			<DataComponents/>
+			<IviHardwareAsset idref="p285"/>
+			<IviSoftwareModuleRef idref="p268"/>
+			<VirtualNames/>
+			<SoftwareModuleName>niSwitch</SoftwareModuleName>
+			<Cache>0</Cache>
+			<DriverSetup>Topology:2576/2-Wire 64x1 Mux</DriverSetup>
+			<InterchangeCheck>0</InterchangeCheck>
+			<QueryInstrStatus>0</QueryInstrStatus>
+			<RangeCheck>0</RangeCheck>
+			<RecordCoercions>0</RecordCoercions>
+			<Simulate>0</Simulate>
+		</IviDriverSession>
+		<IviDriverSession id="p344">
+			<Name>PXI2Slot4_ivi</Name>
+			<Description>PXI-2567</Description>
+			<DataComponents/>
+			<IviHardwareAsset idref="p286"/>
+			<IviSoftwareModuleRef idref="p268"/>
+			<VirtualNames/>
+			<SoftwareModuleName>niSwitch</SoftwareModuleName>
+			<Cache>0</Cache>
+			<DriverSetup>Topology:2576/2-Wire 64x1 Mux</DriverSetup>
+			<InterchangeCheck>0</InterchangeCheck>
+			<QueryInstrStatus>0</QueryInstrStatus>
+			<RangeCheck>0</RangeCheck>
+			<RecordCoercions>0</RecordCoercions>
+			<Simulate>0</Simulate>
+		</IviDriverSession>
+		<IviDriverSession id="p345">
+			<Name>RLYDRV_ivi</Name>
+			<Description>PXI-2567</Description>
+			<DataComponents/>
+			<IviHardwareAsset idref="p287"/>
+			<IviSoftwareModuleRef idref="p268"/>
+			<VirtualNames/>
+			<SoftwareModuleName>niSwitch</SoftwareModuleName>
+			<Cache>1</Cache>
+			<DriverSetup>Topology:2567/Independent</DriverSetup>
+			<InterchangeCheck>0</InterchangeCheck>
+			<QueryInstrStatus>0</QueryInstrStatus>
+			<RangeCheck>1</RangeCheck>
+			<RecordCoercions>0</RecordCoercions>
+			<Simulate>0</Simulate>
+		</IviDriverSession>
+		<IviDriverSession id="p346">
+			<Name>Simulated8x8Matrix</Name>
+			<Description>Sample Switch in 8x8 matrix mode</Description>
+			<DataComponents/>
+			<IviSoftwareModuleRef idref="p269"/>
+			<VirtualNames/>
+			<SoftwareModuleName>sampleSwitch</SoftwareModuleName>
+			<Cache>1</Cache>
+			<DriverSetup>matrix:8x8 2-wire</DriverSetup>
+			<InterchangeCheck>0</InterchangeCheck>
+			<QueryInstrStatus>0</QueryInstrStatus>
+			<RangeCheck>1</RangeCheck>
+			<RecordCoercions>0</RecordCoercions>
+			<Simulate>0</Simulate>
+		</IviDriverSession>
+		<IviDriverSession id="p347">
+			<Name>SorensenDC</Name>
+			<Description/>
+			<DataComponents>
+				<IviStructure id="p348">
+					<Name>NI Settings</Name>
+					<Description/>
+					<ReadOnly>0</ReadOnly>
+					<UsedInSession>None</UsedInSession>
+					<Type>Structure</Type>
+					<HelpContextID>0</HelpContextID>
+					<HelpFilePath/>
+					<SoftwareModuleKey/>
+					<DataComponents>
+						<IviString id="p349">
+							<Name>Simulation Driver Session</Name>
+							<Description/>
+							<ReadOnly>0</ReadOnly>
+							<UsedInSession>None</UsedInSession>
+							<Type>String</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey/>
+							<Value>nisDCPwr</Value>
+						</IviString>
+						<IviBoolean id="p350">
+							<Name>Use Specific Simulation</Name>
+							<Description/>
+							<ReadOnly>0</ReadOnly>
+							<UsedInSession>None</UsedInSession>
+							<Type>Boolean</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey/>
+							<Value>0</Value>
+						</IviBoolean>
+					</DataComponents>
+				</IviStructure>
+			</DataComponents>
+			<IviSoftwareModuleRef idref="p270"/>
+			<VirtualNames/>
+			<SoftwareModuleName>SorensenDC</SoftwareModuleName>
+			<Cache>1</Cache>
+			<DriverSetup/>
+			<InterchangeCheck>0</InterchangeCheck>
+			<QueryInstrStatus>0</QueryInstrStatus>
+			<RangeCheck>1</RangeCheck>
+			<RecordCoercions>0</RecordCoercions>
+			<Simulate>1</Simulate>
+		</IviDriverSession>
+		<IviDriverSession id="p351">
+			<Name>SPDT_1_ivi</Name>
+			<Description>PXI-2570</Description>
+			<DataComponents/>
+			<IviHardwareAsset idref="p288"/>
+			<IviSoftwareModuleRef idref="p268"/>
+			<VirtualNames/>
+			<SoftwareModuleName>niSwitch</SoftwareModuleName>
+			<Cache>1</Cache>
+			<DriverSetup>Topology:2570/40-SPDT</DriverSetup>
+			<InterchangeCheck>0</InterchangeCheck>
+			<QueryInstrStatus>0</QueryInstrStatus>
+			<RangeCheck>1</RangeCheck>
+			<RecordCoercions>0</RecordCoercions>
+			<Simulate>0</Simulate>
+		</IviDriverSession>
+		<IviDriverSession id="p352">
+			<Name>SPDT_2_ivi</Name>
+			<Description>PXI-2570</Description>
+			<DataComponents/>
+			<IviHardwareAsset idref="p289"/>
+			<IviSoftwareModuleRef idref="p268"/>
+			<VirtualNames/>
+			<SoftwareModuleName>niSwitch</SoftwareModuleName>
+			<Cache>1</Cache>
+			<DriverSetup>Topology:2570/40-SPDT</DriverSetup>
+			<InterchangeCheck>0</InterchangeCheck>
+			<QueryInstrStatus>0</QueryInstrStatus>
+			<RangeCheck>1</RangeCheck>
+			<RecordCoercions>0</RecordCoercions>
+			<Simulate>0</Simulate>
+		</IviDriverSession>
+		<IviDriverSession id="p353">
+			<Name>Stimulus_ivi</Name>
+			<Description>PXI-2503</Description>
+			<DataComponents/>
+			<IviHardwareAsset idref="p290"/>
+			<IviSoftwareModuleRef idref="p268"/>
+			<VirtualNames/>
+			<SoftwareModuleName>niSwitch</SoftwareModuleName>
+			<Cache>0</Cache>
+			<DriverSetup>Topology:2503/2-Wire 24x1 Mux</DriverSetup>
+			<InterchangeCheck>0</InterchangeCheck>
+			<QueryInstrStatus>0</QueryInstrStatus>
+			<RangeCheck>0</RangeCheck>
+			<RecordCoercions>0</RecordCoercions>
+			<Simulate>0</Simulate>
+		</IviDriverSession>
+	</DriverSessions>
+	<Sessions>
+		<IviSession id="p354">
+			<Name>nisDCPwr</Name>
+			<Description>National Instruments Simulation Driver for IviDCPwr</Description>
+			<DataComponents>
+				<IviStructure id="p355">
+					<Name>NI Settings</Name>
+					<Description/>
+					<ReadOnly>0</ReadOnly>
+					<UsedInSession>None</UsedInSession>
+					<Type>Structure</Type>
+					<HelpContextID>0</HelpContextID>
+					<HelpFilePath/>
+					<SoftwareModuleKey/>
+					<DataComponents>
+						<IviBoolean id="p356">
+							<Name>IsSimulationDriverSession</Name>
+							<Description/>
+							<ReadOnly>0</ReadOnly>
+							<UsedInSession>None</UsedInSession>
+							<Type>Boolean</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey/>
+							<Value>1</Value>
+						</IviBoolean>
+					</DataComponents>
+				</IviStructure>
+			</DataComponents>
+			<IviSoftwareModuleRef idref="p36"/>
+			<VirtualNames/>
+			<SoftwareModuleName>nisDCPwr</SoftwareModuleName>
+		</IviSession>
+		<IviSession id="p357">
+			<Name>nisDmm</Name>
+			<Description>National Instruments Simulation Driver for IviDmm</Description>
+			<DataComponents>
+				<IviStructure id="p358">
+					<Name>NI Settings</Name>
+					<Description/>
+					<ReadOnly>0</ReadOnly>
+					<UsedInSession>None</UsedInSession>
+					<Type>Structure</Type>
+					<HelpContextID>0</HelpContextID>
+					<HelpFilePath/>
+					<SoftwareModuleKey/>
+					<DataComponents>
+						<IviBoolean id="p359">
+							<Name>IsSimulationDriverSession</Name>
+							<Description/>
+							<ReadOnly>0</ReadOnly>
+							<UsedInSession>None</UsedInSession>
+							<Type>Boolean</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey/>
+							<Value>1</Value>
+						</IviBoolean>
+					</DataComponents>
+				</IviStructure>
+			</DataComponents>
+			<IviSoftwareModuleRef idref="p76"/>
+			<VirtualNames/>
+			<SoftwareModuleName>nisDmm</SoftwareModuleName>
+		</IviSession>
+		<IviSession id="p360">
+			<Name>nisFgen</Name>
+			<Description>National Instruments Simulation Driver for IviFgen</Description>
+			<DataComponents>
+				<IviStructure id="p361">
+					<Name>NI Settings</Name>
+					<Description/>
+					<ReadOnly>0</ReadOnly>
+					<UsedInSession>None</UsedInSession>
+					<Type>Structure</Type>
+					<HelpContextID>0</HelpContextID>
+					<HelpFilePath/>
+					<SoftwareModuleKey/>
+					<DataComponents>
+						<IviBoolean id="p362">
+							<Name>IsSimulationDriverSession</Name>
+							<Description/>
+							<ReadOnly>0</ReadOnly>
+							<UsedInSession>None</UsedInSession>
+							<Type>Boolean</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey/>
+							<Value>1</Value>
+						</IviBoolean>
+					</DataComponents>
+				</IviStructure>
+			</DataComponents>
+			<IviSoftwareModuleRef idref="p122"/>
+			<VirtualNames/>
+			<SoftwareModuleName>nisFgen</SoftwareModuleName>
+		</IviSession>
+		<IviSession id="p363">
+			<Name>nisScope</Name>
+			<Description>National Instruments Simulation Driver for IviScope</Description>
+			<DataComponents>
+				<IviStructure id="p364">
+					<Name>NI Settings</Name>
+					<Description/>
+					<ReadOnly>0</ReadOnly>
+					<UsedInSession>None</UsedInSession>
+					<Type>Structure</Type>
+					<HelpContextID>0</HelpContextID>
+					<HelpFilePath/>
+					<SoftwareModuleKey/>
+					<DataComponents>
+						<IviBoolean id="p365">
+							<Name>IsSimulationDriverSession</Name>
+							<Description/>
+							<ReadOnly>0</ReadOnly>
+							<UsedInSession>None</UsedInSession>
+							<Type>Boolean</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey/>
+							<Value>1</Value>
+						</IviBoolean>
+					</DataComponents>
+				</IviStructure>
+			</DataComponents>
+			<IviSoftwareModuleRef idref="p171"/>
+			<VirtualNames/>
+			<SoftwareModuleName>nisScope</SoftwareModuleName>
+		</IviSession>
+		<IviSession id="p366">
+			<Name>nisSwtch</Name>
+			<Description>National Instruments Simulation Driver for IviSwtch</Description>
+			<DataComponents>
+				<IviStructure id="p367">
+					<Name>NI Settings</Name>
+					<Description/>
+					<ReadOnly>0</ReadOnly>
+					<UsedInSession>None</UsedInSession>
+					<Type>Structure</Type>
+					<HelpContextID>0</HelpContextID>
+					<HelpFilePath/>
+					<SoftwareModuleKey/>
+					<DataComponents>
+						<IviBoolean id="p368">
+							<Name>IsSimulationDriverSession</Name>
+							<Description/>
+							<ReadOnly>0</ReadOnly>
+							<UsedInSession>None</UsedInSession>
+							<Type>Boolean</Type>
+							<HelpContextID>0</HelpContextID>
+							<HelpFilePath/>
+							<SoftwareModuleKey/>
+							<Value>1</Value>
+						</IviBoolean>
+					</DataComponents>
+				</IviStructure>
+			</DataComponents>
+			<IviSoftwareModuleRef idref="p232"/>
+			<VirtualNames/>
+			<SoftwareModuleName>nisSwtch</SoftwareModuleName>
+		</IviSession>
+	</Sessions>
+	<LogicalNames>
+		<IviLogicalName id="p369">
+			<Name>AO_Mux_ivi</Name>
+			<Description>PXI-2576</Description>
+			<IviDriverSession idref="p297"/>
+		</IviLogicalName>
+		<IviLogicalName id="p370">
+			<Name>DMM_Mux_ivi</Name>
+			<Description>PXI-2576</Description>
+			<IviDriverSession idref="p298"/>
+		</IviLogicalName>
+		<IviLogicalName id="p371">
+			<Name>Hi_Current_SPST_ivi</Name>
+			<Description>PXI-2586</Description>
+			<IviDriverSession idref="p299"/>
+		</IviLogicalName>
+		<IviLogicalName id="p372">
+			<Name>Lo_Current_SPST_ivi</Name>
+			<Description>PXI-2569</Description>
+			<IviDriverSession idref="p303"/>
+		</IviLogicalName>
+		<IviLogicalName id="p373">
+			<Name>Measurement_ivi</Name>
+			<Description>PXI-2530</Description>
+			<IviDriverSession idref="p304"/>
+		</IviLogicalName>
+		<IviLogicalName id="p374">
+			<Name>MyDCPwr</Name>
+			<Description/>
+			<IviDriverSession idref="p296"/>
+		</IviLogicalName>
+		<IviLogicalName id="p375">
+			<Name>MyDMM</Name>
+			<Description>Sample Agilient DMM</Description>
+			<IviDriverSession idref="p302"/>
+		</IviLogicalName>
+		<IviLogicalName id="p376">
+			<Name>MyFGEN</Name>
+			<Description/>
+			<IviDriverSession idref="p300"/>
+		</IviLogicalName>
+		<IviLogicalName id="p377">
+			<Name>MyScope</Name>
+			<Description>My sample scope</Description>
+			<IviDriverSession idref="p291"/>
+		</IviLogicalName>
+		<IviLogicalName id="p378">
+			<Name>PXI1Slot10_ivi</Name>
+			<Description>PXI-2576</Description>
+			<IviDriverSession idref="p336"/>
+		</IviLogicalName>
+		<IviLogicalName id="p379">
+			<Name>PXI1Slot11_ivi</Name>
+			<Description>PXI-2570</Description>
+			<IviDriverSession idref="p337"/>
+		</IviLogicalName>
+		<IviLogicalName id="p380">
+			<Name>PXI1Slot12_ivi</Name>
+			<Description>PXI-2586</Description>
+			<IviDriverSession idref="p338"/>
+		</IviLogicalName>
+		<IviLogicalName id="p381">
+			<Name>PXI1Slot13_ivi</Name>
+			<Description>PXI-2567</Description>
+			<IviDriverSession idref="p339"/>
+		</IviLogicalName>
+		<IviLogicalName id="p382">
+			<Name>PXI1Slot2_ivi</Name>
+			<Description>PXI-2570</Description>
+			<IviDriverSession idref="p340"/>
+		</IviLogicalName>
+		<IviLogicalName id="p383">
+			<Name>PXI1Slot8_ivi</Name>
+			<Description>PXI-2569</Description>
+			<IviDriverSession idref="p341"/>
+		</IviLogicalName>
+		<IviLogicalName id="p384">
+			<Name>PXI1Slot9_ivi</Name>
+			<Description>PXI-2576</Description>
+			<IviDriverSession idref="p342"/>
+		</IviLogicalName>
+		<IviLogicalName id="p385">
+			<Name>PXI2Slot3_ivi</Name>
+			<Description>PXI-2576</Description>
+			<IviDriverSession idref="p343"/>
+		</IviLogicalName>
+		<IviLogicalName id="p386">
+			<Name>PXI2Slot4_ivi</Name>
+			<Description>PXI-2567</Description>
+			<IviDriverSession idref="p344"/>
+		</IviLogicalName>
+		<IviLogicalName id="p387">
+			<Name>RLYDRV_ivi</Name>
+			<Description>PXI-2567</Description>
+			<IviDriverSession idref="p345"/>
+		</IviLogicalName>
+		<IviLogicalName id="p388">
+			<Name>SampleMatrix1</Name>
+			<Description>Sample Switch (8x8 Matrix)</Description>
+			<IviDriverSession idref="p346"/>
+		</IviLogicalName>
+		<IviLogicalName id="p389">
+			<Name>SampleMatrix2</Name>
+			<Description>Sample Switch (8x8 Matrix)</Description>
+			<IviDriverSession idref="p346"/>
+		</IviLogicalName>
+		<IviLogicalName id="p390">
+			<Name>SPDT_1_ivi</Name>
+			<Description>PXI-2570</Description>
+			<IviDriverSession idref="p351"/>
+		</IviLogicalName>
+		<IviLogicalName id="p391">
+			<Name>SPDT_2_ivi</Name>
+			<Description>PXI-2570</Description>
+			<IviDriverSession idref="p352"/>
+		</IviLogicalName>
+		<IviLogicalName id="p392">
+			<Name>Stimulus_ivi</Name>
+			<Description>PXI-2503</Description>
+			<IviDriverSession idref="p353"/>
+		</IviLogicalName>
+	</LogicalNames>
+</IviConfigStore>

@@ -1,0 +1,904 @@
+{\rtf1\ansi\ansicpg1252\deff0{\fonttbl{\f0\fnil\fcharset0 AndaleMono;}{\f1\fswiss\fcharset0 Helvetica;}{\f2\fnil Dina;}{\f3\fnil\fcharset0 Dina;}}
+{\colortbl ;\red63\green127\blue95;\red0\green255\blue0;\red0\green128\blue255;\red255\green128\blue64;\red192\green6\blue4;\red255\green128\blue192;\red255\green255\blue128;\red7\green9\blue255;\red1\green119\blue71;\red1\green12\blue174;\red8\green110\blue39;\red1\green43\blue181;\red127\green0\blue85;\red128\green128\blue0;\red255\green0\blue0;\red0\green128\blue0;}
+{\*\generator Msftedit 5.41.15.1515;}\viewkind4\uc1\pard\cf1\lang1033\f0\fs26\par
+\par
+\pard\qc\fs48 MICS DONGLE USB SERIAL \par
+INTERFACE DEFINITIONS\fs26\par
+\pard\par
+This document is presently a collection of comments, code snippets, struct definitions and command parameter descriptions which describe the interface of the "MICS Dongle" telemetry board.  This information will be refined in a future release as an API reference.\par
+\par
+General information:\par
+\cf0\fs24\par
+\cf1 /**************************************************************************\cf0\par
+\cf1  * Data Structures and Typedefs\cf0\par
+\cf1  */\cf0\par
+\cf2  \cf0\par
+\cf1 /* Every communication packet must begin with\cf0\par
+\cf1  * this header, including all command and reply packets.\cf0\par
+\cf1  */\cf0\par
+\cf3 typedef\cf2  \cf3 struct\cf2  \cf4\{\cf0\par
+\cf2     \cf0\par
+\cf2     \cf1 /* The packet source and destination addresses (source in upper 4 bits, \cf0\par
+\cf1      * destination in lower 4 bits). These indicate who the packet is from,\cf0\par
+\cf1      * and who it is for. For addresses that are common to all applications,\cf0\par
+\cf1      * see COM_PC_ADDR, COM_LOCAL_ADP_ADDR, etc. Note address 0 is invalid.\par
+     * These addresses are defined in the "Additional Information" section at the bottom\par
+     * of this document.\cf0\par
+\cf1      * \cf0\par
+\cf1      * Note when a reply packet is sent in response to a command packet, the\cf0\par
+\cf1      * source and destination in the command packet are swapped in the reply\cf0\par
+\cf1      * packet. This ensures the reply will reach whoever sent the command,\cf0\par
+\cf1      * and helps confirm the reply is from whomever the command was sent to.\cf0\par
+\cf1      * As of this writing, all command packets originate from the PC, so\cf0\par
+\cf1      * COM_PC_ADDR is the source address for all command packets, and the\cf0\par
+\cf1      * destination address for all reply packets.  \b NOTE\b0 :  This value is typically\par
+     * a constant 0x13.\cf0\par
+\cf1      */\cf0\par
+\cf2   \cf5   UD8 srcAndDest;\cf0\par
+\cf2     \cf0\par
+\cf2     \cf1 /* Packet type. The most significant bit is reserved for possible future\cf0\par
+\cf1      * use, and should always be 0 for now. The remaining bits are the type.\cf0\par
+\cf1      * \cf0\par
+\cf1      * Types 1 through 126 are the command tokens. The meaning of each\cf0\par
+\cf1      * command and the contents of any transmitted or received data packets \par
+     * associated with the command are defined in the following section\par
+     * of this document.\cf0\par
+\cf1      * \cf0\par
+\cf1      * Types 0 and 127 (0x7F) are special reply types. If the command the reply is for\cf0\par
+\cf1      * was successful, the reply type is 0 (COM_OK_REPLY_TYPE), and the content\cf0\par
+\cf1      * of the reply packet depends on the command eliciting the reply. If the\cf0\par
+\cf1      * command failed, the reply type is 0x7F (COM_ERR_REPLY_TYPE), and the\cf0\par
+\cf1      * reply packet contains the error information (for the format of the error\cf0\par
+\cf1      * reply packet, see COM_ERR_REPLY_TYPE).\cf0\par
+\cf1      */\cf0\par
+\cf2  \cf5     UD8 type;\cf0\par
+\cf2      \cf0\par
+\cf2     \cf1 /* Packet length (LSB & MSB). This is the length of the packet excluding\cf0\par
+\cf1      * packet header. The maximum packet length is 0xFFFF (COM_MAX_PACK_LEN).\cf0\par
+\cf1      */\cf0\par
+\cf2  \cf5    UD8 lenLsb;\cf0\par
+\cf5     UD8 lenMsb;\cf0\par
+\cf2     \cf0\par
+\cf4\}\cf2  \cf6 COM_PACK_HDR\cf7 ;\fs26\par
+\par
+\cf8 Command "Type" (Token) Definitions:\cf7\par
+\par
+\cf0 case 121:BsmCmdGetDevType(packLen)\par
+\tab Send: Header + 0 bytes.  \par
+\tab Returns Standard success + Text: "QiG MICS Telemetry Interface"\\0\par
+\par
+case 122:BsmCmdGetDevName(packLen)\par
+\tab Send: Header + 0 bytes.\par
+\tab Returns Standard success + Text: "MICS Dongle"\\0\par
+\par
+case 123:BsmCmdGetVer(packLen)\par
+\tab Send: Header + 0 bytes.\par
+\tab Returns Standard success + Text:"MICS Dongle: HW v[X.X], FW v[X.X], Zarlink ZL70120; QiG Group 2013"\\0\par
+\par
+case 124:BsmCmdGetErr(packLen)\par
+\tab Send: Header + 0 bytes.\par
+\tab Returns Standard success + Text string containing latched firmware error info.  If no error is is presently latched, returns "UnspecifiedErrGroup.0: Error on base station: UnspecifiedErrGroup.0"\\0\par
+\par
+case 001:BsmCmdGetStat(packLen)\par
+\tab Send: Header + 0 bytes.\par
+\tab Returns string containing Base Station Status (this is the same status string returned by the conventional dev board status command).\par
+\par
+case 004:BsmCmdGetMicsConfig(packLen)\par
+\tab Send: Header + 0 bytes.\tab\par
+\tab Returns micsConfig struct:\par
+\par
+\cf9\f1\fs20 * MICS configuration for ZL7010X base station.\par
+ */\par
+\b typedef\b0  \b struct\b0  \{\par
+    \par
+    /* MICS configuration flags (see BSM_AUTO_LISTEN, ...) */\par
+\par
+\cf5     UD8 flags;\cf9\par
+    \par
+    /* IMD transceiver ID (implant ID; 3 bytes). Note this should never be set\par
+     * to the \ul wildcard\ulnone  value in the MICS configuration. Some operations (i.e.\par
+     * "search for implant") provide a separate interface to use the \ul wildcard\ulnone\par
+     * if desired, so it will only be used where appropriate.\par
+     */\par
+\par
+\cf5     UD8 b3;  /* MSB of ID */\par
+    UD8 b2;\par
+    UD8 b1;  /* LSB of ID */\cf9\par
+        \par
+    /* Company ID. Note this should never be set to 0 (\ul wildcard\ulnone ) in the MICS\par
+     * configuration. Some operations (i.e. "search for implant" and "listen\par
+     * for emergency" provide a separate \ul inteface\ulnone  to use the \ul wildcard\ulnone  if\par
+     * desired, so it will only be used where appropriate.\par
+     */\par
+\cf10  \cf5    UD8 companyId;\cf9\par
+    \par
+    /* link \ul config\ulnone  for normal communication (400 MHz) */\par
+\par
+\cf11     /* MICS channel. Note for a base station, if BSM_AUTO_CCA is set in\par
+     * BSM_MICS_CONFIG.flags, some operations (e.g. "start session" and\par
+     * "search for implant") will ignore this channel and perform a clear\par
+     * channel assessment instead.\par
+     */\cf12\par
+\par
+ \cf5    UD8 chan;\cf12\par
+        \par
+\cf11     /* RF modulation for TX & RX (see MAC_MODUSER). For a base station, this\par
+     * also contains the user \ul wakeup\ulnone  data.\par
+     */\cf12\par
+\cf5     UD8 modUser;\cf12\par
+        \par
+ \cf11    /* TX block size (usually same as RX block size) */\cf12\par
+   \cf5  UD8 txBlockSize;\cf12\par
+        \par
+\cf11     /* RX block size (usually same as TX block size) */\cf12\par
+\cf5     UD8 rxBlockSize;\cf12\par
+        \par
+\cf11     /* max number of blocks to transmit in a packet */\cf12\par
+ \cf5    UD8 maxBlocksPerTxPack;\cf9\par
+        \par
+    /* link \ul config\ulnone  for emergency communication (400 MHz) */\par
+\par
+\cf11     /* MICS channel. Note for a base station, if BSM_AUTO_CCA is set in\par
+     * BSM_MICS_CONFIG.flags, some operations (e.g. "start session" and\par
+     * "search for implant") will ignore this channel and perform a clear\par
+     * channel assessment instead.\par
+     */\cf12\par
+\cf5     UD8 chan;\cf12\par
+        \par
+  \cf11   /* RF modulation for TX & RX (see MAC_MODUSER). For a base station, this\par
+     * also contains the user \ul wakeup\ulnone  data.\par
+     */\cf12\par
+ \cf5    UD8 modUser;\cf12\par
+        \par
+   \cf11  /* TX block size (usually same as RX block size) */\cf12\par
+\cf5     UD8 txBlockSize;\cf12\par
+        \par
+    \cf11 /* RX block size (usually same as TX block size) */\cf12\par
+  \cf5   UD8 rxBlockSize;\cf12\par
+        \par
+   \cf11  /* max number of blocks to transmit in a packet */\cf12\par
+   \cf5  UD8 maxBlocksPerTxPack;\cf9\par
+    \par
+    /* The 2.45 GHz TX power and calibration offset (in dBm). The default TX\par
+     * power is 20 dBm. The default calibration offset is 0, which should give\par
+     * an actual TX power close to the specified power. However, for accuracy\par
+     * in an end product, the offset might need to be calibrated for each base\par
+     * station and saved in flash. Note the only exact values supported for the\par
+     * TX power are -29, -4 to +26 (in steps of 2), and +27. For all other\par
+     * values, the next power setting <= to the specified value will be used.\par
+     * In \ul addtion\ulnone , the calibration offset can only be used to adjust the TX\par
+     * power in steps of 2 dBm.\par
+     */\par
+\cf5     SD8 set245GHzTxPowerDbm;\par
+    SD8 cal245GHzTxPowerDbm;\cf9\par
+    \par
+    /* The revision of the MICS chip on the remote implant (ZL70100, ZL70101,\par
+     * or ZL70102, which are defined in "\ul Adk\ulnone /AnyMezz/MicsHw.h"). The base\par
+     * station will configure its MICS chip as required to communicate with\par
+     * the MICS chip on the remote implant.\par
+     */\par
+\cf5     UD8 micsRevOnImplant;\cf9\par
+    \par
+    /* The RSSI thresholds for determining channel availability during a CCA\par
+     * (using the threshold method as defined in the MICS specification). Note\par
+     * these thresholds only apply during 400 MHz \ul wakeup\ulnone . This value is typically\par
+     * decimal 2650.\par
+     */\par
+ \cf5     UD16 ccaRssiThreshold[10];\cf9\par
+    \par
+\} BSM_MICS_CONFIG;\f0\fs26\par
+\cf0\par
+case 005:BsmCmdSetMicsConfig(packLen)\par
+\tab Send: Header + BSM_MICS_CONFIG struct\par
+\tab Returns std success/fail\par
+\par
+case 006:BsmCmdStartSession(packLen)\par
+\tab Send: Header + BSM_START_SESSION_CMD struct\par
+\tab Returns std success/fail\par
+\par
+\cf1\f1\fs20 /******************************************************************\cf0\par
+\cf1  * Structures for BSM_START_SESSION_CMD_TYPE.\cf0\par
+\cf1  */\cf0\par
+\cf3\b typedef\cf2\b0  \cf3\b struct\cf2\b0  \cf4\{\cf0\par
+\cf2     \cf0\par
+\cf2     \cf1 /* If true(nonzero), the MICS \ul watchdog\ulnone  timer will be enabled, so the start session\cf0\par
+\cf1      * will be aborted if the session doesn't start within ~4.37 seconds.\cf0\par
+\cf1      */\cf0\par
+\cf5     BOOL8 enabWatchdog;\cf0\par
+\cf2     \cf0\par
+\cf2     \cf1 /* Time to wait for the session to start (seconds) before replying. If 0,\cf0\par
+\cf1      * the base station will configure the MICS chip to start a session and\cf0\par
+\cf1      * reply immediately without waiting (not an error). Note if "timeoutSec"\cf0\par
+\cf1      * and "enabWatchdog" are both specified, and "timeoutSec" is > 4.37, the\cf0\par
+\cf1      * actual timeout will be ~4.37 seconds (MICS \ul watchdog\ulnone  timeout).\cf0\par
+\cf1      */\cf0\par
+\cf5     UD8 timeoutSec;\cf0\par
+\cf2     \cf0\par
+\cf4\}\cf2  \cf6 BSM_START_SESSION_CMD\cf7 ;\cf0\f0\fs26\par
+\par
+case 007:BsmCmdSearchForImplant(packLen)\par
+\tab Send: Header + BSM_SEARCH_FOR_IMPLANT_CMD struct\par
+\tab Returns std success/fail\par
+\par
+\cf1\f1\fs20 * Structures for BSM_SEARCH_FOR_IMPLANT_CMD_TYPE.\cf0\par
+\cf1  */\cf0\par
+\cf3\b typedef\cf2\b0  \cf3\b struct\cf2\b0  \cf4\{\cf0\par
+\cf2     \cf0\par
+\cf2     \cf1 /* If true, the MICS \ul watchdog\ulnone  timer will be enabled, so the search will be\cf0\par
+\cf1      * aborted after ~4.37 seconds.\cf0\par
+\cf1      */\cf0\par
+\cf5     BOOL8 enabWatchdog;\cf0\par
+\cf2     \cf0\par
+\cf2     \cf1 /* if true, \ul wakeup\ulnone  implant for any company */\cf0\par
+\cf5     BOOL8 anyCompany;\cf0\par
+\cf2     \cf0\par
+\cf2     \cf1 /* if true, \ul wakeup\ulnone  any implant (provided the company ID matches) */\cf0\par
+\cf2  \cf5    BOOL8 anyImplant;\cf0\par
+\cf2     \cf0\par
+\cf4\}\cf2  \cf6 BSM_SEARCH_FOR_IMPLANT_CMD\cf7 ;\cf0\f0\fs26\par
+\par
+case 008:BsmCmdListenForEmergency(packLen)\par
+\tab Send: Header + BSM_LISTEN_FOR_EMERGENCY_CMD struct\par
+\tab Returns std success/fail\par
+\par
+\cf1\f1\fs20 * Structures for BSM_LISTEN_FOR_EMERGENCY_CMD_TYPE.\cf0\par
+\cf1  */\cf0\par
+\cf3\b typedef\cf2\b0  \cf3\b struct\cf2\b0  \cf4\{\cf0\par
+\cf2     \cf0\par
+\cf2     \cf1 /* If this is true, the base station will monitor the received emergency\cf0\par
+\cf1      * transmissions, and if any match the implant ID specified in the MICS\cf0\par
+\cf1      * \ul config\ulnone  (see BSM_SET_MICS_CONFIG_CMD), the base station will start an\cf0\par
+\cf1      * emergency session with the implant. If this is false, the base station\cf0\par
+\cf1      * will leave the implant ID's in the RX buffer for the application to read.\cf0\par
+\cf1      */\cf0\par
+\cf2  \cf5    BOOL8 startSession;\par
+\cf2     \cf0\par
+\cf4\}\cf2  \cf6 BSM_LISTEN_FOR_EMERGENCY_CMD\cf7 ;\cf0\f0\fs26\par
+\par
+case 009:BsmCmdAbortMics(packLen)\par
+\tab Send: Header + 0 bytes\par
+\tab Returns std success/fail\par
+\par
+case 010:BsmCmdReadMicsReg(packLen)\par
+\tab Send: Header + BSM_READ_MICS_REG_CMD struct\par
+\tab Returns BSM_READ_MICS_REG_REPLY struct\par
+\par
+\cf1\f1\fs20  * Structures for BSM_READ_MICS_REG_CMD_TYPE:\cf0\par
+\cf1  */\cf0\par
+\cf3\b typedef\cf2\b0  \cf3\b struct\cf2\b0  \cf4\{\cf0\par
+\cf2     \cf0\par
+\cf2     \cf1 /* address of register to read in MICS chip */\cf0\par
+\cf2    \cf5  UD16 regAddr;\cf0\par
+\cf2     \cf0\par
+\cf2     \cf1 /* if true, use housekeeping to read register on remote MICS chip */\cf0\par
+\cf2   \cf5   BOOL8 remote;\cf0\par
+\par
+\cf4\}\cf2  \cf6 BSM_READ_MICS_REG_CMD\cf7 ;\par
+\par
+\cf3\b typedef\cf2\b0  \cf3\b struct\cf2\b0  \cf4\{\cf0\par
+\cf2     \cf0\par
+\cf2     \cf1 /* value of register read from MICS chip */\cf0\par
+\cf2    \cf5  UD8 regVal;\par
+\cf0\par
+\cf4\}\cf2  \cf6 BSM_READ_MICS_REG_REPLY\cf7 ;\cf0\f0\fs26\par
+\par
+case 012:BsmCmdReceiveMics(packLen)\par
+\tab Send: Header + BSM_RECEIVE_MICS_CMD struct\par
+\tab Returns 1 byte (REPLY_TYPE) + 1 block of MICS data\par
+\par
+\cf1\f1\fs20  * Structures for BSM_RECEIVE_MICS_CMD_TYPE:\cf0\par
+\cf1  */\cf0\par
+\cf3\b typedef\cf2\b0  \cf3\b struct\cf2\b0  \cf4\{\cf0\par
+\cf2     \cf0\par
+\cf2     \cf1 /* maximum length to read from MICS RX \ul buf\ulnone  */\cf0\par
+\cf2   \cf5   UD16 maxLen;\cf0\par
+\par
+\cf4\}\cf2  \cf6 BSM_RECEIVE_MICS_CMD\cf7 ;\cf0\f0\fs26\par
+\par
+case 013:BsmCmdWriteMicsReg(packLen)\par
+\tab Send: Header + BSM_WRITE_MICS_REG_CMD struct\par
+\tab Returns std success/fail\par
+\par
+\cf1\f1\fs20  * Structures for BSM_WRITE_MICS_REG_CMD_TYPE:\cf0\par
+\cf1  */\cf0\par
+\cf3\b typedef\cf2\b0  \cf3\b struct\cf2\b0  \cf4\{\cf0\par
+\cf2     \cf0\par
+\cf2     \cf1 /* address of register to write to in MICS chip */\cf0\par
+\cf2  \cf5    UD16 regAddr;\cf0\par
+\cf2     \cf0\par
+\cf2     \cf1 /* value to write to register */\cf0\par
+\cf2    \cf5  UD8 regVal;\cf0\par
+\cf2     \cf0\par
+\cf2     \cf1 /* if true, use housekeeping to write to register on remote MICS chip */\cf0\par
+\cf2   \cf5   BOOL8 remote;\cf0\par
+\par
+\cf4\}\cf2  \cf6 BSM_WRITE_MICS_REG_CMD\cf7 ;\cf0\f0\fs26\par
+\par
+case 015:BsmCmdTransmitMics(packLen)\par
+\tab Send: Header + Bytes to Send (Preferably in blocks matching current blockSize)\par
+\tab Returns std success/fail\par
+\par
+case 016:BsmCmdMicsCal(packLen)\par
+\tab Send: Header + BSM_MICS_CAL_CMD struct\par
+\tab Returns std success/fail\par
+\par
+\cf1\f1\fs20  * Structures for BSM_MICS_CAL_CMD_TYPE:\cf0\par
+\cf1  */\cf0\par
+\cf3\b typedef\cf2\b0  \cf3\b struct\cf2\b0  \cf4\{\cf0\par
+\cf2     \cf0\par
+\cf2     \cf1 /* The group 1 calibrations to perform. Each bit corresponds to a bit in\cf0\par
+\cf1      * the CALSELECT1 register on the MICS chip (defined in "ZL7010XAdk\\\ul Sw\ulnone\\\cf0\par
+\cf1      * Includes\\\ul Adk\ulnone\\AnyMezz\\MicsHw.h").\cf0\par
+\cf1      */\cf0\par
+\cf2  \cf5    UD8 calSelect1;\cf0\par
+\cf2     \cf0\par
+\cf2     \cf1 /* The channel to use for the CAL_400_MHZ_ANT calibration on the local\cf0\par
+\cf1      * MICS chip. Note this is ignored for all other calibrations, \ul includng\cf0\ulnone\par
+\cf1      * the CAL_400_MHZ_ANT on the remote MICS chip because that must use the\cf0\par
+\cf1      * current channel for the active session.\cf0\par
+\cf1      */\cf0\par
+\cf5     SD8 chan;\cf0\par
+\cf2     \cf0\par
+\cf2     \cf1 /* If true, the MICS housekeeping interface is used to perform the\cf0\par
+\cf1      * calibrations on the remote implant instead of the base station.\cf0\par
+\cf1      */\cf0\par
+\cf2   \cf5   BOOL8 remote;\cf0\par
+\cf2     \cf0\par
+\cf2     \cf1 /* The group 2 calibrations to perform. Each bit corresponds to a bit in\cf0\par
+\cf1      * the CALSELECT2 register on the ZL70102 (defined in "ZL7010XAdk\\\ul Sw\ulnone\\\cf0\par
+\cf1      * Includes\\\ul Adk\ulnone\\AnyMezz\\MicsHw.h"). This has no meaning for a ZL70101.\cf0\par
+\cf1      */\cf0\par
+\cf5     UD8 calSelect2;\cf0\par
+\cf2     \cf0\par
+\cf4\}\cf2  \cf6 BSM_MICS_CAL_CMD\cf7 ;\cf0\f0\fs26\par
+\par
+case 017:BsmCmdMicsAdc(packLen)\par
+\tab Send: Header + BSM_MICS_ADC_CMD struct\par
+\tab Returns BSM_MICS_ADC_REPLY struct\par
+\par
+\cf1\f1\fs20 * Structures for BSM_MICS_ADC_CMD_TYPE:\cf0\par
+\cf1  */\cf0\par
+\cf3\b typedef\cf2\b0  \cf3\b struct\cf2\b0  \cf4\{\cf0\par
+\cf2     \cf0\par
+\cf2     \cf1 /* The ADC input to use on the MICS chip (see ADC_INPUT_TEST_IO_1,\cf0\par
+\cf1      * ADC_INPUT_VSUP, etc. in "\ul Adk\ulnone /AnyMezz/MicsHw.h").\cf0\par
+\cf1      */\cf0\par
+\cf2   \cf5   UD8 adcInput;\cf0\par
+\cf2     \cf0\par
+\cf2     \cf1 /* If true, the MICS housekeeping interface is used to perform the\cf0\par
+\cf1      * A/D conversion on the remote MICS chip instead of the local MICS chip.\cf0\par
+\cf1      */\cf0\par
+\cf2  \cf5    BOOL8 remote;\par
+    \cf0\par
+\cf4\}\cf2  \cf6 BSM_MICS_ADC_CMD\cf7 ;\par
+\par
+\cf3\b typedef\cf2\b0  \cf3\b struct\cf2\b0  \cf4\{\cf0\par
+\cf2     \cf0\par
+\cf2     \cf1 /* result of A/D conversion */\cf0\par
+\cf2  \cf5    UD8 adcResult;\cf0\par
+\par
+\cf4\}\cf2  \cf6 BSM_MICS_ADC_REPLY\cf7 ;\cf0\f0\fs26\par
+\par
+case 018:BsmCmdSet245GHzTxPower(packLen)\par
+\tab Send: Header + BSM_SET_245_GHZ_TX_POWER_CMD struct\par
+\tab Returns std success/fail\par
+\par
+\cf1\f1\fs20  * Structures for BSM_SET_245_GHZ_TX_POWER_CMD_TYPE:\cf0\par
+\cf1  */\cf0\par
+\cf3\b typedef\cf2\b0  \cf3\b struct\cf2\b0  \cf4\{\cf0\par
+\cf2     \cf0\par
+\cf2     \cf1 /* 2.45 GHz TX power in dBm. The specified value can range from\cf0\par
+\cf1      * BSM_MIN_245_GHZ_TX_POWER_DBM to BSM_MAX_245_GHZ_TX_POWER_DBM in\cf0\par
+\cf1      * increments of 2.\cf0\par
+\cf1      */\cf0\par
+\cf5     SD8 dbm;\cf0\par
+\cf2     \cf0\par
+\cf4\}\cf2  \cf6 BSM_SET_245_GHZ_TX_POWER_CMD\cf7 ;\cf0\f0\fs26\par
+\par
+case 019:BsmCmdStart245GHzTxCarrier(packLen)\par
+\tab Send: Header + BSM_START_245_GHZ_TX_CARRIER_CMD struct\par
+\tab Returns std success/fail\par
+\par
+\cf1\f1\fs20 * Structures for BSM_START_245_GHX_TX_CARRIER_CMD_TYPE:\cf0\par
+\cf1  */\cf0\par
+\cf3\b typedef\cf2\b0  \cf3\b struct\cf2\b0  \cf4\{\cf0\par
+\cf2     \cf0\par
+\cf2     \cf1 /* start if true, stop if false */\cf0\par
+\cf5     BOOL8 start;\cf0\par
+\cf2     \cf0\par
+\cf4\}\cf2  \cf6 BSM_START_245_GHZ_TX_CARRIER_CMD\cf7 ;\cf0\f0\fs26\par
+\par
+case 020:BsmCmdStart400MHzTxCarrier(packLen)\par
+\tab Send: Header + BSM_START_400_MHZ_CARRIER_CMD struct\par
+\tab Returns std success/fail\par
+\par
+\cf1\f1\fs20 * Structures for BSM_START_400_MHX_TX_CARRIER_CMD_TYPE:\cf0\par
+\cf1  */\cf0\par
+\cf3\b typedef\cf2\b0  \cf3\b struct\cf2\b0  \cf4\{\cf0\par
+\cf2     \cf0\par
+\cf2     \cf1 /* start if true, stop if false */\cf0\par
+\cf5     BOOL8 start;\cf0\par
+\cf2     \cf0\par
+\cf2     \cf1 /* MICS channel to transmit 400 MHz TX carrier for */\cf0\par
+\cf5     UD8 chan;\cf0\par
+\cf2     \cf0\par
+\cf4\}\cf2  \cf6 BSM_START_400_MHZ_TX_CARRIER_CMD\cf7 ;\cf0\f0\fs26\par
+\par
+case 021:BsmCmdRssi(packLen)\par
+\tab Send: Header + BSM_RSSI_CMD struct\par
+\tab Returns BSM_RSSI_REPLY struct\par
+\par
+\cf1\f1\fs20  * Structures for BSM_RSSI_CMD_TYPE:\cf0\par
+\cf1  */\cf0\par
+\cf3\b typedef\cf2\b0  \cf3\b struct\cf2\b0  \cf4\{\cf0\par
+\cf2     \cf0\par
+\cf2     \cf1 /* RSSI mode (see BSM_EXT_RSSI_EXT_ADC, etc.) */\cf0\par
+\cf2  \cf5    UD8 rssiMode;\cf0\par
+\cf2     \cf0\par
+\cf2     \cf1 /* MICS channel to do RSSI for */\cf0\par
+\cf2     \cf5 UD8 chan;\cf0\par
+\cf2     \cf0\par
+\cf2     \cf1 /* if true, the average RSSI is calculated instead of the max */\cf0\par
+\cf2    \cf5  BOOL8 average;\cf0\par
+\cf2     \cf0\par
+\cf4\}\cf2  \cf6 BSM_RSSI_CMD\cf7 ;\cf0\par
+\par
+\cf3\b typedef\cf2\b0  \cf3\b struct\cf2\b0  \cf4\{\cf0\par
+\cf2     \cf0\par
+\cf2     \cf1 /* result of RSSI */\cf0\par
+\cf2   \cf5   UD16 rssiResult;\cf0\par
+\par
+\cf4\}\cf2  \cf6 BSM_RSSI_REPLY\cf7 ;\cf0\f0\fs26\par
+\par
+case 022:BsmCmdEnabExtRssi(packLen)\par
+\tab Send: Header + BSM_ENAB_EXT_RSSI_CMD struct\par
+\tab Returns std success/fail\par
+\par
+\cf1\f1\fs20  * Structures for BSM_ENAB_EXT_RSSI_CMD_TYPE:\cf0\par
+\cf1  */\cf0\par
+\cf3\b typedef\cf2\b0  \cf3\b struct\cf2\b0  \cf4\{\cf0\par
+\cf2     \cf0\par
+\cf2     \cf1 /* enable if true, disable if false */\cf0\par
+\cf2   \cf5   BOOL8 enab;\cf0\par
+\cf2     \cf0\par
+\cf2     \cf1 /* MICS channel to use for external RSSI */\cf0\par
+\cf5     UD8 chan;\cf0\par
+\cf2     \cf0\par
+\cf4\}\cf2  \cf6 BSM_ENAB_EXT_RSSI_CMD\cf7 ;\cf0\f0\fs26\par
+\par
+case 023:BsmCmdCca(packLen)\par
+\tab Send: Header + BSM_CCA_CMD struct\par
+\tab Returns BSM_CCA_REPLY struct\par
+\par
+\cf1\f1\fs20  * Structures for BSM_CCA_CMD_TYPE:\cf0\par
+\cf1  */\cf0\par
+\cf3\b typedef\cf2\b0  \cf3\b struct\cf2\b0  \cf4\{\cf0\par
+\cf2     \cf0\par
+\cf2     \cf1 /* RSSI mode (see BSM_EXT_RSSI_EXT_ADC, etc.) */\cf0\par
+\cf2   \cf5   UD8 rssiMode;\cf0\par
+\cf2     \cf0\par
+\cf2     \cf1 /* if true, the average RSSI is used for the CCA instead of the max */\cf0\par
+\cf2     \cf5 BOOL8 average;\cf0\par
+\cf2     \cf0\par
+\cf4\}\cf2  \cf6 BSM_CCA_CMD\cf7 ;\cf0\par
+\par
+\cf3\b typedef\cf2\b0  \cf3\b struct\cf2\b0  \cf4\{\cf0\par
+\cf2     \cf0\par
+\cf2     \cf1 /* clearest channel */\cf0\par
+\cf2    \cf5  UD8 clearChan\cf7 ;\cf0\par
+\cf2     \cf0\par
+\cf2     \cf1 /* CCA data (RSSI results for each MICS channel) */\par
+    /* NOTE - MAX_MICS_CHAN = 9  */\cf0\par
+\cf2    \cf5  UD16 rssi[MAX_MICS_CHAN + 1];\cf0\par
+\par
+\cf4\}\cf2  \cf6 BSM_CCA_REPLY\cf7 ;\cf0\par
+\f0\fs26\par
+case 024:BsmCmdGetLinkStat(packLen)\par
+\tab Send: Header + 0 bytes\par
+\tab Returns MICS_LINK_STAT struct\par
+\par
+\cf1\f1\fs20 /* Link status.\cf0\par
+\cf1  */\cf0\par
+\cf3\b typedef\cf2\b0  \cf3\b struct\cf2\b0  \cf4\{\cf0\par
+\cf2     \cf0\par
+\cf2     \cf1 /* current IMD transceiver ID (implant ID; 3 bytes) */\cf0\par
+\cf5     UD8 b3;  /* MSB of ID */\par
+    UD8 b2;\par
+    UD8 b1;  /* LSB of ID */\cf0\par
+\cf2         \cf0\par
+\cf2     \cf1 /* current company ID */\cf0\par
+\cf5     UD8 companyId\cf7 ;\cf0\par
+\cf2     \cf0\par
+\cf2     \cf1 /* MICS channel */\cf0\par
+\cf5     UD8 chan;\cf0\par
+\cf2         \cf0\par
+\cf2     \cf1 /* RF modulation for TX & RX (see MAC_MODUSER). For a base station, this\cf0\par
+\cf1      * also contains the user \ul wakeup\ulnone  data.\cf0\par
+\cf1      */\cf0\par
+\cf2  \cf5    UD8 modUser;\cf0\par
+\cf2         \cf0\par
+\cf2     \cf1 /* TX block size (usually same as RX block size) */\cf0\par
+\cf2   \cf5   UD8 txBlockSize\cf7 ;\cf0\par
+\cf2         \cf0\par
+\cf2     \cf1 /* RX block size (usually same as TX block size) */\cf0\par
+\cf2   \cf5   UD8 rxBlockSize\cf7 ;\cf0\par
+\cf2         \cf0\par
+\cf2     \cf1 /* max number of blocks to transmit in a packet */\cf0\par
+\cf2   \cf5   UD8 maxBlocksPerTxPack;\cf0\par
+\cf2         \cf0\par
+\cf4\}\cf2  \cf6 MICS_LINK_STAT\cf7 ;\cf0\f0\fs26\par
+\par
+\par
+case 025:BsmCmdGetLinkQual(packLen)\par
+\tab Send: Header + 0 bytes\par
+\tab Returns linkQual struct\par
+\par
+\cf1\f1\fs20 /* Link quality. Note each board will clear its link quality each time the PC\cf0\par
+\cf1  * gets the status (via ImGetStatChanges() for implant, or BsmGetStatChanges()\cf0\par
+\cf1  * for base). Typically, the PC will get the status once a second.\cf0\par
+\cf1  */\cf0\par
+\cf3\b typedef\cf2\b0  \cf3\b struct\cf2\b0  \cf4\{\cf0\par
+\cf2         \cf0\par
+\cf2     \cf1 /* true if IRQ_MAXBERR occurred since the PC last got MICS_LINK_QUAL */\cf0\par
+\cf2   \cf5   BOOL16 maxBErrInts;\cf0\par
+\cf2         \cf0\par
+\cf2     \cf1 /* For a base station, this is true if IRQ_MAXRETRIES occurred since the\cf0\par
+\cf1      * PC last got MICS_LINK_QUAL. For an implant, this is always false (it has\cf0\par
+\cf1      * no meaning on an implant, but has been kept for backwards compatibility).\cf0\par
+\cf1      */\cf0\par
+\cf2    \cf5  BOOL16 maxRetriesInts;\cf0\par
+\cf2         \cf0\par
+\cf2     \cf1 /* error corrected blocks since the PC last got MICS_LINK_QUAL */\cf0\par
+\cf2  \cf5    UD16 errCorBlocks;\cf0\par
+\cf2         \cf0\par
+\cf2     \cf1 /* CRC errors since the PC last got MICS_LINK_QUAL */\cf0\par
+\cf2   \cf5   UD16 crcErrs;\cf0\par
+\cf2         \cf0\par
+\cf4\}\cf2  \cf6 MICS_LINK_QUAL\cf7 ;\cf0\f0\fs26\par
+\par
+case 026:BsmCmdGetTraceMsg(packLen)\par
+\tab Send: Header + 0 bytes\par
+\tab Returns string containing next trace message\par
+\par
+case 027:BsmCmdCopyMicsRegs(packLen)\par
+\tab Send: Header + BSM_COPY_MICS_REGS_CMD struct\par
+\tab Returns std success/fail\par
+\par
+\cf1\f1\fs20  * Structures for BSM_COPY_MICS_REGS_CMD_TYPE:\cf0\par
+\cf1  */\cf0\par
+\cf3\b typedef\cf2\b0  \cf3\b struct\cf2\b0  \cf4\{\cf0\par
+\cf2     \cf0\par
+\cf2     \cf1 /* If true, the base will use MICS housekeeping to execute the "copy\cf0\par
+\cf1      * registers" command on the remote implant instead of the base.\cf0\par
+\cf1      */\cf0\par
+\cf2   \cf5   BOOL8 remote;\cf0\par
+\cf2     \cf0\par
+\cf4\}\cf2  \cf6 BSM_COPY_MICS_REGS_CMD\cf7 ;\cf0\f0\fs26\par
+\par
+case 028:BsmCmdGetStatChanges(packLen)\par
+\tab Send: Header + BSM_GET_STAT_CHANGES_CMD struct\par
+\tab Returns BSM_STAT struct and variable number of addl data structs which may include\par
+\tab\tab MICS_LINK_STAT\par
+\tab\tab MICS_LINK_QUAL\par
+\tab\tab MICS_DATA_STAT\par
+\par
+\cf1\f1\fs20  * Structures for BSM_GET_STAT_CHANGES_CMD_TYPE:\cf0\par
+\cf1  */\cf0\par
+\cf3\b typedef\cf2\b0  \cf3\b struct\cf2\b0  \cf4\{\cf0\par
+\cf2     \cf0\par
+\cf2     \cf1 /* if true, force command to report all of the status sections regardless of "changed" status: \par
+     *  NOTE:  Reporting the "link" or "data" status sections will also clear the accumulated counts\par
+     * in the firmware*/\cf0\par
+\cf5     BOOL8 force;\cf0\par
+\cf2     \cf0\par
+\cf4\}\cf2  \cf6 BSM_GET_STAT_CHANGES_CMD\cf7 ;\par
+\par
+\cf1 /* General base station status.\cf0\par
+\cf1  */\cf0\par
+\cf3\b typedef\cf2\b0  \cf3\b struct\cf2\b0  \cf4\{\cf0\par
+\cf2     \cf0\par
+\cf2     \cf1 /* flags (see BSM_ERR_OCCURRED, BSM_LINK_STAT_CHANGED, ...) */\cf0\par
+\cf5     UD8 flags;\par
+\par
+\cf13\b #define\cf14\b0  BSM_ERR_OCCURRED       (1 << 0)\cf0\par
+\cf13\b #define\cf14\b0  BSM_LINK_STAT_CHANGED  (1 << 1)\cf0\par
+\cf13\b #define\cf14\b0  BSM_LINK_QUAL_CHANGED  (1 << 2)\cf0\par
+\cf13\b #define\cf14\b0  BSM_400_MHZ_TX_ACTIVE  (1 << 3)\cf0\par
+\cf13\b #define\cf14\b0  BSM_400_MHZ_RX_ACTIVE  (1 << 4)  \cf0\par
+\cf13\b #define\cf14\b0  BSM_245_GHZ_TX_ACTIVE  (1 << 5)\cf0\par
+\cf13\b #define\cf14\b0  BSM_DATA_STAT_CHANGED  (1 << 6)\cf0\par
+\cf2     \cf0\par
+\cf2     \cf1 /* current operational state (see BSM_IDLE, BSM_IN_SESSION, etc. above) */\cf0\par
+\cf5     UD8 micsState;\par
+\par
+\cf13\b #define\cf14\b0  BSM_SLEEPING                 0\cf0\par
+\cf13\b #define\cf14\b0  BSM_IDLE                     1\cf0\par
+\cf13\b #define\cf14\b0  BSM_SEARCHING_FOR_IMPLANT    2\cf0\par
+\cf13\b #define\cf14\b0  BSM_STARTING_SESSION         3\tab\cf0\par
+\cf13\b #define\cf14\b0  BSM_LISTENING_FOR_EMERGENCY  4\cf0\par
+\cf13\b #define\cf14\b0  BSM_IN_SESSION               6\cf0\par
+\par
+\cf4\}\cf2  \cf6 BSM_STAT\cf7 ;\par
+\par
+\cf1 /* Link status.\cf0\par
+\cf1  */\cf0\par
+\cf3\b typedef\cf2\b0  \cf3\b struct\cf2\b0  \cf4\{\cf0\par
+\cf2     \cf0\par
+\cf2     \cf1 /* current IMD transceiver ID (implant ID; 3 bytes) */\cf0\par
+\cf5     UD8 b3;  /* MSB of ID */\par
+    UD8 b2;\par
+    UD8 b1;  /* LSB of ID */\cf0\par
+\cf2         \cf0\par
+\cf2\tab\tab     \cf1 /* current company ID */\cf0\par
+\cf5     UD8 companyId\cf7 ;\cf0\par
+\cf2     \cf0\par
+\cf2     \cf1 /* MICS channel */\cf0\par
+\cf5     UD8 chan;\cf0\par
+\cf2         \cf0\par
+\cf2     \cf1 /* RF modulation for TX & RX (see MAC_MODUSER). For a base station, this\cf0\par
+\cf1      * also contains the user \ul wakeup\ulnone  data.\cf0\par
+\cf1      */\cf0\par
+\cf2  \cf5    UD8 modUser;\cf0\par
+\cf2         \cf0\par
+\cf2     \cf1 /* TX block size (usually same as RX block size) */\cf0\par
+\cf2   \cf5   UD8 txBlockSize\cf7 ;\cf0\par
+\cf2         \cf0\par
+\cf2     \cf1 /* RX block size (usually same as TX block size) */\cf0\par
+\cf2   \cf5   UD8 rxBlockSize\cf7 ;\cf0\par
+\cf2         \cf0\par
+\cf2     \cf1 /* max number of blocks to transmit in a packet */\cf0\par
+\cf2   \cf5   UD8 maxBlocksPerTxPack;\cf0\par
+\cf2         \cf0\par
+\cf4\}\cf2  \cf6 MICS_LINK_STAT\cf7 ;\cf0\f0\fs26\par
+\cf7\f1\fs20\par
+\cf1 /* Link quality. Note each board will clear its link quality each time the PC\cf0\par
+\cf1  * gets the status (via ImGetStatChanges() for implant, or BsmGetStatChanges()\cf0\par
+\cf1  * for base). Typically, the PC will get the status once a second.\cf0\par
+\cf1  */\cf0\par
+\cf3\b typedef\cf2\b0  \cf3\b struct\cf2\b0  \cf4\{\cf0\par
+\cf2         \cf0\par
+\cf2     \cf1 /* true if IRQ_MAXBERR occurred since the PC last got MICS_LINK_QUAL */\cf0\par
+\cf2   \cf5   BOOL16 maxBErrInts;\cf0\par
+\cf2         \cf0\par
+\cf2     \cf1 /* For a base station, this is true if IRQ_MAXRETRIES occurred since the\cf0\par
+\cf1      * PC last got MICS_LINK_QUAL. For an implant, this is always false (it has\cf0\par
+\cf1      * no meaning on an implant, but has been kept for backwards compatibility).\cf0\par
+\cf1      */\cf0\par
+\cf2    \cf5  BOOL16 maxRetriesInts;\cf0\par
+\cf2         \cf0\par
+\cf2     \cf1 /* error corrected blocks since the PC last got MICS_LINK_QUAL */\cf0\par
+\cf2  \cf5    UD16 errCorBlocks;\cf0\par
+\cf2         \cf0\par
+\cf2     \cf1 /* CRC errors since the PC last got MICS_LINK_QUAL */\cf0\par
+\cf2   \cf5   UD16 crcErrs;\cf0\par
+\cf2         \cf0\par
+\cf4\}\cf2  \cf6 MICS_LINK_QUAL\cf7 ;\cf0\f0\fs26\par
+\cf7\f1\fs20\par
+\cf1 /* Data status. Note each board will clear its data status each time the PC\cf0\par
+\cf1  * gets the status (via ImGetStatChanges() for implant, or BsmGetStatChanges()\cf0\par
+\cf1  * for base). Typically, the PC will get the status once a second. The PC\cf0\par
+\cf1  * should get the status often enough to ensure these counters won't wrap\cf0\par
+\cf1  * (~54 seconds for 2FSK_FB, and ~13 seconds for 4FSK). If they wrap, the next\cf0\par
+\cf1  * status won't be accurate. To get the total counts, the PC must maintain it's\cf0\par
+\cf1  * own running sums, adding the counters in each status to the sums.\cf0\par
+\cf1  */\cf0\par
+\cf3\b typedef\cf2\b0  \cf3\b struct\cf2\b0  \cf4\{\cf0\par
+\cf2     \cf0\par
+\cf2     \cf1 /* Number of data blocks transmitted since the PC last got MICS_DATA_STAT.\cf0\par
+\cf1      */\cf0\par
+\cf2  \cf5    UD16 txBlockCount;\cf0\par
+\cf2     \cf0\par
+\cf2     \cf1 /* Number of data blocks received since the PC last got MICS_DATA_STAT.\cf0\par
+\cf1      */\cf0\par
+\cf5     UD16 rxBlockCount;\cf0\par
+\cf2     \cf0\par
+\cf2     \cf1 /* Number of received bytes that didn't match the expected value (since\cf0\par
+\cf1      * the PC last got MICS_DATA_STAT). Note this is only meaningful when the\cf0\par
+\cf1      * data test is running with the MICS_DT_RX and MICS_DT_VALIDATE options\cf0\par
+\cf1      * (see the MICS_DT_SPECS structure).\cf0\par
+\cf1      */\cf0\par
+\cf5     UD16 dataErrCount;\cf0\par
+\cf2     \cf0\par
+\cf4\}\cf2  \cf6 MICS_DATA_STAT\cf7 ;\cf0\f0\fs26\par
+\par
+case 029:BsmCmdStartDataTest(packLen)\par
+\tab Send: Header + BSM_START_DATA_TEST_CMD struct\par
+\tab Returns std success/fail\par
+\par
+\cf1\f1\fs20 /* Data test specifications (passed to BsmStartDataTest() and ImStartDataTest()).\cf0\par
+\cf1  */\cf0\par
+\cf3\b typedef\cf2\b0  \cf3\b struct\cf2\b0  \cf4\{\cf0\par
+\cf2     \cf0\par
+\cf2     \cf1 /* flags for various data test options (see MICS_DT_TX, etc. below) */\cf0\par
+\cf5     UD8 options;\cf0\par
+\cf2     \cf0\par
+\cf2     \cf1 /* If the MICS_DT_TX option is specified, this specifies the data value to\cf0\par
+\cf1      * transmit. Not if the MICS_DT_INC_TX option is also specified, the data\cf0\par
+\cf1      * will start with the specified value, but will be incremented for each\cf0\par
+\cf1      * subsequent byte.\cf0\par
+\cf1      */\cf0\par
+\cf5     UD8 txData;\cf0\par
+\cf2     \cf0\par
+\cf2     \cf1 /* If the MICS_DT_TX option is specified, this specifies the number of data\cf0\par
+\cf1      * blocks to transmit (0 to keep transmitting until the test is stopped).\cf0\par
+\cf1      */\cf0\par
+\cf5     UD16 txBlockCount;\cf0\par
+\cf2     \cf0\par
+\cf2     \cf1 /* If the MICS_DT_RX and MICS_DT_VALIDATE options are specified, this is\cf0\par
+\cf1      * the data value expected to be received. Note if the MICS_DT_INC_RX\cf0\par
+\cf1      * option is also specified, the data will start with the specified value,\cf0\par
+\cf1      * but will be incremented for each subsequent byte.\cf0\par
+\cf1      */\cf0\par
+\cf5     UD8 rxData;\cf0\par
+\cf2     \cf0\par
+\cf4\}\cf2  \cf6 BSM_START_DATA_TEST_CMD\cf0\f0\fs26\par
+\par
+case 030:BsmCmdSetCc2550Freq(packLen)\par
+\tab Send: Header + BSM_SET_CC2550_FREQ_CMD struct\par
+\tab Returns std success/fail\par
+\par
+\cf1\f1\fs20  * Structures for BSM_SET_CC2550_FREQ_CMD_TYPE:\cf0\par
+\cf1  */\cf0\par
+\cf3\b typedef\cf2\b0  \cf3\b struct\cf2\b0  \cf4\{\cf0\par
+\cf2     \cf0\par
+\cf2     \cf1 /* the values for the CC2550's FREQ0, FREQ1, and FREQ2 registers */\cf0\par
+\cf5     UD8 freq0;\par
+    UD8 freq1;\par
+    UD8 freq2;\cf0\par
+\cf2     \cf0\par
+\cf4\}\cf2  \cf6 BSM_SET_CC2550_FREQ_CMD\cf7 ;\par
+\par
+\cf0\f0\fs26 case 060:BsmCmdSetAttenuator(packLen)\par
+\tab Send: Header + BSM_SET_ATTENUATOR struct\par
+\tab Returns std success/fail\par
+\par
+\cf1\f1\fs20  * Structures for BSM_SET_ATTENUATOR_TYPE:\cf0\par
+\cf1  */\cf0\par
+\cf3\b typedef\cf2\b0  \cf3\b struct\cf2\b0  \cf4\{\cf0\par
+\cf2     \cf0\par
+\cf2     \cf1 /* RF Attenuator Setting in 0.25dB increments (7 bits, max 0x7F = -32dB).\cf0\par
+\cf1      */\cf0\par
+\cf5     SD8 atten;\cf0\par
+\cf2     \cf0\par
+\cf4\}\cf2  \cf6 BSM_SET_ATTENUATOR_CMD\cf7 ;\par
+\par
+\cf0\f0\fs26 case 061:BsmCmdSetAttenuator(packLen)\par
+\tab Send: Header + 0 Bytes\par
+\tab Returns CMD_GET_ATTENUATOR_REPLY Struct\cf7\f1\fs20\par
+\par
+\cf1\f2 * Structure for the BSM_GET_ATTENUATION reply:\cf0\par
+\cf1 */\cf0\par
+\cf3\b typedef\cf2\b0  \cf3\b struct\cf2\b0  \cf4\{\cf0\par
+\cf2\f3   \cf1\f2 /* the value for the Attenuator Register */\cf0\par
+\cf2\f3   \cf15\f2 UD8 atten\cf7 ;\cf0\par
+\par
+\cf4\}\cf2  \cf6 BSM_GET_ATTENUATOR_REPLY\cf7 ;\par
+\par
+\par
+\cf16\f3 Additional Design Information:\par
+\par
+\cf1\f0\fs24 * Device addresses that are common to all applications. A source and\cf0\par
+\cf1  * destination address are specified in each packet header to indicate who\cf0\par
+\cf1  * the packet is from, and who it is for (see COM_PACK_HDR.srcAndDest). The\cf0\par
+\cf1  * addresses defined below are common to all applications and should not be\cf0\par
+\cf1  * used for any other purpose. Note address 0 is invalid:\cf0\par
+\cf1  * \cf0\par
+\cf1  * COM_PC_ADDR:\cf0\par
+\cf1  *     Address for the PC. As of this writing, all command packets originate\cf0\par
+\cf1  *     from the PC, so the PC is the source address for all command packets,\cf0\par
+\cf1  *     and the destination address for all reply packets.\cf0\par
+\cf1  * COM_LOCAL_MEZZ_ADDR:\cf0\par
+\cf1  *     Address for a \ul mezzanine\ulnone  board attached to a local ADP board.\cf0\par
+\cf1  * COM_REMOTE_MEZZ_ADDR:\cf0\par
+\cf1  * COM_RESERVED_ADDR_6, COM_RESERVED_ADDR_7:\cf0\par
+\cf1  *     Reserved for possible future use.\cf0\par
+\cf1  */\cf0\par
+\cf13 #define\cf14  COM_PC_ADDR           1\cf0\par
+\cf13 #define\cf14  COM_LOCAL_MEZZ_ADDR   3\cf0\par
+\cf13 #define\cf14  COM_RESERVED_ADDR_6   6\cf0\par
+\cf13 #define\cf14  COM_RESERVED_ADDR_7   7\cf0\par
+\cf1 /*\cf0\par
+\cf1  * Start of addresses that can be defined by the application if desired.\cf0\par
+\cf1  */\cf0\par
+\cf13 #define\cf14  COM_APP_START_ADDR    8\cf0\par
+\cf1 /*\cf0\par
+\cf1  * Maximum valid address (must fit in 4 bits).\cf0\par
+\cf1  */\cf0\par
+\cf13 #define\cf14  COM_MAX_ADDR          15 \cf1 /* 0xF */\cf0\par
+\par
+\par
+\cf1 /* Packet types that are common to all devices. The packet type is specified \cf0\par
+\cf1  * in each communication packet header (see COM_PACK_HDR.type).\cf0\par
+\cf1  * \cf0\par
+\cf1  * Command packet types that are common to all devices:\cf0\par
+\cf1  * \cf0\par
+\cf1  *   COM_GET_DEV_TYPE_CMD_TYPE:\cf0\par
+\cf1  *       Command to get device type string. For this command, the reply\cf0\par
+\cf1  *       contains the device type (terminated by '\\0'). The buffer size\cf0\par
+\cf1  *       required to hold a maximum length reply is COM_DEV_TYPE_BUF_SIZE.\cf0\par
+\cf1  *   COM_GET_DEV_NAME_CMD_TYPE:\cf0\par
+\cf1  *       Command to get device name string. For this command, the reply\cf0\par
+\cf1  *       contains the device name (terminated by '\\0'). The buffer size\cf0\par
+\cf1  *       required to hold a maximum length reply is COM_DEV_NAME_BUF_SIZE.\cf0\par
+\cf1  *   COM_GET_DEV_VER_CMD_TYPE:\cf0\par
+\cf1  *       Command to get device version string. For this command, the reply\cf0\par
+\cf1  *       contains the device version (terminated by '\\0'). The buffer size\cf0\par
+\cf1  *       required to hold a maximum length reply is COM_DEV_VER_BUF_SIZE.\cf0\par
+\cf1  *   COM_GET_DEV_ERR_CMD_TYPE:\cf0\par
+\cf1  *       Command to get device error information. For this command, the reply\cf0\par
+\cf1  *       packet is the same as for an error reply (see COM_ERR_REPLY_TYPE), but\cf0\par
+\cf1  *       the reply type in the reply packet header will be COM_OK_REPLY_TYPE,\cf0\par
+\cf1  *       not COM_ERR_REPLY_TYPE. The buffer size required to hold a maximum\cf0\par
+\cf1  *       length reply is COM_ERR_REPLY_BUF_SIZE.\cf0\par
+\cf1  *   COM_MAX_CMD_TYPE:\cf0\par
+\cf1  *       Maximum valid command type.\cf0\par
+\cf1  * \cf0\par
+\cf1  * Reserved packet types:\cf0\par
+\cf1  * \cf0\par
+\cf1  *   COM_RESERVED_TYPE_125:\cf0\par
+\cf1  *       Reserved for possible future use.\cf0\par
+\cf1  *   COM_RESERVED_TYPE_126:\cf0\par
+\cf1  *       Reserved for possible future use.\cf0\par
+\cf1  * \cf0\par
+\cf1  * Reply packet types (note these are the only valid reply types):\cf0\par
+\cf1  * \cf0\par
+\cf1  *   COM_OK_REPLY_TYPE:\cf0\par
+\cf1  *       Reply for a command that was successful. The content of the reply\cf0\par
+\cf1  *       packet depends on the command the reply is for.\cf0\par
+\cf1  *   COM_ERR_REPLY_TYPE:\cf0\par
+\cf1  *       Reply for a command that failed. The reply packet contains an error ID\cf0\par
+\cf1  *       string (terminated with a '\\0'), followed by an error arguments string\cf0\par
+\cf1  *       (terminated with a '\\0'). The format of the error ID string is\cf0\par
+\cf1  *       "<ErrorGroup>.<ErrorCode>: <DefaultErrorMessage>". The arguments\cf0\par
+\cf1  *       string contains arguments to insert into the error message. If there\cf0\par
+\cf1  *       are multiple arguments, they must be separated by '\\f' (form feed) in\cf0\par
+\cf1  *       the arguments string. If there are no arguments, the arguments string\cf0\par
+\cf1  *       should be empty (just the terminating '\\0'). The host (PC) will insert\cf0\par
+\cf1  *       the first argument where \{0\} appears in the message, the second where\cf0\par
+\cf1  *       \{1\} appears, and so on. For more information about error ID strings,\cf0\par
+\cf1  *       argument strings, and how they're used, see "AppDevPlat/\ul Sw\ulnone /\ul Pc\ulnone /\ul Libs\ulnone /\cf0\par
+\cf1  *       ErrInfoLib.c". Note the buffer size required to hold a maximum length\cf0\par
+\cf1  *       error reply is COM_ERR_REPLY_BUF_SIZE.\cf0\par
+\cf1  */\cf0\par
+\cf13 #define\cf14  COM_GET_DEV_TYPE_CMD_TYPE    121  \cf1 /* 0x79 */\cf0\par
+\cf13 #define\cf14  COM_GET_DEV_NAME_CMD_TYPE    122  \cf1 /* 0x7A */\cf0\par
+\cf13 #define\cf14  COM_GET_DEV_VER_CMD_TYPE     123  \cf1 /* 0x7B */\cf0\par
+\cf13 #define\cf14  COM_GET_DEV_ERR_CMD_TYPE     124  \cf1 /* 0x7B */\cf0\par
+\cf13 #define\cf14  COM_MAX_CMD_TYPE             124\cf0\par
+\cf1 /* reserved types */\cf0\par
+\cf13 #define\cf14  COM_RESERVED_TYPE_125        125  \cf1 /* 0x7D */\cf0\par
+\cf13 #define\cf14  COM_RESERVED_TYPE_126        126  \cf1 /* 0x7E */\cf0\par
+\cf1 /* reply types */\cf0\par
+\cf13 #define\cf14  COM_OK_REPLY_TYPE              0  \cf1 /* 0x00 */\cf14  \cf0\par
+\cf13 #define\cf14  COM_ERR_REPLY_TYPE           127  \cf1 /* 0x7F */\cf0\par
+\par
+\cf1 /* maximum packet length (see COM_PACK_HDR.lenLsb & lenMsb) */\cf0\par
+\cf13 #define\cf14  COM_MAX_PACK_LEN  0xFFFF\cf0\par
+\par
+\cf1 /* Size of buffer required to hold a maximum length device type string and\cf0\par
+\cf1  * its terminating '\\0'.\cf0\par
+\cf1  */\cf0\par
+\cf13 #define\cf14  COM_DEV_TYPE_BUF_SIZE  128\cf0\par
+\cf13 #define\cf14  COM_DEV_TYPE_MAX_LEN   (COM_DEV_TYPE_BUF_SIZE - 1)\cf0\par
+\cf1 /*\cf0\par
+\cf1  * Size of buffer required to hold a maximum length device name and\cf0\par
+\cf1  * its terminating '\\0'.\cf0\par
+\cf1  */\cf0\par
+\cf13 #define\cf14  COM_DEV_NAME_BUF_SIZE  128\cf0\par
+\cf13 #define\cf14  COM_DEV_NAME_MAX_LEN   (COM_DEV_NAME_BUF_SIZE - 1)\cf0\par
+\cf1 /*\cf0\par
+\cf1  * Size of buffer required to hold a maximum length version string and its\cf0\par
+\cf1  * terminating '\\0'.\cf0\par
+\cf1  */\cf0\par
+\cf13 #define\cf14  COM_DEV_VER_BUF_SIZE  256\cf0\par
+\cf13 #define\cf14  COM_DEV_VER_MAX_LEN   (COM_DEV_VER_BUF_SIZE - 1)\cf0\par
+\cf1 /*\cf0\par
+\cf1  * Size of buffer required to hold a maximum length error reply. For the\cf0\par
+\cf1  * content of an error reply packet, see COM_ERR_REPLY_TYPE.\cf0\par
+\cf1  */\cf0\par
+\cf13 #define\cf14  COM_ERR_REPLY_BUF_SIZE  256\cf0\par
+\fs26\par
+\par
+*** END OF DOCUMENT ***\par
+}
+ 

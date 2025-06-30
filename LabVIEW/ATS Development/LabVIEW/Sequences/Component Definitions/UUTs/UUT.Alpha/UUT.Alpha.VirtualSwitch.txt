@@ -1,0 +1,104 @@
+NI Switch Executive Virtual Device File
+For help on this file, refer to the topic 'Managing a Virtual Device in Excel' in the 'NI Switch Executive Help'.
+
+Virtual Device Name	Comment	Export Schema Version	Channel Name Style	Route Editor Channel Display	Route Editor Route Updates	Route Editor Route Search Depth	Schematic Route Display	Schematic Route Deletion
+UUT_Alpha_Measurement_SwitchMatrix_VirtualDevice		1	Alias Or Full Name	Show Channels Without Aliases	Auto Update Routes	Low	Hide Routes	Show Notification Dialog
+
+IVI Device Name	Comment
+Measurement_ivi	PXI-2503
+
+Channel IVI Device	Channel IVI Name	Alias	Hardwire	Reserved For Routing	Disabled	Comment	Wire Mode	Settling Time (s)	Impedance (Ohm)	Bandwidth (Hz)	DC Voltage (V)	AC Voltage (V)	DC Switching Current (A)	AC Switching Current (A)	DC Carry Current (A)	AC Carry Current (A)	DC Switching Power (W)	AC Switching Power (W)	DC Carry Power (W)	AC Carry Power (W)
+Measurement_ivi	c0	UUT_PinName					1	0.001800	50.00	3000000.00	55.00	42.00	1.00	1.00	1.00	1.00	55.00	42.00	55.00	42.00
+Measurement_ivi	c1	J6-1					1	0.001800	50.00	3000000.00	55.00	42.00	1.00	1.00	1.00	1.00	55.00	42.00	55.00	42.00
+Measurement_ivi	c2	J6-2					1	0.001800	50.00	3000000.00	55.00	42.00	1.00	1.00	1.00	1.00	55.00	42.00	55.00	42.00
+Measurement_ivi	c3	J6-3					1	0.001800	50.00	3000000.00	55.00	42.00	1.00	1.00	1.00	1.00	55.00	42.00	55.00	42.00
+Measurement_ivi	c4	J6-4					1	0.001800	50.00	3000000.00	55.00	42.00	1.00	1.00	1.00	1.00	55.00	42.00	55.00	42.00
+Measurement_ivi	c5				x		1	0.001800	50.00	3000000.00	55.00	42.00	1.00	1.00	1.00	1.00	55.00	42.00	55.00	42.00
+Measurement_ivi	c6				x		1	0.001800	50.00	3000000.00	55.00	42.00	1.00	1.00	1.00	1.00	55.00	42.00	55.00	42.00
+Measurement_ivi	c7				x		1	0.001800	50.00	3000000.00	55.00	42.00	1.00	1.00	1.00	1.00	55.00	42.00	55.00	42.00
+Measurement_ivi	c8				x		1	0.001800	50.00	3000000.00	55.00	42.00	1.00	1.00	1.00	1.00	55.00	42.00	55.00	42.00
+Measurement_ivi	c9				x		1	0.001800	50.00	3000000.00	55.00	42.00	1.00	1.00	1.00	1.00	55.00	42.00	55.00	42.00
+Measurement_ivi	c10				x		1	0.001800	50.00	3000000.00	55.00	42.00	1.00	1.00	1.00	1.00	55.00	42.00	55.00	42.00
+Measurement_ivi	c11				x		1	0.001800	50.00	3000000.00	55.00	42.00	1.00	1.00	1.00	1.00	55.00	42.00	55.00	42.00
+Measurement_ivi	c12				x		1	0.001800	50.00	3000000.00	55.00	42.00	1.00	1.00	1.00	1.00	55.00	42.00	55.00	42.00
+Measurement_ivi	c13				x		1	0.001800	50.00	3000000.00	55.00	42.00	1.00	1.00	1.00	1.00	55.00	42.00	55.00	42.00
+Measurement_ivi	c14				x		1	0.001800	50.00	3000000.00	55.00	42.00	1.00	1.00	1.00	1.00	55.00	42.00	55.00	42.00
+Measurement_ivi	c15				x		1	0.001800	50.00	3000000.00	55.00	42.00	1.00	1.00	1.00	1.00	55.00	42.00	55.00	42.00
+Measurement_ivi	c16				x		1	0.001800	50.00	3000000.00	55.00	42.00	1.00	1.00	1.00	1.00	55.00	42.00	55.00	42.00
+Measurement_ivi	c17				x		1	0.001800	50.00	3000000.00	55.00	42.00	1.00	1.00	1.00	1.00	55.00	42.00	55.00	42.00
+Measurement_ivi	c18				x		1	0.001800	50.00	3000000.00	55.00	42.00	1.00	1.00	1.00	1.00	55.00	42.00	55.00	42.00
+Measurement_ivi	c19				x		1	0.001800	50.00	3000000.00	55.00	42.00	1.00	1.00	1.00	1.00	55.00	42.00	55.00	42.00
+Measurement_ivi	c20				x		1	0.001800	50.00	3000000.00	55.00	42.00	1.00	1.00	1.00	1.00	55.00	42.00	55.00	42.00
+Measurement_ivi	c21				x		1	0.001800	50.00	3000000.00	55.00	42.00	1.00	1.00	1.00	1.00	55.00	42.00	55.00	42.00
+Measurement_ivi	c22				x		1	0.001800	50.00	3000000.00	55.00	42.00	1.00	1.00	1.00	1.00	55.00	42.00	55.00	42.00
+Measurement_ivi	c23				x		1	0.001800	50.00	3000000.00	55.00	42.00	1.00	1.00	1.00	1.00	55.00	42.00	55.00	42.00
+Measurement_ivi	c24				x		1	0.001800	50.00	3000000.00	55.00	42.00	1.00	1.00	1.00	1.00	55.00	42.00	55.00	42.00
+Measurement_ivi	c25				x		1	0.001800	50.00	3000000.00	55.00	42.00	1.00	1.00	1.00	1.00	55.00	42.00	55.00	42.00
+Measurement_ivi	c26				x		1	0.001800	50.00	3000000.00	55.00	42.00	1.00	1.00	1.00	1.00	55.00	42.00	55.00	42.00
+Measurement_ivi	c27				x		1	0.001800	50.00	3000000.00	55.00	42.00	1.00	1.00	1.00	1.00	55.00	42.00	55.00	42.00
+Measurement_ivi	c28				x		1	0.001800	50.00	3000000.00	55.00	42.00	1.00	1.00	1.00	1.00	55.00	42.00	55.00	42.00
+Measurement_ivi	c29				x		1	0.001800	50.00	3000000.00	55.00	42.00	1.00	1.00	1.00	1.00	55.00	42.00	55.00	42.00
+Measurement_ivi	c30				x		1	0.001800	50.00	3000000.00	55.00	42.00	1.00	1.00	1.00	1.00	55.00	42.00	55.00	42.00
+Measurement_ivi	c31				x		1	0.001800	50.00	3000000.00	55.00	42.00	1.00	1.00	1.00	1.00	55.00	42.00	55.00	42.00
+Measurement_ivi	c32				x		1	0.001800	50.00	3000000.00	55.00	42.00	1.00	1.00	1.00	1.00	55.00	42.00	55.00	42.00
+Measurement_ivi	c33				x		1	0.001800	50.00	3000000.00	55.00	42.00	1.00	1.00	1.00	1.00	55.00	42.00	55.00	42.00
+Measurement_ivi	c34				x		1	0.001800	50.00	3000000.00	55.00	42.00	1.00	1.00	1.00	1.00	55.00	42.00	55.00	42.00
+Measurement_ivi	c35				x		1	0.001800	50.00	3000000.00	55.00	42.00	1.00	1.00	1.00	1.00	55.00	42.00	55.00	42.00
+Measurement_ivi	c36				x		1	0.001800	50.00	3000000.00	55.00	42.00	1.00	1.00	1.00	1.00	55.00	42.00	55.00	42.00
+Measurement_ivi	c37				x		1	0.001800	50.00	3000000.00	55.00	42.00	1.00	1.00	1.00	1.00	55.00	42.00	55.00	42.00
+Measurement_ivi	c38				x		1	0.001800	50.00	3000000.00	55.00	42.00	1.00	1.00	1.00	1.00	55.00	42.00	55.00	42.00
+Measurement_ivi	c39				x		1	0.001800	50.00	3000000.00	55.00	42.00	1.00	1.00	1.00	1.00	55.00	42.00	55.00	42.00
+Measurement_ivi	c40				x		1	0.001800	50.00	3000000.00	55.00	42.00	1.00	1.00	1.00	1.00	55.00	42.00	55.00	42.00
+Measurement_ivi	c41				x		1	0.001800	50.00	3000000.00	55.00	42.00	1.00	1.00	1.00	1.00	55.00	42.00	55.00	42.00
+Measurement_ivi	c42				x		1	0.001800	50.00	3000000.00	55.00	42.00	1.00	1.00	1.00	1.00	55.00	42.00	55.00	42.00
+Measurement_ivi	c43				x		1	0.001800	50.00	3000000.00	55.00	42.00	1.00	1.00	1.00	1.00	55.00	42.00	55.00	42.00
+Measurement_ivi	c44				x		1	0.001800	50.00	3000000.00	55.00	42.00	1.00	1.00	1.00	1.00	55.00	42.00	55.00	42.00
+Measurement_ivi	c45				x		1	0.001800	50.00	3000000.00	55.00	42.00	1.00	1.00	1.00	1.00	55.00	42.00	55.00	42.00
+Measurement_ivi	c46				x		1	0.001800	50.00	3000000.00	55.00	42.00	1.00	1.00	1.00	1.00	55.00	42.00	55.00	42.00
+Measurement_ivi	c47				x		1	0.001800	50.00	3000000.00	55.00	42.00	1.00	1.00	1.00	1.00	55.00	42.00	55.00	42.00
+Measurement_ivi	c48				x		1	0.001800	50.00	3000000.00	55.00	42.00	1.00	1.00	1.00	1.00	55.00	42.00	55.00	42.00
+Measurement_ivi	c49				x		1	0.001800	50.00	3000000.00	55.00	42.00	1.00	1.00	1.00	1.00	55.00	42.00	55.00	42.00
+Measurement_ivi	c50				x		1	0.001800	50.00	3000000.00	55.00	42.00	1.00	1.00	1.00	1.00	55.00	42.00	55.00	42.00
+Measurement_ivi	c51				x		1	0.001800	50.00	3000000.00	55.00	42.00	1.00	1.00	1.00	1.00	55.00	42.00	55.00	42.00
+Measurement_ivi	c52				x		1	0.001800	50.00	3000000.00	55.00	42.00	1.00	1.00	1.00	1.00	55.00	42.00	55.00	42.00
+Measurement_ivi	c53				x		1	0.001800	50.00	3000000.00	55.00	42.00	1.00	1.00	1.00	1.00	55.00	42.00	55.00	42.00
+Measurement_ivi	c54				x		1	0.001800	50.00	3000000.00	55.00	42.00	1.00	1.00	1.00	1.00	55.00	42.00	55.00	42.00
+Measurement_ivi	c55				x		1	0.001800	50.00	3000000.00	55.00	42.00	1.00	1.00	1.00	1.00	55.00	42.00	55.00	42.00
+Measurement_ivi	c56				x		1	0.001800	50.00	3000000.00	55.00	42.00	1.00	1.00	1.00	1.00	55.00	42.00	55.00	42.00
+Measurement_ivi	c57				x		1	0.001800	50.00	3000000.00	55.00	42.00	1.00	1.00	1.00	1.00	55.00	42.00	55.00	42.00
+Measurement_ivi	c58				x		1	0.001800	50.00	3000000.00	55.00	42.00	1.00	1.00	1.00	1.00	55.00	42.00	55.00	42.00
+Measurement_ivi	c59				x		1	0.001800	50.00	3000000.00	55.00	42.00	1.00	1.00	1.00	1.00	55.00	42.00	55.00	42.00
+Measurement_ivi	c60				x		1	0.001800	50.00	3000000.00	55.00	42.00	1.00	1.00	1.00	1.00	55.00	42.00	55.00	42.00
+Measurement_ivi	c61				x		1	0.001800	50.00	3000000.00	55.00	42.00	1.00	1.00	1.00	1.00	55.00	42.00	55.00	42.00
+Measurement_ivi	c62				x		1	0.001800	50.00	3000000.00	55.00	42.00	1.00	1.00	1.00	1.00	55.00	42.00	55.00	42.00
+Measurement_ivi	c63				x		1	0.001800	50.00	3000000.00	55.00	42.00	1.00	1.00	1.00	1.00	55.00	42.00	55.00	42.00
+Measurement_ivi	r0	DMM_IN+					1	0.001800	50.00	3000000.00	55.00	42.00	1.00	1.00	1.00	1.00	55.00	42.00	55.00	42.00
+Measurement_ivi	r1	DMM_IN-					1	0.001800	50.00	3000000.00	55.00	42.00	1.00	1.00	1.00	1.00	55.00	42.00	55.00	42.00
+Measurement_ivi	r2	DMM_SNSE+					1	0.001800	50.00	3000000.00	55.00	42.00	1.00	1.00	1.00	1.00	55.00	42.00	55.00	42.00
+Measurement_ivi	r3	DMM_SNSE-					1	0.001800	50.00	3000000.00	55.00	42.00	1.00	1.00	1.00	1.00	55.00	42.00	55.00	42.00
+
+Route Name	Endpoint1	Endpoint2	Specification	Type	Multiconnect Mode	Comment	Wire Mode	Settling Time (s)	Impedance (Ohm)	Bandwidth (Hz)	DC Voltage (V)	AC Voltage (V)	DC Switching Current (A)	AC Switching Current (A)	DC Carry Current (A)	AC Carry Current (A)	DC Switching Power (W)	AC Switching Power (W)	DC Carry Power (W)	AC Carry Power (W)
+
+Route Group Name	Comment
+RouteGroup0	
+
+Route Group Name	Child
+
+Hardwire Name	Comment
+
+Exclusion Name	Type	Disabled	Comment
+DMMChannels	Mutual		Exclude the connection of source channels
+
+Exclusion Name	Channel
+DMMChannels	DMM_IN+
+DMMChannels	DMM_IN-
+DMMChannels	DMM_SNSE+
+DMMChannels	DMM_SNSE-
+
+Exclusion Name	Set1 Channel
+
+Exclusion Name	Set2 Channel
+
+Bus Name	Hardwire Name Start Index	Comment
+
+Bus Name	IVI Device	Base Channel	End Channel

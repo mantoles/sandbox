@@ -1,0 +1,3 @@
+The contents of this folder must go in the following directory on the target computer:
+
+C:\Documents and Settings\All Users\Shared Documents\National Instruments\TestStand 2012\Components\Callbacks\FrontEnd

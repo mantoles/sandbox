@@ -1,0 +1,5 @@
+<Step Name>
+<StationGlobals>	Variable Value	
+'Including "ATES.rack_Model" and/or "ATES.rack_Serial" StationGlobals will force ATES into rack identification simulation mode
+ATES.rack_Model	0
+ATES.rack_Serial	A

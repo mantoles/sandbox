@@ -1,0 +1,28 @@
+Test.0004.Start
+Step	Limits.Low	Limits.High	Limits.String
+Numeric Limit Test	1	9	
+Numeric Limit Test2	-1	Inf	
+String Value Test			"Test 4"
+Test.0004.End
+
+Test.0007.Start
+Step	Limits.Low	Limits.High	Limits.String
+Numeric Limit Test	2	5	
+Numeric Limit Test2	3	Inf	
+String Value Test			"Alpha Test 7"
+Test.0007.End
+
+Test.0000.Start
+Step	Limits.Low	Limits.High	Limits.String
+
+Test.0000.End
+
+Test.0001.Start
+Step	Limits.Low	Limits.High	Limits.String
+
+Test.0001.End
+
+Test.0002.Start
+Step	Limits.Low	Limits.High	Limits.String
+
+Test.0002.End

@@ -1,0 +1,19 @@
+PPC_Enabled:0x01
+PPC_EXID[0]:0x00
+PPC_EXID[1]:0xFF
+PPC_EXID[2]:0xFF
+POP1_Enabled:0x01
+POP1_EXID[0]:0x01
+POP1_EXID[1]:0xFF
+POP1_EXID[2]:0xFF
+POP2_Enabled:0x00
+POP2_EXID[0]:0x00
+POP2_EXID[1]:0x00
+POP2_EXID[2]:0x00
+PPC_Text:This is a test of the EBC
+PulseWidthStep:100
+AmplitudeSteps:10
+PPC_Options:01
+IPG_Magnet_Options:01
+ImplantDateTime:04/01/2012 12:00:00 AM
+ReplacementIntervalMonths:48

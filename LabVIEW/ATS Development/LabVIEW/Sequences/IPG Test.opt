@@ -1,0 +1,22 @@
+[DEF, %OBJROOT]
+PersistedBreakpointArray = Objs
+PersistedWatchpointArray = Objs
+
+[DEF, PersistedBreakpointArray]
+%NAME = ""
+
+[__Header__]
+ProductName = "TestStand"
+ProductVersion = 4.5.0.310
+CompatibleProdVersion = 4.5.0.0
+Version = 577
+Type = "TEPersisted"
+Path Line0001 = "\\\\tsclient\\C\\Projects\\1-11-01791- QiG - Test System Development\\Engineering\\3 - Develop\\Code\\Sequences\\IPG Tes"
+Path Line0002 = "t.opt"
+ProductVersionString = "2010 (4.5.0.310)"
+Description = ""
+CharEncoding = ""
+
+[DEF, PersistedWatchpointArray]
+%NAME = ""
+

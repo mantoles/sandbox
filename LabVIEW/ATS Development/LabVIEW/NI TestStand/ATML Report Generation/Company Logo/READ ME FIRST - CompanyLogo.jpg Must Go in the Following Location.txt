@@ -1,0 +1,3 @@
+CompanyLogo.jpg must go in the following location:
+
+D:\Reports

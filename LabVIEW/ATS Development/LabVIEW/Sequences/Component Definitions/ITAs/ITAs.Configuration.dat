@@ -1,0 +1,5 @@
+<Step Name>
+<StationGlobals>	Variable Value	
+'Including "ATES.ITA_Model" and/or "ATES.ITA_Serial" StationGlobals will force ATES into ITA identification simulation mode
+ATES.ITA_Model	First
+ATES.ITA_Serial	AB

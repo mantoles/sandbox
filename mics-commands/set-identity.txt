@@ -1,0 +1,14 @@
+MICSID[1]=0x02
+MICSID[2]=0xB7
+MICSID[3]=0xD4
+MICSID[4]=0xBB
+ModelNumber=2412
+SerialNumber=02B7D4
+
+
+MICSID[1]=0x02
+MICSID[2]=0x6C
+MICSID[3]=0xCC
+MICSID[4]=0xCF
+ModelNumber=2412
+SerialNumber=026CCC

@@ -1,0 +1,11 @@
+C:\Users\Sophronis.Mantoles\OneDrive - Cirtec Medical Corporation\Documents\_projects\cirtec_labview_framework\Libraries\StatusLog\Class\SystemLog\Method\CheckLogSize.vi (Framework.lvlib:StatusLog.lvlib:SystemLog.lvclass:CheckLogSize.vi)
+    OpenG Libraries support for LabVIEW 2020 is missing and is referenced by the following VIs:
+C:\Users\Sophronis.Mantoles\OneDrive - Cirtec Medical Corporation\Documents\_projects\cirtec_labview_framework\Libraries\StatusLog\Class\SystemLog\Method\Init_Factory.vi (Framework.lvlib:StatusLog.lvlib:SystemLog.lvclass:Init_Factory.vi)
+    OpenG Libraries support for LabVIEW 2020 is missing and is referenced by the following VIs:
+C:\Users\Sophronis.Mantoles\OneDrive - Cirtec Medical Corporation\Documents\_projects\cirtec_labview_framework\Libraries\StatusLog\Class\SystemLog\Method\ReadINISection.vi (Framework.lvlib:StatusLog.lvlib:SystemLog.lvclass:ReadINISection.vi)
+    OpenG Libraries support for LabVIEW 2020 is missing and is referenced by the following VIs:
+C:\Users\Sophronis.Mantoles\OneDrive - Cirtec Medical Corporation\Documents\_projects\cirtec_labview_framework\Libraries\StatusLog\Class\SysLog_Text\Methods\OpenLog.vi (Framework.lvlib:StatusLog.lvlib:TextSysLog.lvclass:OpenLog.vi)
+    OpenG Libraries support for LabVIEW 2020 is missing and is referenced by the following VIs:
+C:\Users\Sophronis.Mantoles\OneDrive - Cirtec Medical Corporation\Documents\_projects\cirtec_labview_framework\Framework.lvproj (Framework.lvproj)
+    - The library expected to be at "C:\Program Files (x86)\National Instruments\LabVIEW 2020\user.lib\Cirtec_LabVIEW_FrameWork\Framework.lvlib" was loaded from "C:\Users\Sophronis.Mantoles\OneDrive - Cirtec Medical Corporation\Documents\_projects\cirtec_labview_framework\Framework.lvlib".
+    - The library expected to be at "C:\Program Files (x86)\National Instruments\LabVIEW 2020\user.lib\Cirtec_LabVIEW_FrameWork\Libraries\Cirtec DQMH Template\Cirtec DQMH Template.lvlib" was loaded from "C:\Users\Sophronis.Mantoles\OneDrive - Cirtec Medical Corporation\Documents\_projects\cirtec_labview_framework\Libraries\Cirtec DQMH Template\Cirtec DQMH Template.lvlib".

@@ -1,0 +1,5 @@
+<Step Name>
+<StationGlobals>	Variable Value	
+'Including "ATES.UUT_Model" and/or "ATES.UUT_Serial" StationGlobals will force ATES into rack identification simulation mode
+ATES.UUT_Model	Alpha
+ATES.UUT_Serial	ABCD

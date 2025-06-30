@@ -1,0 +1,19 @@
+PPC_Enabled=0
+PPC_EXID[0]=0x00
+PPC_EXID[1]=0x00
+PPC_EXID[2]=0x00
+POP1_Enabled=1
+POP1_EXID[0]=0x90
+POP1_EXID[1]=0x24
+POP1_EXID[2]=0x00
+POP2_Enabled=0
+POP2_EXID[0]=0x00
+POP2_EXID[1]=0x00
+POP2_EXID[2]=0x00
+PPC_Text= popmode
+PulseWidthStep=20
+AmplitudeSteps=50
+PPC_Options=0
+IPG_Magnet_Options=1
+ImplantDateTime=06/12/2023 12=00=00 PM
+ReplacementIntervalMonths=120
